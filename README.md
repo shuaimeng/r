@@ -80,3 +80,35 @@ iso：    异丙醇；
 **fp 1s**: 1s内的打印频率。不同的流量和占空比的情况。
 
 **droplet size**：液滴尺寸与fv的关系。不同Q和K的表现。
+
+### Voltage
+
+讨论电压施加方式不同时的打印效果。其中，包含：Va+Vb的电压
+配置方式，以及与普通的0+Va进行比较。
+
++ 26g-fp：26g针头下的打印频率fp；
++ voltage-dod: 两种电压配置方式下打印频率的比较；
+
+涉及xlsx：
+
+1. qd1.xlsx; 26G-18nl/min
+  + V1: 1.7kv-2kv;
+  + V2: 1.9kv-2kv;
+  + V3: 1.95kv-2kv;
+
+2. qd2.xlsx; 26G-180nl/min
+  + V1: 1.7kv-2kv;
+  + V2: 1.8kv-2kv;
+  + V3: 1.9kv-2kv;
+
+3. qd3.xlsx; 32G-18nl/min
+  + V1: 1.7kv-2kv;
+  + V2: 1.8kv-2kv;
+  + V3: 1.9kv-2kv;
+
+4. qd4.xlsx; 32G-180nl/min
+  + V1: 1.7kv-2kv;
+  + V2: 1.8kv-2kv;
+  + V3: 1.9kv-2kv;
+
+### 
