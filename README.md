@@ -39,4 +39,44 @@ nozzles文件夹包含使用多种尺寸针头进行试验的结果。
 + rd：   液滴尺寸；
 + angle：弯月面锥角；
 + fp：   射出频率；
-+ fe：   单脉冲射出频率；
++ fe：   单脉冲射出频率；i
+
+### Liquids
+
+三种液体下的打印实现：乙醇，异丙醇，丙酮。
+
+涉及了DOD技术，电压适用区间等核心参数。
+
+#### 三种液体
+
+acetone：丙酮；
+ethanol：乙醇；
+iso：    异丙醇；
+
+#### 关注内容
+
+**DOD**：drop on demand。
+
+**voltage of liquids**: 测量了ov电压和bv电压在不同液体下的
+表现。
+
+**meniscus**：研究三种液体，流量变化下，各参数与弯月面高度
+和角度的关系。
+
+**diameter**：不同针头尺寸下电压ov和bvd的关系。
+
+**distance**：不同极间距离下，ov与bv电压的关系。
+
+**fp emission**: fe与fv关系，在不同占空比和流量下的表现。
+
+**tfor**：tfor时间在不同占空比和流量下的表现。
+
+**tpulse eject_k**: tp x fe的总时间，不同占空比。
+
+**tpulse eject_q**: tp x fe的总时间，不同流量下。
+
+**tpulse_single**: 单射出时间tp。
+
+**fp 1s**: 1s内的打印频率。不同的流量和占空比的情况。
+
+**droplet size**：液滴尺寸与fv的关系。不同Q和K的表现。
