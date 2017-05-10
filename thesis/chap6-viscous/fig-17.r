@@ -31,7 +31,7 @@ plot(k1$fv,k1$fveva, col=0,xlab = expression(italic(f["v"]) (Hz)),
 ylab = expression(italic(d["d"])(um)), mgp=c(1.1, 0, 0),tck=0.02,
 main = "", xlim = c(0,800),ylim=c(0,1000))
 
-mtext("2.2kv-fp",3,line=0,font=2)
+mtext("2.2kv-d",3,line=0,font=2)
 
 
 lines(k1$fv,k1$fveva,col=yan[1],lwd=1.5,lty=2,type="b",pch=pcc[1],cex=0.8)

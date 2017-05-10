@@ -6,6 +6,7 @@ setwd("/Users/mengmengjiang/all datas/viscous")
 library(xlsx)
 
 # reading datas
+# compare in 2kv
 
 k1<-read.xlsx("liquid1.xlsx",sheetName="2.1kv-18",header=TRUE)
 k2<-read.xlsx("liquid1.xlsx",sheetName="2.1kv-180",header=TRUE)
@@ -28,11 +29,10 @@ yan[2]<-c("yellow3")
 
 # plot
 plot(k1$fv,k1$fveva, col=0,xlab = expression(italic(f["v"]) (Hz)),
-ylab = expression(italic(d["d"])(um)), mgp=c(1.1, 0, 0),tck=0.02,
-main = "", xlim = c(0,800),ylim=c(0,1000))
+ylab = expression(italic(f["p"])(Hz)), mgp=c(1.1, 0, 0),tck=0.02,
+main = "", xlim = c(0,800),ylim=c(0,800))
 
-mtext("2.1kv-d",3,line=0,font=2)
-
+mtext("2.1kv-fp",3,line=0,font=2)
 
 lines(k1$fv,k1$fveva,col=yan[1],lwd=1.5,lty=2,type="b",pch=pcc[1],cex=0.8)
 lines(k2$fv,k2$fveva,col=yan[2],lwd=1.5,lty=2,type="b",pch=pcc[2],cex=0.8)
@@ -46,8 +46,8 @@ error.bar(k3$fv,k3$fveva,k3$stdfv/2,col=yan[3])
 error.bar(k4$fv,k4$fveva,k1$stdfv/2,col=yan[4])
 error.bar(k5$fv,k5$fveva,k2$stdfv/2,col=yan[5])
 
-leg<-c("18nl/min-liquid1","180nl/min-liquid1","18nl/min-liquid2",
-"90nl/min-liquid2","180nl/min-liquid2")
+leg<-c("liquid1-18nl/min","liquid1-180nl/min","liquid2-18nl/min",
+"liquid2-90nl/min","liquid2-180nl/min")
 
-legend("topright",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.03,bty="n",
+legend("bottomright",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.06,bty="n",
 cex=0.8)
