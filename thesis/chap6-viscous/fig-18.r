@@ -43,8 +43,8 @@ lines(k5$fv,k5$deva,col=yan[5],lwd=1.5,lty=2,type="b",pch=pcc[5],cex=0.8)
 error.bar(k1$fv,k1$deva,k1$stdd/2,col=yan[1])
 error.bar(k2$fv,k2$deva,k2$stdd/2,col=yan[2])
 error.bar(k3$fv,k3$deva,k3$stdd/2,col=yan[3])
-error.bar(k4$fv,k4$deva,k1$stdd/2,col=yan[4])
-error.bar(k5$fv,k5$deva,k2$stdd/2,col=yan[5])
+error.bar(k4$fv,k4$deva,k4$stdd/2,col=yan[4])
+error.bar(k5$fv,k5$deva,k5$stdd/2,col=yan[5])
 
 leg<-c("18nl/min-liquid1","180nl/min-liquid1","18nl/min-liquid2",
 "90nl/min-liquid2","180nl/min-liquid2")

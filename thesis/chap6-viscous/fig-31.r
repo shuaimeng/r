@@ -43,8 +43,8 @@ lines(k5$fv,k5$fveva,col=yan[5],lwd=1.5,lty=2,type="b",pch=pcc[5],cex=0.8)
 error.bar(k1$fv,k1$fveva,k1$stdfv/2,col=yan[1])
 error.bar(k2$fv,k2$fveva,k2$stdfv/2,col=yan[2])
 error.bar(k3$fv,k3$fveva,k3$stdfv/2,col=yan[3])
-error.bar(k4$fv,k4$fveva,k1$stdfv/2,col=yan[4])
-error.bar(k5$fv,k5$fveva,k2$stdfv/2,col=yan[5])
+error.bar(k4$fv,k4$fveva,k4$stdfv/2,col=yan[4])
+error.bar(k5$fv,k5$fveva,k5$stdfv/2,col=yan[5])
 
 leg<-c("liquid1-18nl/min","liquid1-180nl/min","liquid2-18nl/min",
 "liquid2-90nl/min","liquid2-180nl/min")

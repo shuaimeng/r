@@ -14,7 +14,7 @@ k4<-read.xlsx("liquid2.xlsx",sheetName="2.2kv-90",header=TRUE)
 k5<-read.xlsx("liquid2.xlsx",sheetName="2.2kv-180",header=TRUE)
 
 
-# errorbar  
+# errorbar
 error.bar <- function(x, y, upper, coll,lower=upper, length=0.05,...){
 if(length(x) != length(y) | length(y) !=length(lower) | length(lower) != length(upper))
 stop("vectors must be same length")
@@ -44,8 +44,8 @@ lines(k5$fv,k5$raeva,col=yan[5],lwd=1.5,lty=2,type="b",pch=pcc[5],cex=0.8)
 error.bar(k1$fv,k1$raeva,k1$stdra/2,col=yan[1])
 error.bar(k2$fv,k2$raeva,k2$stdra/2,col=yan[2])
 error.bar(k3$fv,k3$raeva,k3$stdra/2,col=yan[3])
-error.bar(k4$fv,k4$raeva,k1$stdra/2,col=yan[4])
-error.bar(k5$fv,k5$raeva,k2$stdra/2,col=yan[5])
+error.bar(k4$fv,k4$raeva,k4$stdra/2,col=yan[4])
+error.bar(k5$fv,k5$raeva,k5$stdra/2,col=yan[5])
 
 abline(h=5,col="red",lwd=1,lty=2)
 abline(h=10,col="blue",lwd=1,lty=2)

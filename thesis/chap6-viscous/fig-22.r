@@ -51,11 +51,11 @@ lines(k8$fv,k8$raeva,col=yan[8],lwd=1.5,lty=2,type="b",pch=pcc[8],cex=0.8)
 error.bar(k1$fv,k1$raeva,k1$stdra/2,col=yan[1])
 error.bar(k2$fv,k2$raeva,k2$stdra/2,col=yan[2])
 error.bar(k3$fv,k3$raeva,k3$stdra/2,col=yan[3])
-error.bar(k4$fv,k4$raeva,k1$stdra/2,col=yan[4])
-error.bar(k5$fv,k5$raeva,k2$stdra/2,col=yan[5])
-error.bar(k6$fv,k6$raeva,k2$stdra/2,col=yan[6])
-error.bar(k7$fv,k7$raeva,k2$stdra/2,col=yan[7])
-error.bar(k8$fv,k8$raeva,k2$stdra/2,col=yan[8])
+error.bar(k4$fv,k4$raeva,k4$stdra/2,col=yan[4])
+error.bar(k5$fv,k5$raeva,k5$stdra/2,col=yan[5])
+error.bar(k6$fv,k6$raeva,k6$stdra/2,col=yan[6])
+error.bar(k7$fv,k7$raeva,k7$stdra/2,col=yan[7])
+error.bar(k8$fv,k8$raeva,k8$stdra/2,col=yan[8])
 
 abline(h=5,col="red",lwd=1,lty=2)
 abline(h=10,col="blue",lwd=1,lty=2)
@@ -65,5 +65,5 @@ abline(h=15,col="black",lwd=1,lty=2)
 leg<-c("18nl/min-2kv","18nl/min-2.1kv","18nl/min-2.2kv","90nl/min-2kv",
 "90nl/min-2.1kv","90nl/min-2.2kv","180nl/min-2kv","180nl/min-2.1kv")
 
-legend("topright",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.03,bty="n",
+legend("topleft",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.03,bty="n",
 cex=0.8)

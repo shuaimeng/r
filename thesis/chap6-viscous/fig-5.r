@@ -52,9 +52,9 @@ lines(k6$fv,k6$feeva,col=yan[6],lwd=1.5,lty=2,type="b",pch=pcc[6],cex=0.8)
 error.bar(k1$fv,k1$feeva,k1$stdfe/2,col=yan[1])
 error.bar(k2$fv,k2$feeva,k2$stdfe/2,col=yan[2])
 error.bar(k3$fv,k3$feeva,k3$stdfe/2,col=yan[3])
-error.bar(k4$fv,k4$feeva,k1$stdfe/2,col=yan[4])
-error.bar(k5$fv,k5$feeva,k2$stdfe/2,col=yan[5])
-error.bar(k6$fv,k6$feeva,k3$stdfe/2,col=yan[6])
+error.bar(k4$fv,k4$feeva,k4$stdfe/2,col=yan[4])
+error.bar(k5$fv,k5$feeva,k5$stdfe/2,col=yan[5])
+error.bar(k6$fv,k6$feeva,k6$stdfe/2,col=yan[6])
 
 leg<-c("2kv-liquid1","2kv-liquid2","2.1kv-liquid1","2.1kv-liquid2",
 "2.2kv-liquid1","2.2kv-liquid2")

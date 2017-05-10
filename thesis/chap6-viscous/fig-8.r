@@ -49,11 +49,11 @@ lines(k8$fv,k8$feeva,col=yan[8],lwd=1.5,lty=2,type="b",pch=pcc[8],cex=0.8)
 error.bar(k1$fv,k1$feeva,k1$stdfe/2,col=yan[1])
 error.bar(k2$fv,k2$feeva,k2$stdfe/2,col=yan[2])
 error.bar(k3$fv,k3$feeva,k3$stdfe/2,col=yan[3])
-error.bar(k4$fv,k4$feeva,k1$stdfe/2,col=yan[4])
-error.bar(k5$fv,k5$feeva,k2$stdfe/2,col=yan[5])
-error.bar(k6$fv,k6$feeva,k3$stdfe/2,col=yan[6])
-error.bar(k7$fv,k7$feeva,k3$stdfe/2,col=yan[7])
-error.bar(k8$fv,k8$feeva,k3$stdfe/2,col=yan[8])
+error.bar(k4$fv,k4$feeva,k4$stdfe/2,col=yan[4])
+error.bar(k5$fv,k5$feeva,k5$stdfe/2,col=yan[5])
+error.bar(k6$fv,k6$feeva,k6$stdfe/2,col=yan[6])
+error.bar(k7$fv,k7$feeva,k7$stdfe/2,col=yan[7])
+error.bar(k8$fv,k8$feeva,k8$stdfe/2,col=yan[8])
 
 
 leg<-c("2kv-18nl/min","2.1kv-18nl/min","2.2kv-18nl/min",
