@@ -37,7 +37,7 @@ yan[2]<-c("yellow3")
 
 plot(k1$fv,k1$tfeva, col=0,xlab = expression(italic(f["v"]) (Hz)),
 ylab = expression(italic(t["for"])(ms)), mgp=c(1.1, 0, 0),tck=0.02,
-main = "tfor", xlim = c(0,800),ylim=c(0,40))
+main = "tfor&tp-Liquid1", xlim = c(0,800),ylim=c(0,40))
 
 # lines and error
 
@@ -58,7 +58,7 @@ error.bar(k6$fv,k6$tfeva,k3$stdtf/2,col=yan[6])
 leg<-c("2kv-18nl/min","2kv-180nl/min","2.1kv-18nl/min","2.1kv-180nl/min",
 "2.2kv-18nl/min","2.2kv-180nl/min")
 
-legend("topright",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.06,bty="n",cex=0.8)
+legend("topright",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n",cex=0.8)
 
 # plot2,about tp
 
@@ -84,4 +84,4 @@ error.bar(k6$fv,k6$deva,k6$stdtp/2,col=yan[6])
 leg<-c("2kv-18nl/min","2kv-180nl/min","2.1kv-18nl/min","2.1kv-180nl/min",
 "2.2kv-18nl/min","2.2kv-180nl/min")
 
-legend("topright",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset = .06,bty = "n",cex=0.8)
+legend("topright",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset = .02,bty = "n",cex=0.8)

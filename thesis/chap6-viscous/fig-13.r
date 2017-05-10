@@ -30,7 +30,10 @@ yan[2]<-c("yellow3")
 # plot
 plot(k1$fv,k1$deva, col=0,xlab = expression(italic(f["v"]) (Hz)),
 ylab = expression(italic(d["d"])(um)), mgp=c(1.1, 0, 0),tck=0.02,
-main = "18nl/min", xlim = c(0,800),ylim=c(10,80))
+main = "", xlim = c(0,800),ylim=c(10,80))
+
+mtext("18nl/min-d",3,line=0,font=2)
+
 
 lines(k1$fv,k1$deva,col=yan[1],lwd=1.5,lty=2,type="b",pch=pcc[1],cex=0.8)
 lines(k2$fv,k2$deva,col=yan[2],lwd=1.5,lty=2,type="b",pch=pcc[2],cex=0.8)

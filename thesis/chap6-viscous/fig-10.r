@@ -32,8 +32,11 @@ yan[2]<-c("yellow3")
 
 # plot
 plot(k1$fv,k1$fveva, col=0,xlab = expression(italic(f["v"]) (Hz)),
-ylab = expression(italic(f["e"])(Hz)), mgp=c(1.1, 0, 0),tck=0.02,
-main = "Liquid2-fp", xlim = c(0,800),ylim=c(0,1000))
+ylab = expression(italic(f["p"])(Hz)), mgp=c(1.1, 0, 0),tck=0.02,
+main = "", xlim = c(0,800),ylim=c(0,1000))
+
+mtext("Liquid2-fp",3,line=0,font=2)
+
 
 lines(k1$fv,k1$fveva,col=yan[1],lwd=1.5,lty=2,type="b",pch=pcc[1],cex=0.8)
 lines(k2$fv,k2$fveva,col=yan[2],lwd=1.5,lty=2,type="b",pch=pcc[2],cex=0.8)
@@ -57,5 +60,5 @@ error.bar(k8$fv,k8$fveva,k3$stdfv/2,col=yan[8])
 leg<-c("2kv-18nl/min","2.1kv-18nl/min","2.2kv-18nl/min",
 "2kv-90nl/min","2.1kv-90nl/min","2.2kv-90nl/min","2kv-180nl/min","2.1kv-180nl/min")
 
-legend("topright",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n",
+legend("topleft",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n",
 cex=0.8)
