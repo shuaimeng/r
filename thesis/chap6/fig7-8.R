@@ -1,6 +1,3 @@
-dyn.load('/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/server/libjvm.dylib')
-
-setwd("/Users/mengmengjiang/all datas/conductivity")
 
 library(xlsx)
 
@@ -13,10 +10,10 @@ library(xlsx)
 # 液滴比较和ratio比较只能在两个电导率下，即gly1和gly2；
 
 
-k1<-read.xlsx("gly1.xlsx", sheetName = "qd1-19", header = TRUE)
-k2<-read.xlsx("gly1.xlsx", sheetName = "qd2-19", header = TRUE)
-k3<-read.xlsx("gly2.xlsx", sheetName = "qd1-19", header = TRUE)
-k4<-read.xlsx("gly2.xlsx", sheetName = "qd2-19", header = TRUE)
+k1<-read.xlsx("gly1.xlsx", sheetName = "qd1-20", header = TRUE)
+k2<-read.xlsx("gly1.xlsx", sheetName = "qd2-20", header = TRUE)
+k3<-read.xlsx("gly2.xlsx", sheetName = "qd1-20", header = TRUE)
+k4<-read.xlsx("gly2.xlsx", sheetName = "qd2-20", header = TRUE)
 
 #
 par(mar = c(2,2.4,2,2), oma = c(1,1,1,1))
@@ -28,16 +25,15 @@ pcc<-c(0,1,2,5)
 
 #
 error.bar <- function(x, y, upper, coll,lower=upper, length=0.05,...){
-  if(length(x) != length(y) | length(y) !=length(lower) | length(lower) !=
-     length(upper))
+  if(length(x) != length(y) | length(y) !=length(lower) | length(lower) != length(upper))
     stop("vectors must be same length")
   arrows(x,y+upper, x, y-lower,col=coll, angle=90, code=3, length=length, ...)
 }
 
 # Plot-1
-plot(k1$fv,k1$tpeva, col=0,xlab = expression(italic(f["v"]) (Hz)),
-          ylab = expression(italic(d["d"])(um)), mgp=c(1.1, 0, 0),tck=0.02,
-               main = "droplet-1.9kv", xlim = c(0,3000),ylim=c(0,60))
+plot(k1$fv,k1$tpeva, col=0,xlab = expression(italic(f["v"]) (Hz)), 
+     ylab = expression(italic(d["d"])(um)), mgp=c(1.1, 0, 0),tck=0.02, 
+     main = "droplet-2kv", xlim = c(0,3000),ylim=c(0,70))
 
 lines(k1$fv,k1$deva,col=yan[1],lwd=1.5,lty=2,pch=pcc[1],type="b",cex=0.8)
 lines(k2$fv,k2$deva,col=yan[2],lwd=1.5,lty=2,pch=pcc[2],type="b",cex=0.8)
@@ -52,14 +48,13 @@ error.bar(k4$fv,k4$deva,k4$stdd,col=yan[4])
 
 leg<-c("Gly1-18nl/min","Gly1-180nl/min","Gly2-18nl/min","Gly2-180nl/min")
 
-legend("topright",legend=leg,col=yan,pch=pcc,lwd=1.5,inset =
-       .05,bty="n",cex=0.8)
+legend("topright",legend=leg,col=yan,pch=pcc,lwd=1.5,inset = .05,bty="n",cex=0.8)
 
 # Plot -2
 
-   plot(k1$fv,k1$tpeva, col=0,xlab = expression(italic(f["v"]) (Hz)),
-             ylab = expression(italic(ratio)), mgp=c(1.1, 0, 0),tck=0.02,
-                  main = "ratio-1.9kv", xlim = c(0,3000),ylim=c(5,20))
+plot(k1$fv,k1$tpeva, col=0,xlab = expression(italic(f["v"]) (Hz)), 
+     ylab = expression(italic(ratio)), mgp=c(1.1, 0, 0),tck=0.02, 
+     main = "ratio-2kv", xlim = c(0,3000),ylim=c(5,20))
 
 lines(k1$fv,k1$raeva,col=yan[1],lwd=1.5,lty=2,pch=pcc[1],type="b",cex=0.8)
 lines(k2$fv,k2$raeva,col=yan[2],lwd=1.5,lty=2,pch=pcc[2],type="b",cex=0.8)
@@ -75,3 +70,4 @@ error.bar(k4$fv,k4$raeva,k4$rastd,col=yan[4])
 leg<-c("Gly1-18nl/min","Gly1-180nl/min","Gly2-18nl/min","Gly2-180nl/min")
 
 legend("topleft",legend=leg,col=yan,pch=pcc,lwd=1.5,inset = .05,bty="n",cex=0.8)
+

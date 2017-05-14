@@ -1,5 +1,6 @@
+dyn.load('/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/server/libjvm.dylib')
 
-setwd("/Users/mengmengjiang/37datas")
+setwd("/Users/mengmengjiang/all datas/conductivity")
 
 library(xlsx)
 
@@ -26,8 +27,8 @@ error.bar <- function(x, y, upper, coll,lower=upper, length=0.05,...){
   arrows(x,y+upper, x, y-lower,col=coll, angle=90, code=3, length=length, ...)
 }
 
-plot(k1$fv,k1$raeva, col=0,xlab = expression(italic(f["v"]) (Hz)), 
-          ylab = expression(italic(ratio)), mgp=c(1.1, 0, 0),tck=0.02, 
+plot(k1$fv,k1$raeva, col=0,xlab = expression(italic(f["v"]) (Hz)),
+          ylab = expression(italic(ratio)), mgp=c(1.1, 0, 0),tck=0.02,
                main = "", xlim = c(0,3500),ylim=c(5,25))
 
 lines(k1$fv,k1$raeva,col=yan[1],lwd=1.5,lty=2,type="b",pch=pcc[1],cex=0.8)
@@ -48,7 +49,7 @@ lines(k6$fv,k6$raeva,col=yan[6],lwd=1.5,lty=2,type="b",pch=pcc[6],cex=0.8)
                 y1<-c(0,10)
                     lines(x1,y1,col="red",lwd=1,lty=2)
                     text(1300,6,"ratio>10",col="blue",font=2)
-                        
+
                         x2<-c(2500,2500)
                         y2<-c(0,15)
                             lines(x2,y2,col="red",lwd=1,lty=2)

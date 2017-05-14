@@ -1,4 +1,6 @@
-etwd("/Users/mengmengjiang/37datas")
+dyn.load('/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/server/libjvm.dylib')
+
+setwd("/Users/mengmengjiang/all datas/conductivity")
 
 library(xlsx)
 
@@ -31,8 +33,8 @@ error.bar <- function(x, y, upper, coll,lower=upper, length=0.05,...){
 }
 
 #
-plot(k1$fv,k1$deva, col=0,xlab = expression(italic(f["v"]) (Hz)), 
-          ylab = expression(italic(d["d"]) (um)), mgp=c(1.1, 0, 0),tck=0.02, 
+plot(k1$fv,k1$deva, col=0,xlab = expression(italic(f["v"]) (Hz)),
+          ylab = expression(italic(d["d"]) (um)), mgp=c(1.1, 0, 0),tck=0.02,
                main = "", xlim = c(0,3000),ylim=c(15,40))
 
 lines(k1$fv,k1$deva,col=yan[1],lwd=1.5,lty=2,type="b",pch=pcc[1],cex=0.8)
@@ -56,5 +58,3 @@ leg<-c("18nl/min-1.8kv","18nl/min-1.9kv","18nl/min-2kv","180nl/min-1.8kv",
         "180nl/min-1.9kv","180nl/min-2kv")
 
 legend("topright",legend=leg,col=yan,pch=pcc,lwd=1.5,inset = .06,lty=2,bty="n")
-
-

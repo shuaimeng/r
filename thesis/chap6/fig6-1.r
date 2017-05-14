@@ -1,8 +1,6 @@
 dyn.load('/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/server/libjvm.dylib')
-end=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.06,bty="n",cex=0.8)
 
-
-setwd("/Users/mengmengjiang/37datas")
+setwd("/Users/mengmengjiang/all datas/conductivity")
 library(xlsx)
 
 #reading datas
@@ -32,9 +30,11 @@ error.bar <- function(x, y, upper, coll,lower=upper, length=0.05,...){
 }
 ##
 
-plot(k1$fv,k1$fveva, col=0,xlab = expression(italic(f["v"]) (Hz)), 
-          ylab = expression(italic(f["p"]) (Hz)), mgp=c(1.1, 0, 0),tck=0.02, 
-               main = "30G-18nl/min", xlim = c(0,4000),ylim=c(0,4000))
+plot(k1$fv,k1$fveva, col=0,xlab = expression(italic(f["v"]) (Hz)),
+          ylab = expression(italic(f["p"]) (Hz)), mgp=c(1.1, 0, 0),tck=0.02,
+               main = "", xlim = c(0,4000),ylim=c(0,4000))
+
+               mtext("18nl/min-fp",3,line=0,font=2)
 
 lines(k1$fv,k1$fveva,col=yan[1],pch=pcc[1],lwd=2,lty=2,type="b",cex=0.8)
 lines(k2$fv,k2$fveva,col=yan[2],pch=pcc[2],lwd=2,lty=2,type="b",cex=0.8)
@@ -61,4 +61,3 @@ text(3300,1200,"fpmax=2KHz",col=yan[6],font=1)
 leg<-c("gly1-1.8kv","gly1-1.9kv","gly1-2kv","gly2-1.8kv","gly2-1.9kv","gly2-2kv")
 
 legend("topleft",legend=leg,col=yan,pch=pcc,lty=2,lwd=2,inset=.07,bty="n")
-

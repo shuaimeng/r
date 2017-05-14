@@ -1,4 +1,7 @@
 dyn.load('/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/server/libjvm.dylib')
+
+setwd("/Users/mengmengjiang/all datas/conductivity")
+
 library(rJava)
 
 setwd("/Users/mengmengjiang/37datas")
@@ -65,4 +68,3 @@ y3<-c()
 leg<-c("Gly1-18nl/min-2kv","Gly1-180nl/min-2kv","Gly2-18nl/min-2kv","Gly2-180nl/min-2kv")
 
 legend("topleft",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.06,bty="n",cex=0.8)
-
