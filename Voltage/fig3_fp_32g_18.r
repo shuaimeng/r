@@ -24,7 +24,7 @@ error.bar <- function(x, y, upper, coll,lower=upper, length=0.05,...){
 
 plot(k1$fv,k1$feeva*k1$fv, col=0,xlab = expression(italic(f["v"]) (Hz)),
      ylab = expression(italic(f["p"]) (Hz)), mgp=c(1.1, 0, 0),tck=0.02,
-     main = "", xlim = c(0, 6000),ylim=c(0,4000))
+     main = "", xlim = c(0,6000),ylim=c(0,4000))
 
      mtext("32G-18nl/min-fp",3,line=0.2,font=2,cex=1.2)
 
