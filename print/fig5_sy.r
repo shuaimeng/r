@@ -13,8 +13,8 @@ k3<-read.xlsx("doty.xlsx",sheetName="2khz",header=TRUE)
 
 # par
 
-par(mfrow = c(2,1), mar = c(2,2.4,2,2), oma = c(1,1,1,1))
-layout(matrix(c(1,2), 2, 1,byrow = TRUE))
+#par(mfrow = c(2,1), mar = c(2,2.4,2,2), oma = c(1,1,1,1))
+#layout(matrix(c(1,2), 2, 1,byrow = TRUE))
 
 # errorbar
 error.bar <- function(x, y, upper, coll,lower=upper, length=0.05,...){
