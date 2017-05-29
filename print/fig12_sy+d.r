@@ -49,6 +49,7 @@ plot(k1$uy,k1$syeva, col=0,xlab = expression(italic(U["y"]) (um)),
                error.bar(k3$uy,z3,(k3$systd+k3$stdd)/2,col=yan[3])
 
                abline(a=0,b=1,col="green3",lwd=1.5,lty=2)
+               text(100,110,"Set Uy",col="green3",font=2)
 
                leg<-c("600Hz","1KHz","2KHz")
 
