@@ -9,7 +9,6 @@ library(xlsx)
 
 #k1<-read.xlsx("repert.xlsx",sheetName="600",header=TRUE)
 k1<-read.xlsx("repert.xlsx",sheetName="600",header=TRUE)
-
 k2<-read.xlsx("repert.xlsx",sheetName="1k",header=TRUE)
 k3<-read.xlsx("repert.xlsx",sheetName="1.5k",header=TRUE)
 k4<-read.xlsx("repert.xlsx",sheetName="3k",header=TRUE)
