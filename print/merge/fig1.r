@@ -11,6 +11,7 @@ k1<-read.xlsx("rong.xlsx",sheetName="600",header=TRUE)
 k2<-read.xlsx("rong.xlsx",sheetName="1khz",header=TRUE)
 k3<-read.xlsx("rong.xlsx",sheetName="2khz",header=TRUE)
 
+
 # errorbar
 error.bar <- function(x, y, upper, coll,lower=upper, length=0.05,...){
 if(length(x) != length(y) | length(y) !=length(lower) | length(lower) != length(upper))
@@ -28,7 +29,7 @@ pcc<-c(0,1,2)
 par(mfrow = c(2,1), mar = c(2,2.4,2,2), oma = c(1,1,1,1))
 layout(matrix(c(1,2), 2, 1,byrow = TRUE))
 
-# plot
+# plot d
 
 plot(k1$ux,k1$deva, col=0,xlab = expression(italic(U["x"]) (mm/s)),
           ylab = expression(italic(d["d"]) (um)), mgp=c(1.1, 0, 0),tck=0.02,
