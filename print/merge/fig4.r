@@ -58,7 +58,7 @@ lines(k3$ux,n3,col=yan[3],pch=pcc[3],lwd=1.5,lty=2,type="b")
 
 leg<-c("No - 600Hz","No - 1KHz","No - 2KHz")
 
-legend("topright",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n",cex=0.9)
+legend("topright",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n",cex=0.8)
 
 # 分析Sd/deva（融合）的大小
 
@@ -78,4 +78,4 @@ text(5,0.4,"ratio = 20%",col="green3")
 leg<-c("600Hz","1KHz","2KHz")
 
 legend("topleft",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,
-bty="n",cex=0.9)
+bty="n",cex=0.8)

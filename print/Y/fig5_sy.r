@@ -31,26 +31,19 @@ pcc<-c(0,1,2)
 # plot
 
 plot(k1$uy,k1$syeva, col=0,xlab = expression(italic(U["y"]) (um)),
-          ylab = expression(italic(S["y"]+D) (um)), mgp=c(1.1, 0, 0),tck=0.02,
-               main = "", xlim = c(50,150),ylim=c(0,150))
+          ylab = expression(italic(S["y"]) (um)), mgp=c(1.1, 0, 0),tck=0.02,
+               main = "", xlim = c(50,150),ylim=c(-20,70))
 
-               mtext("Line space:Sy+D",3,line=0.2,font=2,cex=1.2)
+               mtext("Line space",3,line=0.2,font=2,cex=1.2)
 
-               z1<-k1$syeva+k1$deva
-               z2<-k2$syeva+k2$deva
-               z3<-k3$syeva+k3$deva
+               lines(k1$uy,k1$syeva,lwd=1.5,lty=2,col=yan[1],pch=pcc[1],type="b")
+               lines(k2$uy,k2$syeva,lwd=1.5,lty=2,col=yan[2],pch=pcc[2],type="b")
+               lines(k3$uy,k3$syeva,lwd=1.5,lty=2,col=yan[3],pch=pcc[3],type="b")
 
-               lines(k1$uy,z1,lwd=1.5,lty=2,col=yan[1],pch=pcc[1],type="b")
-               lines(k2$uy,z2,lwd=1.5,lty=2,col=yan[2],pch=pcc[2],type="b")
-               lines(k3$uy,z3,lwd=1.5,lty=2,col=yan[3],pch=pcc[3],type="b")
-
-               error.bar(k1$uy,z1,(k1$systd+k1$stdd)/2,col=yan[1])
-               error.bar(k2$uy,z2,(k2$systd+k2$stdd)/2,col=yan[2])
-               error.bar(k3$uy,z3,(k3$systd+k3$stdd)/2,col=yan[3])
-
-               abline(a=0,b=1,col="green3",lwd=1.5,lty=2)
-               text(100,110,"Set Uy",col="green3",font=2)
+               error.bar(k1$uy,k1$syeva,k1$systd/2,col=yan[1])
+               error.bar(k2$uy,k2$syeva,k2$systd/2,col=yan[2])
+               error.bar(k3$uy,k3$syeva,k3$systd/2,col=yan[3])
 
                leg<-c("600Hz","1KHz","2KHz")
 
-               legend("topleft",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n")
+               legend("topleft",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n",cex=0.8)

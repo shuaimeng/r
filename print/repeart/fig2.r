@@ -20,7 +20,7 @@ pcc<-c(0,1,2,5)
 
 
 # 比较转换之后的液滴的大小
-par(fig=c(0,1,0,1),new=TRUE)
+par(fig=c(0,1,0,1),new=F)
 
 plot(k1$no,k1$dp, col=0,xlab = expression(italic(Number)),
           ylab = expression(italic(t["rp"])(ms)), mgp=c(1.1, 0, 0),tck=0.02,
@@ -34,13 +34,10 @@ lines(k3$no,k3$trp,col=yan[3],pch=pcc[3],lwd=1.5,lty=2,type="b")
 lines(k4$no,k4$trp,col=yan[4],pch=pcc[4],lwd=1.5,lty=2,type="b")
 
 
-
-
-
 leg<-c("600Hz","1KHz","1.5KHz","3KHz")
 
 legend("topleft",legend=leg,col=yan,pch=pcc,lty=2,lwd=1.5,inset=.02,
-bty="n",cex=1)
+bty="n",cex=0.8)
 
 # plot 2,斜率拟合
 
@@ -75,4 +72,4 @@ lines(x,b,col="blue",lwd=1.5,lty=2,pch=1,type="b")
 leg2<-c("real","fitting")
 
 legend("topright",legend=leg2,lwd=1.5,lty=2,pch=c(0,1),col=c("red","blue"),
-inset=.02,bty="n",cex=1)
+inset=.02,bty="n",cex=0.8)

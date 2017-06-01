@@ -53,7 +53,7 @@ plot(uy,k1$syeva, col=0,xlab = expression(italic(U["y"]) (um)),
 
                leg<-c("600Hz","1KHz","2KHz")
 
-               legend("topleft",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n")
+               legend("topleft",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n",cex=0.8)
 
                plot(uy,k1$syeva, col=0,xlab = expression(italic(U["y"]) (um)),
                          ylab = expression(italic(ratio_Sy)), mgp=c(1.1, 0, 0),tck=0.02,
@@ -75,4 +75,4 @@ plot(uy,k1$syeva, col=0,xlab = expression(italic(U["y"]) (um)),
 
                               leg<-c("600Hz","1KHz","2KHz")
 
-                              legend("topleft",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n")
+                              legend("topleft",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n",cex=0.8)

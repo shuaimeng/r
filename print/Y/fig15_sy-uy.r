@@ -52,7 +52,7 @@ error.bar(uy,z3,e3/2,col=yan[3])
 
 leg<-c("600Hz","1KHz","2KHz")
 
-legend("topleft",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n")
+legend("topleft",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n",cex=0.8)
 
 # plot2,Sy+D
 
@@ -77,10 +77,10 @@ error.bar(uy,r2,q2/2,col=yan[2])
 error.bar(uy,r3,q3/2,col=yan[3])
 
 abline(h=0.7,col="green3",lwd=1,lty=2)
-text(130,0.75,"ratio=0.7",font=2,col="black")
+text(110,0.8,"ratio=0.7",font=2,col="black")
 abline(h=0.65,col="green3",lwd=1,lty=2)
 text(70,0.62,"ratio=0.65",font=2,col="black")
 
 leg<-c("600Hz","1KHz","2KHz")
 
-legend("topright",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n")
+legend("topright",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n",cex=0.8)

@@ -72,5 +72,5 @@ abline(h=0.5,col="red",lwd=1.5,lty=2)
 leg<-c("600Hz-r_Sd","1KHz-r_Sd","2KHz-r_Sd","2.5KHz-r_Sd")
 leg2<-c("|600Hz-r_Sd+D|","1KHz-r_Sd+D","2KHz-r_Sd+D","2.5KHz-r_Sd+D")
 
-legend("bottomright",legend=leg,col=yan,pch=pcc,lwd=1.5,inset=.02,bty="n",cex=0.9)
-legend("bottomleft",legend=leg2,col=yan,lty=2,lwd=1.5,inset=.02,bty="n",cex=0.9)
+legend("bottomright",legend=leg,col=yan,pch=pcc,lwd=1.5,inset=.02,bty="n",cex=0.8)
+legend("bottomleft",legend=leg2,col=yan,lty=2,lwd=1.5,inset=.02,bty="n",cex=0.8)

@@ -41,4 +41,4 @@ plot(k1$uy,k1$deva, col=0,xlab = expression(italic(U["y"]) (um)),
 
                leg<-c("600Hz","1KHz","2KHz")
 
-               legend("topleft",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n")
+               legend("topleft",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n",cex=0.8)
