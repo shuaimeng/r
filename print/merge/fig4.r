@@ -47,7 +47,7 @@ n2<-k2$deva/y2
 n3<-k3$deva/y3
 
 plot(k1$ux,k1$deva, col=0,xlab = expression(italic(U["x"]) (mm/s)),
-          ylab = expression(italic(Number)), mgp=c(1.1, 0, 0),tck=0.02,
+          ylab = expression(italic(n["m"])), mgp=c(1.1, 0, 0),tck=0.02,
                main = "", xlim = c(0,10),ylim=c(0,10))
 
 mtext("Merge number",3,line=0.2,font=2,cex=1.2)
@@ -63,10 +63,10 @@ legend("topright",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n",cex
 # 分析Sd/deva（融合）的大小
 
 plot(k1$ux,k1$deva, col=0,xlab = expression(italic(U["x"]) (mm/s)),
-          ylab = expression(italic(Sd/D)), mgp=c(1.1, 0, 0),tck=0.02,
+          ylab = expression(italic(S["dm"]/d["m"])), mgp=c(1.1, 0, 0),tck=0.02,
                main = "", xlim = c(0,10),ylim=c(0,1))
 
-mtext("Sd/D",3,line=0.2,font=2,cex=1.2)
+mtext("Ratio between space and droplet size",3,line=0.2,font=2,cex=1.2)
 
 lines(k1$ux,k1$sdeva/k1$deva,col=yan[1],pch=pcc[1],lwd=1.5,lty=2,type="b")
 lines(k2$ux,k2$sdeva/k2$deva,col=yan[2],pch=pcc[2],lwd=1.5,lty=2,type="b")

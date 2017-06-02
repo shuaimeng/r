@@ -34,7 +34,7 @@ layout(matrix(c(1,2), 2, 1,byrow = TRUE))
 # plot d
 
 plot(k1$ux,k1$deva, col=0,xlab = expression(italic(U["x"]) (mm/s)),
-          ylab = expression(italic(d["d"]) (um)), mgp=c(1.1, 0, 0),tck=0.02,
+          ylab = expression(italic(d["m"]) (um)), mgp=c(1.1, 0, 0),tck=0.02,
                main = "", xlim = c(0,10),ylim=c(0,200))
 
 mtext("Merged Droplet Size",3,line=0.2,font=2,cex=1.2)
@@ -54,10 +54,10 @@ legend("topright",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n",cex
 # plot Sd
 
 plot(k1$ux,k1$sdeva, col=0,xlab = expression(italic(U["x"]) (mm/s)),
-          ylab = expression(italic(S["d"]) (um)), mgp=c(1.1, 0, 0),tck=0.02,
+          ylab = expression(italic(S["dm"]) (um)), mgp=c(1.1, 0, 0),tck=0.02,
                main = "", xlim = c(0,10),ylim=c(0,80))
 
-mtext("Merged Droplet Sd",3,line=0.2,font=2,cex=1.2)
+mtext("Merged Droplet Space",3,line=0.2,font=2,cex=1.2)
 
 lines(k1$ux,k1$sdeva,col=yan[1],pch=pcc[1],lwd=1.5,lty=2,type="b")
 lines(k2$ux,k2$sdeva,col=yan[2],pch=pcc[2],lwd=1.5,lty=2,type="b")
