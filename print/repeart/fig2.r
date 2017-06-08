@@ -22,7 +22,7 @@ pcc<-c(0,1,2,5)
 # 比较转换之后的液滴的大小
 par(fig=c(0,1,0,1),new=F)
 
-plot(k1$no,k1$dp, col=0,xlab = expression(italic(Number)),
+plot(k1$no,k1$dp, col=0,xlab = expression(italic(n["p"])(Number)),
           ylab = expression(italic(t["rp"])(ms)), mgp=c(1.1, 0, 0),tck=0.02,
                main = "", xlim = c(0,300),ylim=c(0,100))
 
@@ -45,7 +45,7 @@ par(fig=c(0.35,0.99,0.1,0.5),new=TRUE)
 
 plot(k1$no,k1$dp,col=0,bty="n",xlab = expression(italic(Frequency)(KHz)),
           ylab = expression(italic(slope)), mgp=c(1.1, 0, 0),tck=0.02,
-               main = "",xlim = c(1,3),ylim=c(0,1.2))
+               main = "",xlim = c(1,3),ylim=c(0,1.8))
 
 z1<-lm(k1$trp~k1$no)
 z2<-lm(k2$trp~k2$no)

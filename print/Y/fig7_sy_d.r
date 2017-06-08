@@ -33,7 +33,7 @@ plot(k1$uy,k1$syeva, col=0,xlab = expression(italic(U["y"]) (um)),
           ylab = expression(italic(S["y"]) (um)), mgp=c(1.1, 0, 0),tck=0.02,
                main = "", xlim = c(50,150),ylim=c(-20,70))
 
-               mtext("Line space",3,line=0.2,font=2,cex=1.2)
+               mtext("Droplet space in Y",3,line=0.2,font=2,cex=1.2)
 
                lines(k1$uy,k1$syeva,lwd=1.5,lty=2,col=yan[1],pch=pcc[1],type="b")
                lines(k2$uy,k2$syeva,lwd=1.5,lty=2,col=yan[2],pch=pcc[2],type="b")
@@ -45,7 +45,7 @@ plot(k1$uy,k1$syeva, col=0,xlab = expression(italic(U["y"]) (um)),
 
                leg<-c("600Hz","1KHz","2KHz")
 
-               legend("topleft",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n")
+               legend("topleft",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n",cex=0.9)
 
 plot(k1$uy,k1$deva, col=0,xlab = expression(italic(U["y"]) (um)),
          ylab = expression(italic(d["d"]) (um)), mgp=c(1.1, 0, 0),tck=0.02,
@@ -63,4 +63,4 @@ plot(k1$uy,k1$deva, col=0,xlab = expression(italic(U["y"]) (um)),
 
               leg<-c("600Hz","1KHz","2KHz")
 
-              legend("topleft",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n")
+              legend("topleft",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n",cex=0.9)

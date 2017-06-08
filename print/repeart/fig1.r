@@ -18,16 +18,17 @@ pcc<-c(0,1,2)
 
 
 # 比较转换之后的液滴的大小
-
-plot(k1$no,k1$dp, col=0,xlab = expression(italic(Number)),
+par(fig=c(0,1,0,1),new=F)
+plot(k1$no,k1$dp, col=0,xlab = expression(italic(n["p"])(Number)),
           ylab = expression(italic(d["p"])(um)), mgp=c(1.1, 0, 0),tck=0.02,
                main = "", xlim = c(0,300),ylim=c(0,400))
 
-mtext("Droplet size",3,line=0.2,font=2,cex=1.2)
+mtext("Repeart Droplet size",3,line=0.2,font=2,cex=1)
 
 lines(k1$no,k1$dp,col=yan[1],pch=pcc[1],lwd=1.5,lty=2,type="b")
 lines(k2$no,k2$dp,col=yan[2],pch=pcc[2],lwd=1.5,lty=2,type="b")
 lines(k3$no,k3$dp,col=yan[3],pch=pcc[3],lwd=1.5,lty=2,type="b")
+
 
 leg<-c("600Hz","1KHz","3KHz")
 
