@@ -51,20 +51,20 @@ n4<-(D-(k4$sdeva+k4$deva))/D
 # plot
 
 plot(k1$ux,k1$sdeva, col=0,xlab = expression(italic(U["x"]) (mm/s)),
-          ylab = expression(italic(ratio_Sd)), mgp=c(1.1, 0, 0),tck=0.02,
+          ylab = expression(italic(ratio_Sd/ratio_Sd+D)), mgp=c(1.1, 0, 0),tck=0.02,
                main = "", xlim = c(0,300),ylim=c(-0.5,1))
 
-mtext("ratio of error in Sd",3,line=0.2,font=2,cex=1.2)
+mtext("ratio of error in Sd and Sd+D",3,line=0.2,font=2,cex=1.2)
 
 lines(ux1,t1,col=yan[1],lwd=1.5,lty=2,pch=pcc[1],type="b")
 lines(ux2,t2,col=yan[2],lwd=1.5,lty=2,pch=pcc[2],type="b")
 lines(ux3,t3,col=yan[3],lwd=1.5,lty=2,pch=pcc[3],type="b")
 lines(ux4,t4,col=yan[4],lwd=1.5,lty=2,pch=pcc[4],type="b")
 
-lines(ux1,-n1,col=yan[1],lwd=1.5)
-lines(ux2,n2,col=yan[2],lwd=1.5)
-lines(ux3,n3,col=yan[3],lwd=1.5)
-lines(ux4,n4,col=yan[4],lwd=1.5)
+lines(ux1,-n1,col=yan[1],pch=0,lwd=1.5)
+lines(ux2,n2,col=yan[2],pch=1,lwd=1.5)
+lines(ux3,n3,col=yan[3],pch=2,lwd=1.5)
+lines(ux4,n4,col=yan[4],pch=5,lwd=1.5)
 
 abline(h=0,col="yellow3",lwd=1.5,lty=2)
 abline(h=0.5,col="red",lwd=1.5,lty=2)
@@ -72,5 +72,5 @@ abline(h=0.5,col="red",lwd=1.5,lty=2)
 leg<-c("600Hz-r_Sd","1KHz-r_Sd","2KHz-r_Sd","2.5KHz-r_Sd")
 leg2<-c("|600Hz-r_Sd+D|","1KHz-r_Sd+D","2KHz-r_Sd+D","2.5KHz-r_Sd+D")
 
-legend("bottomright",legend=leg,col=yan,pch=pcc,lwd=1.5,inset=.02,bty="n",cex=0.8)
-legend("bottomleft",legend=leg2,col=yan,lty=2,lwd=1.5,inset=.02,bty="n",cex=0.8)
+legend("bottomright",legend=leg,col=yan,lwd=1.5,inset=.02,bty="n",cex=0.8)
+legend("bottomleft",legend=leg2,pch=c(0,1,2,5),col=yan,lty=2,lwd=1.5,inset=.02,bty="n",cex=0.8)

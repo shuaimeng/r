@@ -1,3 +1,9 @@
+dyn.load('/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/server/libjvm.dylib')
+library(rJava)
+
+setwd("/Users/mengmengjiang/all datas/jmm2")
+
+
 library(xlsx)
 
 #针头为25G
@@ -81,8 +87,3 @@ leg<-c("kv=0.2","kv=0.3","kv=0.5",
        "kv=0.6","kv=0.8")
 
 legend("topleft",legend=leg,col=yan,pch=pchc,bty="n",lwd=2,lty=2,inset=.05,cex=1)
-
-
-
-
-

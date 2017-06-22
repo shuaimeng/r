@@ -1,3 +1,8 @@
+dyn.load('/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/server/libjvm.dylib')
+library(rJava)
+
+setwd("/Users/mengmengjiang/all datas/jmm2")
+
 library(xlsx)
 #针头为30g
 n1<-read.xlsx("he-25g.xlsx",sheetName="2kv18",header=TRUE)

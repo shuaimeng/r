@@ -10,42 +10,49 @@ library(xlsx)
 k1<-read.xlsx("gly1.xlsx",sheetName="qd2-20",header=TRUE)
 
 
-plot(k1$fv,k1$deva,col="0",xlab = expression(italic(f["v"]) (Hz)),
-          ylab =expression(italic(U["s"]) (mm/s)), mgp=c(1.1, 0, 0),tck=0.02,
-               main = "",xlim = c(0,4000),ylim=c(0,100))
+par(mfrow = c(2,1), mar = c(2,2.4,2,2), oma = c(1,1,1,1))
+layout(matrix(c(1,2), 2, 1,byrow = TRUE))
 
-points(k1$fv,k1$deva,col="red",pch=1)
+plot(k1$fv,k1$deva,col="0",xlab = expression(italic(f["v"]) (Hz)),
+          ylab =expression(italic(D)(um)), mgp=c(1.1, 0, 0),tck=0.02,
+               main = "",xlim = c(0,4000),ylim=c(0,80))
+
+points(k1$fv,k1$deva,col="red",pch=0)
 
 z1=loess(k1$deva~k1$fv,span=0.5,degree=2)
 
 lines(k1$fv,z1$fit,col="red",lwd=1.5,lty=2,type="b")
 
-abline(lm(k1$deva~k1$fv),col="blue",lwd=1.5,lty=2)
+abline(lm(k1$deva~k1$fv),pch=0,type="b",col="blue",lwd=1.5,lty=2)
 
-fv<-1:4000 # 自己拟合的曲线
+mtext("Droplet size and fitting",3,line=0.2,font=2,cex=0.9)
+
+leg1<-c("Droplet real","Droplet fit")
+
+legend("topright",legend=leg1,col=c("red","blue"),pch=c(0,1),lwd=1.5,lty=2,
+bty="n",inset=.02)
+
+plot(k1$fv,k1$deva,col=0,xlab = expression(italic(f["v"]) (Hz)),ylab =expression(italic(U["s"]) (mm/s)), mgp=c(1.1, 0, 0),tck=0.02,main = "",xlim = c(0,4000),ylim=c(0,80))
+
+mtext("Critical velocity Us",3,line=0.2,font=2,cex=0.9)
 
 
-mtext("Critical Velocity Us",3,line=0.2,font=2,cex=0.9)
+# 临界速度的拟合
 
-f<-lm(k1$deva~k1$fv)
+# 实际的临界速度为Sd=0，液滴k1$deva * k1$fv的结果
 
-a<-f$coefficients[1]
-b<-f$coefficients[2]
+# 拟合的数据，为根据
 
-usa<-10*b/7 # 斜率
-usb<-10*a/7 # 截距
+fit<-(k1$deva*k1$fv*0.9)/1000 # 真实数据
+fv<-1:4000
 
-z<-usa*fv+usb
+lines(k1$fv,fit,col="black",pch=0,type="b",lwd=2.5,lty=2)
 
-lines(fv,z,col="black",lwd=2.5,lty=5)
+x<-1:4000
+y<-(x*(-0.01046*x+54)*0.9)/1000
 
-text(2000,75,"Us fitting",col="black",font=2)
+lines(x,y,col="green3",lwd=2.5,pch=1,cex=0.5,lty=2)
 
-x<-c(600,1000,2000)
-y<-c(66,60,50)
-
-lines(x,y,col="green3",lwd=2.5,lty=5)
-
-leg<-c("Droplet","D size fit","Us fit","Us real")
-legend("topright",legend=leg,col=c("red","blue","black","green3"),lwd=1.5,
+leg2<-c("Us real","Us fitting")
+legend("topleft",legend=leg2,pch=c(0,1),col=c("black","green3"),lwd=1.5,
 bty="n",inset=.02)
