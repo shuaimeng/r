@@ -1,3 +1,7 @@
+dyn.load('/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/server/libjvm.dylib')
+library(rJava)
+
+setwd("/Users/mengmengjiang/all datas/jmm2-v1")
 library(xlsx)
 #读取数据
 q2 <- read.xlsx("f_eject_2.xls", sheetName = "eject_k2", header = TRUE)
@@ -15,8 +19,8 @@ par(mfrow = c(2,2), mar = c(2,2.6,2,2), oma = c(1,1,1,1))
 #pdf("fp_vs_fv.pdf")
 
 ##################################画图--占空比k = 0.2#######################
-plot(q2$fv, q2$X1.5, xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz)), 
-     ylab = expression(italic(f["p"]) (Hz)), mgp=c(1.3, 0, 0),tck=0.03, main = "k = 0.2", cex.lab = 1.2, cex.main = 1.5, xlim = c(0, 1200), ylim = c(0, 1200))
+plot(q2$fv, q2$X1.5, xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz)),
+     ylab = expression(italic(f["p"]) (Hz)), mgp=c(1.1, 0, 0),tck=0.01, main = "k = 0.2", cex.lab = 1.2, cex.main = 1.4, xlim = c(0, 1200), ylim = c(0, 1200))
 
 points(q2$fv,q2$X1.5,col="green4",pch=0,cex=0.8)
 points(q2$fv,q2$X27,col="black",pch=1,cex=0.8)
@@ -34,11 +38,11 @@ lines(q2$fv, q2$X180, col="blue", lwd=2, type="l", lty=2)
 
 #区域划线
 legend("bottomright", c("1.5nl/min", "27nl/min", "54nl/min", "180nl/min"), col = c("green4", "black", "red", "blue"), pch = c(0,1,2,5),
-       lwd = 2, lty = 2, cex = 1.2, inset = .1, bty = "n")
+       lwd = 2, lty = 2, cex = 1.2, inset = .02, bty = "n")
 
 ##################################画图--占空比k = 0.3#######################
-plot(q3$fv, q3$X1.5, xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz)), 
-     ylab = expression(italic(f["p"]) (Hz)), mgp=c(1.3, 0, 0),tck=0.03,main = "k = 0.3", cex.lab = 1.2, cex.main = 1.5, xlim = c(0, 1000), ylim = c(0, 1600))
+plot(q3$fv, q3$X1.5, xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz)),
+     ylab = expression(italic(f["p"]) (Hz)), mgp=c(1.1, 0, 0),tck=0.01,main = "k = 0.3", cex.lab = 1.2, cex.main = 1.4, xlim = c(0,1000), ylim = c(0, 1000))
 
 points(q3$fv,q3$X1.5,col="green4",pch=0,cex=0.8)
 points(q3$fv,q3$X27,col="black",pch=1,cex=0.8)
@@ -56,11 +60,11 @@ lines(q3$fv, q3$X180, col="blue", lwd=2, type="l", lty=2)
 
 #区域划线
 legend("bottomright", c("1.5nl/min", "27nl/min", "54nl/min", "180nl/min"), col = c("green4", "black", "red", "blue"), pch = c(0,1,2,5),
-       lwd = 2, lty = 2, cex = 1.2, inset = .1, bty = "n")
+       lwd = 2, lty = 2, cex = 1.2, inset = .02, bty = "n")
 
 ##################################画图--占空比k = 0.4#######################
-plot(q4$fv, q4$X1.5, xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz)), 
-     ylab = expression(italic(f["p"]) (Hz)),mgp=c(1.3, 0, 0),tck=0.03, main = "k = 0.4", cex.lab = 1.2, cex.main = 1.5, xlim = c(0, 2000), ylim = c(0, 2000))
+plot(q4$fv, q4$X1.5, xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz)),
+     ylab = expression(italic(f["p"]) (Hz)),mgp=c(1.1, 0, 0),tck=0.01, main = "k = 0.4", cex.lab = 1.2, cex.main = 1.4, xlim = c(0, 2000), ylim = c(0, 2000))
 
 points(q4$fv,q4$X1.5,col="green4",pch=0,cex=0.8)
 points(q4$fv,q4$X27,col="black",pch=1,cex=0.8)
@@ -78,11 +82,11 @@ lines(q4$fv, q4$X180, col="blue", lwd=2, type="l", lty=2)
 
 #区域划线
 legend("bottomright", c("1.5nl/min", "27nl/min", "54nl/min", "180nl/min"), col = c("green4", "black", "red", "blue"), pch = c(0,1,2,5),
-       lwd = 2, lty = 2, cex = 1.2, inset = .1, bty = "n")
+       lwd = 2, lty = 2, cex = 1.2, inset = .02, bty = "n")
 
 ##################################画图--占空比k = 0.5#######################
-plot(q5$fv, q5$X1.5, xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz)), 
-     ylab = expression(italic(f["p"]) (Hz)), mgp=c(1.3, 0, 0),tck=0.03,main = "k = 0.5", cex.lab = 1.2, cex.main = 1.5, xlim = c(0, 3500), ylim = c(0, 3500))
+plot(q5$fv, q5$X1.5, xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz)),
+     ylab = expression(italic(f["p"]) (Hz)), mgp=c(1.1, 0, 0),tck=0.01,main = "k = 0.5", cex.lab = 1.2, cex.main = 1.4, xlim = c(0, 3500), ylim = c(0, 3500))
 
 points(q5$fv,q5$X1.5,col="green4",pch=0,cex=0.8)
 points(q5$fv,q5$X27,col="black",pch=1,cex=0.8)
@@ -100,4 +104,4 @@ lines(q5$fv, q5$X180, col="blue", lwd=2, type="l", lty=2)
 
 #区域划线
 legend("bottomright", c("1.5nl/min", "27nl/min", "54nl/min", "180nl/min"), col = c("green4", "black", "red", "blue"), pch = c(0,1,2,5),
-       lwd = 2, lty = 2, cex = 1.2, inset = .1, bty = "n")
+       lwd = 2, lty = 2, cex = 1.2, inset = .02, bty = "n")
