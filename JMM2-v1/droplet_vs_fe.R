@@ -4,7 +4,7 @@ library(rJava)
 setwd("/Users/mengmengjiang/all datas/jmm2-v1")
 
 library(xlsx)
-library(plotrix)
+#library(plotrix)
 #读取数据
 q2 <- read.xlsx("f_eject_2.xls", sheetName = "single_k2", header = TRUE)
 #q3 <- read.xlsx("f_eject_2.xls", sheetName = "single_k3", header = TRUE)
