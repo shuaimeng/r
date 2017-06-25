@@ -2,7 +2,10 @@
 # name: duty cycle
 
 ##reading datas##
+dyn.load('/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/server/libjvm.dylib')
+library(rJava)
 
+setwd("/Users/mengmengjiang/all datas/maxfp")
 library(xlsx)
 
 k1<-read.xlsx("duty cycle.xlsx",sheetName = "5",header = TRUE)
@@ -24,7 +27,7 @@ error.bar <- function(x, y, upper, coll,lower=upper, length=0.05,...){
 
 
 ####k=0.5###
-plot(k1$fv,k1$tfeva, xaxs="i", col=0, xlab = expression(italic(f["v"]) (Hz)), 
+plot(k1$fv,k1$tfeva, xaxs="i", col=0, xlab = expression(italic(f["v"]) (Hz)),
      ylab = expression(italic(t["for"]) (ms)),mgp=c(1.1, 0, 0),tck=0.01, main="",
      cex.lab=1,xlim=c(0,300),ylim=c(0,10))
 
@@ -48,12 +51,3 @@ lines(k4$fv, k4$tfeva,col="black", lwd=2, pch=5,type="b", lty=2)
 
 legend("topright",c("k=0.5","k=0.6","k=0.8","k=0.9"),col=c("red","blue","green3","black"),
        pch=c(0,1,2,5),lwd=2,lty=2,inset=.05,bty="n")
-
-
-
-
-
-
-
-
-

@@ -1,3 +1,6 @@
+dyn.load('/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/server/libjvm.dylib')
+
+setwd("/Users/mengmengjiang/all datas/chap5")
 library(xlsx)
 
 #针头为25G
@@ -110,5 +113,3 @@ leg<-c("18nl/min-30G","18nl/min-32G","54nl/min-30G",
        "180nl/min-30G","54nl/min-34G","180nl/min-32G","180nl/min-34G")
 
 legend("topleft",legend=leg,col=yan,pch=pchc,bty="n",lwd=1.5,lty=2,inset=.06,cex=0.9)
-
-

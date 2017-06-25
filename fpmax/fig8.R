@@ -1,3 +1,7 @@
+dyn.load('/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/server/libjvm.dylib')
+library(rJava)
+
+setwd("/Users/mengmengjiang/all datas/maxfp")
 library(xlsx)
 
 #reading datas
@@ -24,8 +28,8 @@ yan<-c("red","blue","black","green3")
 pcc<-c(0,1,2,5)
 
 ##Plot-1
-plot(c1$fv,c1$tfeva, col=0,xlab = expression(italic(f["v"]) (Hz)), 
-     ylab = expression(italic(t["for"]) (ms)), mgp=c(1.1, 0, 0),tck=0.02, 
+plot(c1$fv,c1$tfeva, col=0,xlab = expression(italic(f["v"]) (Hz)),
+     ylab = expression(italic(t["for"]) (ms)), mgp=c(1.1, 0, 0),tck=0.02,
      main = "", xlim = c(0, 500),ylim=c(0,15))
 
 lines(c1$fv,c1$tfeva,col=yan[1],pch=pcc[1],type="b",lwd=1.5,lty=2)
@@ -44,8 +48,8 @@ legend("topright",legend=leg,col=yan,pch=pcc,lwd=1.5,inset=.06,bty="n")
 
 par(fig=c(0.3,0.98,0.63,0.98),new=T)
 
-plot(c1$fv,c1$tfeva, col=0,bty="n",xlab = "", 
-     ylab = "", mgp=c(1.1, 0, 0),tck=0.02, 
+plot(c1$fv,c1$tfeva, col=0,bty="n",xlab = "",
+     ylab = "", mgp=c(1.1, 0, 0),tck=0.02,
      main = "", xlim = c(500, 3500),ylim=c(0,1))
 
 lines(c1$fv,c1$tfeva,col=yan[1],pch=pcc[1],type="b",lwd=1.5,lty=2)
@@ -58,8 +62,8 @@ error.bar(c3$fv,c3$tfeva,c3$stdtf/2,col=yan[3])
 
 ###Plot-2
 par(fig=c(0,1,0,0.5),new=T)
-plot(c1$fv,c1$tpeva, col=0,xlab = expression(italic(f["v"]) (Hz)), 
-     ylab = expression(italic(t["pulse"]) (ms)), mgp=c(1.1, 0, 0),tck=0.02, 
+plot(c1$fv,c1$tpeva, col=0,xlab = expression(italic(f["v"]) (Hz)),
+     ylab = expression(italic(t["pulse"]) (ms)), mgp=c(1.1, 0, 0),tck=0.02,
      main = "", xlim = c(0, 3500),ylim=c(0,0.4))
 
 lines(c1$fv,c1$tpeva,col=yan[1],pch=pcc[1],type="b",lwd=1.5,lty=2)
@@ -72,12 +76,3 @@ error.bar(c3$fv,c3$tpeva,c3$stdtp/2,col=yan[3])
 
 leg<-c("Ethylene","Ethylene 2","Ethylene 3")
 legend("topright",legend=leg,col=yan,pch=pcc,lwd=1.5,inset=.06,bty="n")
-
-
-
-
-
-
-
-
-
