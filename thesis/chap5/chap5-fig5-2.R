@@ -51,7 +51,7 @@ error.bar <- function(x, y, upper, coll,lower=upper, length=0.05,...){
 ####18nl/min####
 par(fig=c(0,1,0.5,1),mar = c(1.8,2.2,1.8,1.8), oma = c(1,1,1,1),new=F)
 plot(nj$fv, nj$feeva, xlab = expression(italic(f["v"])(Hz)),
-     ylab=expression(italic(f["e"])(Hz)),mgp=c(1.1, 0, 0),tck=0.02,main = "18nl/min", cex.lab = 1, cex.main = 1.2,xlim=c(0,500),ylim=c(0,250),col=0)
+     ylab=expression(italic(f["e"])(Hz)),mgp=c(1.1, 0, 0),tck=0.02,main = "18nl/min", cex.lab = 1, cex.main = 1,xlim=c(0,500),ylim=c(0,250),col=0)
 #25g
 lines(nj$fv,nj$feeva,col="red",pch=1,lwd=1.5,lty=2,type="b",cex=0.8)
 #30g
@@ -80,12 +80,12 @@ lines(ng$fv,ng$feeva,col="green3",pch=16,lwd=1.5,lty=2,type="b",cex=0.8)
 
 legend("topright",c("25g",
                     "30g","32g","34g"),
-       pch=c(1,2,15,16),bty="n",lty=2,cex=1,col=c("red","blue","black","green3"),inset=.02)
+       pch=c(1,2,15,16),bty="n",lty=2,cex=0.8,col=c("red","blue","black","green3"),inset=.02)
 
 ###54nl/min####
 par(fig=c(0,0.5,0,0.5), new=T)
 plot(nk$fv, nk$d_ra, xlab = expression(italic(f["v"])(Hz)),
-     ylab=expression(italic(f["e"])(Hz)),mgp=c(1.1, 0, 0),tck=0.02,main = "54nl/min", cex.lab = 1, cex.main = 1.2,xlim=c(0,500),ylim=c(0,250),col=0)
+     ylab=expression(italic(f["e"])(Hz)),mgp=c(1.1, 0, 0),tck=0.02,main = "54nl/min", cex.lab = 1, cex.main = 1,xlim=c(0,500),ylim=c(0,250),col=0)
 
 #25g
 lines(nk$fv,nk$feeva,col="red",pch=1,lwd=1.5,lty=2,type="b",cex=0.8)
@@ -117,12 +117,12 @@ lines(nh$fv,nh$feeva,col="green3",pch=16,lwd=1.5,lty=2,type="b",cex=0.8)
 
 legend("topright",c("25g",
                     "30g","32g","34g"),
-       pch=c(1,2,15,16),bty="n",lty=2,cex=1,col=c("red","blue","black","green3"),inset=.02)
+       pch=c(1,2,15,16),bty="n",lty=2,cex=0.8,col=c("red","blue","black","green3"),inset=.02)
 
 ####180nlmin####
 par(fig=c(0.5,1,0,0.5), new=T)
 plot(nl$fv, nl$d_ra, xlab = expression(italic(f["v"])(Hz)),
-     ylab=expression(italic(f["e"])(Hz)),mgp=c(1.1, 0, 0),tck=0.02,main = "180nl/min", cex.lab = 1, cex.main = 1.2,xlim=c(0,500),ylim=c(0,250),col=0)
+     ylab=expression(italic(f["e"])(Hz)),mgp=c(1.1, 0, 0),tck=0.02,main = "180nl/min", cex.lab = 1, cex.main = 1,xlim=c(0,500),ylim=c(0,250),col=0)
 #25g
 lines(nl$fv,nl$feeva,col="red",pch=1,lwd=1.5,lty=2,type="b",cex=0.8)
 #30g
@@ -157,4 +157,4 @@ plot(nl$fv, nl$d_ra, xlab = expression(italic(f["v"])(Hz)),
 
 legend("topright",c("25g",
                     "30g","32g","34g"),
-       pch=c(1,2,15,16),bty="n",lty=2,col=c("red","blue","black","green3"),cex=1,inset=.02)
+       pch=c(1,2,15,16),bty="n",lty=2,col=c("red","blue","black","green3"),cex=0.8,inset=.02)
