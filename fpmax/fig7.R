@@ -1,3 +1,7 @@
+dyn.load('/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/server/libjvm.dylib')
+library(rJava)
+
+setwd("/Users/mengmengjiang/all datas/maxfp")
 library(xlsx)
 
 #reading
@@ -28,8 +32,8 @@ yan<-c("red","blue","black","green3")
 pcc<-c(0,1,2,5)
 
 ##Plot-1#
-plot(v1$fv,v1$fveva, col=0,xlab = expression(italic(f["v"]) (Hz)), 
-     ylab = expression(italic(f["p"]) (Hz)), mgp=c(1.1, 0, 0),tck=0.02, 
+plot(v1$fv,v1$fveva, col=0,xlab = expression(italic(f["v"]) (Hz)),
+     ylab = expression(italic(f["p"]) (Hz)), mgp=c(1.1, 0, 0),tck=0.02,
      main = "", xlim = c(0, 3500),ylim=c(0,3500))
 
 lines(v1$fv,v1$fveva,col=yan[1],pch=pcc[1],lwd=2,lty=2,type="b",cex=0.8)
@@ -69,8 +73,8 @@ leg<-c("V=1.6kv","V=1.8kv","V=2kv","V=2.2kv")
 legend("topleft",legend=leg,col=yan,pch=pcc,lwd=1.5,inset=.06,bty="n")
 
 ##Plot2
-plot(v5$fv,v5$fveva, col=0,xlab = expression(italic(f["v"]) (Hz)), 
-     ylab = expression(italic(f["p"]) (Hz)), mgp=c(1.1, 0, 0),tck=0.02, 
+plot(v5$fv,v5$fveva, col=0,xlab = expression(italic(f["v"]) (Hz)),
+     ylab = expression(italic(f["p"]) (Hz)), mgp=c(1.1, 0, 0),tck=0.02,
      main = "", xlim = c(0, 4500),ylim=c(0,4500))
 
 lines(v5$fv,v5$fveva,col=yan[1],pch=pcc[1],lwd=2,lty=2,type="b",cex=0.8)
@@ -87,8 +91,3 @@ text(4000,2600,"fpmax=4.5KHz",col="blue",font=2)
 leg1<-c("V-kv:2kv-0.9","V-kv:2.1kv-0.9")
 
 legend("topleft",legend=leg1,col=c("red","blue"),pch=c(0,1),lwd=1.5,inset=.06,bty="n")
-
-
-
-
-

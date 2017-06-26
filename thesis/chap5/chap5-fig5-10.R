@@ -97,6 +97,7 @@ plot(n1$fv, n1$he_ra, xlab = expression(log(q["d"])),
 yan<-rainbow(4)
 
 ####30g针头下###
+0.2*nt$fv
 
 #1#180nl/min-k-0.2##
 e<-log(0.2*180/(nk2$fv*60*3.1^3))
