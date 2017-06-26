@@ -1,4 +1,8 @@
+dyn.load('/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/server/libjvm.dylib')
+
+setwd("/Users/mengmengjiang/all datas/chap5")
 library(xlsx)
+
 
 #针头为25G
 #n1<-read.xlsx("he-25g.xlsx",sheetName="2kv18",header=TRUE)
@@ -22,8 +26,8 @@ n8<-read.xlsx("he-34g.xlsx",sheetName="2kv54",header=TRUE)
 n9<-read.xlsx("he-34g.xlsx",sheetName="2kv180",header=TRUE)
 
 ###画图
-plot(n1$fv, n1$he_ra, xlab = expression(log(q["d"])),
-     ylab=expression(D/d["d"]),mgp=c(1.1, 0, 0),tck=0.02,
+plot(n1$fv, n1$he_ra, xlab = expression(italic(log(q["d"]))),
+     ylab=expression(italic(D/d["d"])),mgp=c(1.1, 0, 0),tck=0.02,
      xlim=c(-14,-4),ylim=c(2,20),col=0)
 
 ###颜色###
@@ -95,9 +99,4 @@ leg<-c("18nl/min-30G","54nl/min-30G","180nl/min-30G",
        "18nl/min-32G","54nl/min-32G",
        "180nl/min-32G","18nl/min-34G","54nl/min-34G","180nl/min-34G")
 
-legend("topright",legend=leg,col=yan,pch=pchc,bty="n",lwd=1.5,lty=2,inset=.05,cex=0.8)
-
-
-
-
-
+legend("topright",legend=leg,col=yan,pch=pchc,bty="n",lwd=1.5,lty=2,inset=.02,cex=0.8)
