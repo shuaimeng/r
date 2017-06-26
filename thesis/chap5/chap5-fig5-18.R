@@ -1,3 +1,6 @@
+dyn.load('/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/server/libjvm.dylib')
+
+setwd("/Users/mengmengjiang/all datas/chap5")
 library(xlsx)
 
 #读取25G
@@ -23,10 +26,10 @@ par(mar=c(2,2.2,1.4,1),oma=c(2,2,2,2))
 layout(matrix(c(1,2,3,4), 2,2,byrow = TRUE))
 
 ###画图-25G##
-plot(n1$fv, n1$d_ra, xlab = expression(f["v"](Hz)),
-     ylab=expression(D/d["d"]),mgp=c(1.1, 0, 0),tck=0.02,xlim=c(0,1000),ylim=c(2,25),col=0)
+plot(n1$fv, n1$d_ra, xlab = expression(italic(f["v"](Hz))),
+     ylab=expression(italic(D/d["d"])),mgp=c(1.1, 0, 0),tck=0.02,xlim=c(0,1000),ylim=c(2,25),col=0)
 
-
+mtext("25G",col="black",3,line=-1,font=2,cex=0.8)
 k1<-1/n20$d_Rn
 k<-(n20$fv)
 
@@ -41,12 +44,13 @@ abline(lm(l1~l),col="blue",lty=4)
 
 leg<-c("2kv","2.2kv")
 
-legend("topleft",legend=leg,col=yan,pch=pchc,bty="n",lwd=1.5,lty=2,inset=.05,cex=0.8)
+legend("topleft",legend=leg,col=yan,pch=pchc,bty="n",lwd=1.5,lty=2,inset=.02,cex=0.8)
 
 
 ###画图-30g##
-plot(n1$fv, n1$d_ra, xlab = expression(f["v"](Hz)),
-     ylab=expression(D/d["d"]),mgp=c(1.1, 0, 0),tck=0.02,xlim=c(0,3000),ylim=c(2,25),col=0)
+plot(n1$fv, n1$d_ra, xlab = expression(italic(f["v"](Hz))),
+     ylab=expression(italic(D/d["d"])),mgp=c(1.1, 0, 0),tck=0.02,xlim=c(0,3000),ylim=c(2,25),col=0)
+     mtext("30G",col="black",3,line=-1,font=2,cex=0.8)
 
 ###颜色###
 yan<-c("red","blue","black","green3")
@@ -76,11 +80,12 @@ abline(lm(d1~d),col=yan[4],lty=4)
 
 leg<-c("1.6kv","1.8kv","2kv","2.2kv")
 
-legend("topleft",legend=leg,col=yan,pch=c(1,2,3,4),bty="n",lwd=1.5,lty=2,inset=.05,cex=0.8)
+legend("topleft",legend=leg,col=yan,pch=c(1,2,3,4),bty="n",lwd=1.5,lty=2,inset=.02,cex=0.8)
 
 #####画图-32G###
-plot(n1$fv, n1$d_ra, xlab = expression(f["v"](Hz)),
-     ylab=expression(D/d["d"]),mgp=c(1.1, 0, 0),tck=0.02,xlim=c(0,3500),ylim=c(2,25),col=0)
+plot(n1$fv, n1$d_ra, xlab = expression(italic(f["v"](Hz))),
+     ylab=expression(italic(D/d["d"])),mgp=c(1.1, 0, 0),tck=0.02,xlim=c(0,3500),ylim=c(2,25),col=0)
+     mtext("32G",col="black",3,line=-1,font=2,cex=0.8)
 
 ###颜色###
 yan<-c("red","blue","black")
@@ -105,12 +110,13 @@ abline(lm(f1~f),col=yan[2],lty=4)
 
 leg<-c("1.8kv","2kv","2.2kv")
 
-legend("topleft",legend=leg,col=yan,pch=c(1,2,3),bty="n",lwd=1.5,lty=2,inset=.05,cex=0.8)
+legend("topleft",legend=leg,col=yan,pch=c(1,2,3),bty="n",lwd=1.5,lty=2,inset=.02,cex=0.8)
 
 ####34G
 
-plot(n1$fv, n1$d_ra, xlab = expression(f["v"](Hz)),
-     ylab=expression(D/d["d"]),mgp=c(1.1, 0, 0),tck=0.02,xlim=c(0,3500),ylim=c(2,25),col=0)
+plot(n1$fv, n1$d_ra, xlab = expression(italic(f["v"](Hz))),
+     ylab=expression(italic(D/d["d"])),mgp=c(1.1, 0, 0),tck=0.02,xlim=c(0,3500),ylim=c(2,25),col=0)
+     mtext("34G",col="black",3,line=-1,font=2,cex=0.8)
 
 ###颜色###
 yan<-c("red","blue","black")
@@ -139,4 +145,4 @@ abline(lm(i1~i),col=yan[2],lty=4)
 
 leg<-c("1.8kv","2kv","2.2kv")
 
-legend("topleft",legend=leg,col=yan,pch=c(1,2,3),bty="n",lwd=1.5,lty=2,inset=.05,cex=0.8)
+legend("topleft",legend=leg,col=yan,pch=c(1,2,3),bty="n",lwd=1.5,lty=2,inset=.02,cex=0.8)
