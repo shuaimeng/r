@@ -3,7 +3,7 @@ dyn.load('/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/l
 
 setwd("/Users/mengmengjiang/all datas/voltage")
 library(xlsx)
-par(mfrow = c(2,1), mar = c(2,2.4,2,2), oma = c(1,1,1,1))
+par(mfrow = c(2,1), mar = c(1.8,2.2,0.8,1), oma = c(1,1,1,1))
 
 ### 32G-18nl/min ###
 k1<-read.xlsx("he-32g.xlsx", sheetName = "2kv18", header = TRUE)
@@ -27,7 +27,7 @@ plot(k1$fv,k1$d_r, col=0,xlab = expression(italic(f["v"]) (Hz)),
      ylab = expression(italic(d["d"]) (um)), mgp=c(1.1, 0, 0),tck=0.02,
      main = "", xlim = c(0, 6000),ylim=c(0,70))
 
-     mtext("32G-18nl/min-d",3,line=0.2,font=2,cex=1)
+     mtext("32G-18nl/min-d",3,line=-1.2,font=2,cex=1)
 
 lines(k1$fv,k1$d_r,col=yan[1],pch=pcc[1],type="b",lwd=2,lty=2)
 lines(k2$fv,k2$deva,col=yan[2],pch=pcc[2],type="b",lwd=2,lty=2)
@@ -41,7 +41,7 @@ error.bar(k4$fv,k4$deva,k4$stdd/2,col=yan[4])
 
 leg<-c("V0+0:0kv+2Kv","Va+Vb:1.7kv-2kv","Va+Vb:1.8kv-2kv","Va+Vb:1.9kv-2kv")
 
-legend("topright",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n",cex=0.8)
+legend("topright",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.01,bty="n",cex=0.8)
 
 ### 32G-180nl/min ###
 
@@ -54,7 +54,7 @@ plot(ka$fv,ka$d_r, col=0,xlab = expression(italic(f["v"]) (Hz)),
      ylab = expression(italic(d["d"]) (um)), mgp=c(1.1, 0, 0),tck=0.02,
      main = "", xlim = c(0,4000),ylim=c(0,70))
 
-     mtext("32G-180nl/min-d",3,line=0.2,font=2,cex=1)
+     mtext("32G-180nl/min-d",3,line=-1.2,font=2,cex=1)
 
 lines(ka$fv,ka$d_r,col=yan[1],pch=pcc[1],type="b",lwd=2,lty=2)
 lines(kb$fv,kb$deva,col=yan[2],pch=pcc[2],type="b",lwd=2,lty=2)
@@ -68,4 +68,4 @@ error.bar(kd$fv,kd$deva,kd$stdd/2,col=yan[4])
 
 leg<-c("V0+0:0kv+2Kv","Va+Vb:1.7kv-2kv","Va+Vb:1.8kv-2kv","Va+Vb:1.9kv-2kv")
 
-legend("topright",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n",cex=0.8)
+legend("topright",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.01,bty="n",cex=0.8)

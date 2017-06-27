@@ -3,7 +3,7 @@ dyn.load('/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/l
 setwd("/Users/mengmengjiang/all datas/voltage")
 library(xlsx)
 
-par(mfrow = c(2,1), mar = c(2,2.4,2,2), oma = c(1,1,1,1))
+par(mfrow = c(2,1), mar = c(2,2.2,0.8,1), oma = c(1,1,1,1))
 
 # reading and compare the datas from gly1 and he-25g
 
