@@ -20,7 +20,7 @@ layout(matrix(c(1,2,3,4), 2, 1,byrow = TRUE))
 ###30G###
 plot(n1$fv, n1$tf, xlab = expression(italic(f["v"](Hz))),
      ylab=expression(italic(f["e"](Hz))),mgp=c(1.1, 0, 0),tck=0.02,xlim=c(0,300),ylim=c(0,250),col=0)
-mtext("30G-18nl/min",3,line=-1.2,font=2,cex=1)
+mtext("30G",3,line=-1.2,font=2,cex=1)
 a1<-(500/n1$fv - n1$tfeva)/n1$tp
 lines(n1$fv,a1,col="red",pch=1,lwd=1.5,lty=2,type="b",cex=0.7)
 
@@ -35,14 +35,14 @@ lines(n4$fv,d1,col="green3",pch=4,lwd=1.5,lty=2,type="b",cex=0.7)
 
 legend("topright",c("1.6kv",
                     "1.8kv","2kv","2.2kv"),
-       pch=c(1,2,3,4),bty="n",lty=2,col=c("red","blue","black","green3"),inset=.02)
+       pch=c(1,2,3,4),bty="n",lty=2,col=c("red","blue","black","green3"),inset=.02,cex=0.8)
 
 
 ####32G###
 
 plot(n5$fv, n5$tf, xlab = expression(italic(f["v"](Hz))),
      ylab=expression(italic(f["e"](Hz))),mgp=c(1.1, 0, 0),tck=0.02,xlim=c(0,300),ylim=c(0,250),col=0)
-     mtext("30G-180nl/min",3,line=-1.2,font=2,cex=1)
+     mtext("32G",3,line=-1.2,font=2,cex=1)
 
 e1<-(500/n5$fv - n5$tf)/n5$tp
 lines(n5$fv,e1,col="red",pch=1,lwd=1.5,lty=2,type="b",cex=0.7)
@@ -53,4 +53,4 @@ lines(n6$fv,f1,col="blue",pch=2,lwd=1.5,lty=2,type="b",cex=0.7)
 g1<-(500/n7$fv - n7$tf)/n7$tp
 lines(n7$fv,g1,col="black",pch=3,lwd=1.5,lty=2,type="b",cex=0.7)
 legend("topright",c("1.8kv","2kv","2.2kv"),
-       pch=c(1,2,3),bty="n",lty=2,col=c("red","blue","black"),inset=.02)
+       pch=c(1,2,3),bty="n",lty=2,col=c("red","blue","black"),inset=.02,cex=0.8)

@@ -26,41 +26,43 @@ n8<-read.xlsx("he-34g.xlsx",sheetName="2kv54",header=TRUE)
 n9<-read.xlsx("he-34g.xlsx",sheetName="2kv180",header=TRUE)
 
 ###画图
-plot(n1$fv, n1$he_ra, xlab = expression(italic(log(q["d"]))),
-     ylab=expression(italic(D/d["d"])),mgp=c(1.1, 0, 0),tck=0.02,
-     xlim=c(-14,-4),ylim=c(2,20),col=0)
+plot(n1$fv, n1$he_ra, xlab = expression(italic(log(W["ev"]))),
+     ylab=expression(italic(D/d["d"])),mgp=c(1.1, 0, 0),tck=0.01,
+     xlim=c(-8,4),ylim=c(2,20),col=0)
 
 ###颜色###
 yan<-rainbow(9)
 
+rho<-((10^3)*0.5)/3.1415926*3.1415936
+
 ####30g针头下###
 
 #1#18nl-30g##
-a<-log(0.5*18/(n1$fv*60*3.1^3))
+a<-log(rho*18*18/(n1$fv*60*60*3.1^3))
 
 #2###18nl-32g###
-b<-log(0.5*18/(n2$fv*60*2.3^3))
+b<-log(rho*18*18/(n2$fv*60*60*2.3^3))
 
-#3#18nl-34G##
-c<-log(0.5*18/(n3$fv*60*1.9^3))
+#3#54nl-30G##
+c<-log(rho*54*54/(n3$fv*60*60*3.1^3))
 
-#4#54nl-30g##
-d<-log(0.5*54/(n4$fv*60*3.1^3))
+#4#18nl-34g##
+d<-log(rho*18*18/(n4$fv*60*60*1.9^3))
 
 #5#54nl-32G##
-e<-log(0.5*54/(n5$fv*60*2.3^3))
+e<-log(rho*54*54/(n5$fv*60*60*2.3^3))
 
-#6#54nl-34G##
-f<-log(0.5*54/(n6$fv*60*1.9^3))
+#6#180nl-30G##
+f<-log(rho*180*180/(n6$fv*60*60*3.1^3))
 
-#7#180nl-30G##
-g<-log(0.5*180/(n7$fv*60*3.1^3))
+#7#54nl-34G##
+g<-log(rho*54*54/(n7$fv*60*60*1.9^3))
 
 #8#180nl-32G##
-h<-log(0.5*180/(n8$fv*60*2.3^3))
+h<-log(rho*180*180/(n8$fv*60*60*2.3^3))
 
 #9#180nl-34G##
-i<-log(0.5*180/(n9$fv*60*1.9^3))
+i<-log(rho*180*180/(n9$fv*60*60*1.9^3))
 
 ###
 xx<-c(a,b,c,d,e,f,g,h,i)
@@ -95,8 +97,8 @@ points(lowess(i,1/n9$d_eRn,f=1/4,iter=3),col=yan[9],pch=24,lwd=2,lty=2,cex=0.8)
 #abline(lm(h1~h),col=yan[8],lty=4)
 #abline(lm(i1~i),col=yan[9],lty=4)
 
-leg<-c("18nl/min-30G","54nl/min-30G","180nl/min-30G",
-       "18nl/min-32G","54nl/min-32G",
-       "180nl/min-32G","18nl/min-34G","54nl/min-34G","180nl/min-34G")
+leg<-c("18nl/min-30G","18nl/min-32G","54nl/min-30G",
+       "18nl/min-34G","54nl/min-32G",
+       "180nl/min-30G","54nl/min-34G","180nl/min-32G","180nl/min-34G")
 
 legend("topright",legend=leg,col=yan,pch=pchc,bty="n",lwd=1.5,lty=2,inset=.02,cex=0.8)
