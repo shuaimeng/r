@@ -26,14 +26,14 @@ y7<-c(36/81,36/81,36/81,36/81,37/81) # 32G,V3,180nl/min
 yan<-c("red","blue","black","green3")
 pcc<-c(0,1,2,5)
 
-par(mfrow = c(2,1), mar = c(2,2.4,2,2), oma = c(1,1,1,1))
+par(mfrow = c(2,1), mar = c(2,2.4,0.8,1), oma = c(1,1,1,1))
 
 
 plot(x,y1, col=0,xlab = expression(italic(f["v"]) (KHz)),
-     ylab = expression(italic(height/D)), mgp=c(1.1, 0, 0),tck=0.02,
-     main = "", xlim = c(2,4),ylim=c(0.3,0.6))
+     ylab = expression(italic(h["m"]/D)), mgp=c(1.1, 0, 0),tck=0.02,
+     main = "", xlim = c(2,4),ylim=c(0.2,0.8))
 
-        mtext("height/D-18nl/min",3,line=0.2,font=2,cex=1.2)
+        mtext("18nl/min",3,line=-1,font=2,cex=1)
 
         lines(x,y0,col=yan[1],pch=pcc[1],type="b",lwd=2,lty=2)
         lines(x,y2,col=yan[2],pch=pcc[2],type="b",lwd=2,lty=2)
@@ -45,13 +45,13 @@ plot(x,y1, col=0,xlab = expression(italic(f["v"]) (KHz)),
         leg<-c("0+2kv-18nl/min","1.7kv+2kv-18nl/min",
         "1.8kv-2kv-18nl/min","1.9kv-2kv-18nl/min")
 
-        legend("bottomright",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n")
+        legend("bottomright",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.01,cex=0.8,bty="n")
 
         plot(x,y1, col=0,xlab = expression(italic(f["v"]) (KHz)),
-             ylab = expression(italic(height/D)), mgp=c(1.1, 0, 0),tck=0.02,
-             main = "", xlim = c(2,4),ylim=c(0.3,0.6))
+             ylab = expression(italic(h["m"]/D)), mgp=c(1.1, 0, 0),tck=0.02,
+             main = "", xlim = c(2,4),ylim=c(0.2,0.8))
 
-                mtext("height/D-180nl/min",3,line=0.2,font=2,cex=1.2)
+                mtext("180nl/min",3,line=-1,font=2,cex=1)
 
                 lines(x,y1,col=yan[1],pch=pcc[1],type="b",lwd=2,lty=2)
                 lines(x,y5,col=yan[2],pch=pcc[2],type="b",lwd=2,lty=2)
@@ -61,4 +61,4 @@ plot(x,y1, col=0,xlab = expression(italic(f["v"]) (KHz)),
 
         leg2<-c("0-2kv-180nl/min","1.7kv-2kv-180nl/min",
         "1.8kv-2kv-180nl/min","1.9kv-2kv-180nl/min")
-        legend("bottomright",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n")
+        legend("bottomright",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.01,cex=0.8,bty="n")
