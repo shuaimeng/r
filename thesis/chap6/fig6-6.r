@@ -45,6 +45,6 @@ error.bar(aq$f,aq$vbeva,aq$vbstd/2,col=yan[4])
 error.bar(iq$f,iq$vaeva,iq$vastd/2,col=yan[5])
 error.bar(iq$f,iq$vbeva,iq$vbstd/2,col=yan[6])
 
-leg<-c("ethanol-Va","ethanol-Vb","acetone-Va","acetone-Vb","iso-Va","iso-Vb")
+leg<-c("ethanol-Von","ethanol-Vbr","acetone-Von","acetone-Vbr","iso-Von","iso-Vbr")
 
 legend("bottomleft",legend=leg, col=yan, pch=c(1,2,1,2,1,2),bty="n",lwd=2,lty=2,inset=.01,cex=0.8)
