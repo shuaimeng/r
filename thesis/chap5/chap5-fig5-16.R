@@ -28,12 +28,12 @@ n9<-read.xlsx("he-34g.xlsx",sheetName="2kv180",header=TRUE)
 ###画图
 plot(n1$fv, n1$he_ra, xlab = expression(italic(log(W["ev"]))),
      ylab=expression(italic(D/d["d"])),mgp=c(1.1, 0, 0),tck=0.01,
-     xlim=c(-8,4),ylim=c(2,20),col=0)
+     xlim=c(-10,1),ylim=c(2,20),col=0)
 
 ###颜色###
 yan<-rainbow(9)
 
-rho<-((10^3)*0.5)/3.1415926*3.1415936
+rho<-(1000*0.5/(3.1415926*3.1415936))
 
 ####30g针头下###
 
