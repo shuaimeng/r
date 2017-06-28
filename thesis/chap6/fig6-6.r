@@ -13,8 +13,10 @@ aq<-read.xlsx("voltage.xls",sheetName="acetone_q",header=TRUE)
 iq<-read.xlsx("voltage.xls",sheetName="iso_q",header=TRUE)
 
 plot(eq$f, eq$va,  col=0, xaxs="i", xlim=c(-0.002, 0.032), ylim=c(1, 3),
-     xlab="Q (ml/min)",mgp=c(1, 0, 0),tck=0.02,cex.lab=1.1,
-     ylab=expression(V(kv)))
+     xlab=expression(italic(Q)(nl/min)),mgp=c(1, 0, 0),tck=0.01,cex.lab=1.1,
+     ylab=expression(italic(V)(kv)))
+
+mtext("Flowrate",col="black",3,line=-1,font=2,cex=1)
 
 ###error bar####
 error.bar <- function(x, y, upper, coll,lower=upper, length=0.05,...){
@@ -45,4 +47,4 @@ error.bar(iq$f,iq$vbeva,iq$vbstd/2,col=yan[6])
 
 leg<-c("ethanol-Va","ethanol-Vb","acetone-Va","acetone-Vb","iso-Va","iso-Vb")
 
-legend("bottomleft",legend=leg, col=yan, pch=c(1,2,1,2,1,2),bty="n",lwd=2,lty=2,inset=.03)
+legend("bottomleft",legend=leg, col=yan, pch=c(1,2,1,2,1,2),bty="n",lwd=2,lty=2,inset=.01,cex=0.8)
