@@ -20,7 +20,7 @@ k3<-read.xlsx("gly2.xlsx", sheetName = "qd1-18", header = TRUE)
 k4<-read.xlsx("gly2.xlsx", sheetName = "qd2-18", header = TRUE)
 
 #
-par(mar = c(2,2.4,2,2), oma = c(1,1,1,1))
+par(mar = c(2,2.4,0.8,1), oma = c(1,1,1,1))
 layout(matrix(c(1,2),2,1,byrow=TRUE))
 
 #
@@ -38,7 +38,8 @@ error.bar <- function(x, y, upper, coll,lower=upper, length=0.05,...){
 # Plot-1
 plot(k1$fv,k1$tpeva, col=0,xlab = expression(italic(f["v"]) (Hz)),
           ylab = expression(italic(d["d"])(um)), mgp=c(1.1, 0, 0),tck=0.02,
-               main = "droplet-1.8kv", xlim = c(0,3000),ylim=c(0,60))
+               main = "", xlim = c(0,3000),ylim=c(0,60))
+mtext("Droplet-1.8kv",col="black",3,line=-1.2,font=2,cex=1)
 
 lines(k1$fv,k1$deva,col=yan[1],lwd=1.5,lty=2,pch=pcc[1],type="b",cex=0.8)
 lines(k2$fv,k2$deva,col=yan[2],lwd=1.5,lty=2,pch=pcc[2],type="b",cex=0.8)
@@ -53,14 +54,15 @@ error.bar(k4$fv,k4$deva,k4$stdd,col=yan[4])
 
 leg<-c("Gly1-18nl/min","Gly1-180nl/min","Gly2-18nl/min","Gly2-180nl/min")
 
-legend("topright",legend=leg,col=yan,pch=pcc,lwd=1.5,inset =
-       .05,bty="n",cex=0.8)
+legend("topright",legend=leg,col=yan,pch=pcc,lwd=1.5,inset =.01,bty="n",cex=0.8)
 
 # Plot -2
 
    plot(k1$fv,k1$tpeva, col=0,xlab = expression(italic(f["v"]) (Hz)),
              ylab = expression(italic(ratio)), mgp=c(1.1, 0, 0),tck=0.02,
-                  main = "ratio-1.8kv", xlim = c(0,3000),ylim=c(5,20))
+                  main = "", xlim = c(0,3000),ylim=c(5,20))
+
+  mtext("Ratio-1.8kv",col="black",3,line=-1.2,font=2,cex=1)
 
 lines(k1$fv,k1$raeva,col=yan[1],lwd=1.5,lty=2,pch=pcc[1],type="b",cex=0.8)
 lines(k2$fv,k2$raeva,col=yan[2],lwd=1.5,lty=2,pch=pcc[2],type="b",cex=0.8)
@@ -75,4 +77,4 @@ error.bar(k4$fv,k4$raeva,k4$rastd,col=yan[4])
 
 leg<-c("Gly1-18nl/min","Gly1-180nl/min","Gly2-18nl/min","Gly2-180nl/min")
 
-legend("topleft",legend=leg,col=yan,pch=pcc,lwd=1.5,inset = .05,bty="n",cex=0.8)
+legend("bottomright",legend=leg,col=yan,pch=pcc,lwd=1.5,inset = .01,bty="n",cex=0.8)

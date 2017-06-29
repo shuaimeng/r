@@ -51,12 +51,12 @@ error.bar(q1$fv,q1$fveva,q1$stdfv/2,col=yan[4])
 error.bar(q2$fv,q2$fveva,q2$stdfv/2,col=yan[5])
 error.bar(q3$fv,q3$fveva,q3$stdfv/2,col=yan[6])
 
-text(3300,2200,"fpmax=3KHz",col=yan[1],font=1)
-text(3300,2000,"fpmax=3.5KHz",col=yan[2],font=1)
-text(3300,1800,"fpmax=3KHz",col=yan[3],font=1)
-text(3300,1600,"fpmax=3KHz",col=yan[4],font=1)
-text(3300,1400,"fpmax=1.7KHz",col=yan[5],font=1)
-text(3300,1200,"fpmax=2KHz",col=yan[6],font=1)
+text(3300,2200,"fpmax=3KHz",col=yan[1],font=2)
+text(3300,2000,"fpmax=3.5KHz",col=yan[2],font=2)
+text(3300,1800,"fpmax=3KHz",col=yan[3],font=2)
+text(3300,1600,"fpmax=3KHz",col=yan[4],font=2)
+text(3300,1400,"fpmax=1.7KHz",col=yan[5],font=2)
+text(3300,1200,"fpmax=2KHz",col=yan[6],font=2)
 
 leg<-c("gly1-1.8kv","gly1-1.9kv","gly1-2kv","gly2-1.8kv","gly2-1.9kv","gly2-2kv")
 
