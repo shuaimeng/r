@@ -54,7 +54,7 @@ plot(k1$ux,k1$sdeva, col=0,xlab = expression(italic(U["x"]) (mm/s)),
           ylab = expression(italic(ratio_Sd/ratio_Sd+D)), mgp=c(1.1, 0, 0),tck=0.02,
                main = "", xlim = c(0,300),ylim=c(-0.5,1))
 
-mtext("ratio of error in Sd and Sd+D",3,line=0.2,font=2,cex=1.2)
+mtext("ratio of error in Sd and Sd+D",3,line=-1,font=2,cex=1)
 
 lines(ux1,t1,col=yan[1],lwd=1.5,lty=2,pch=pcc[1],type="b")
 lines(ux2,t2,col=yan[2],lwd=1.5,lty=2,pch=pcc[2],type="b")
