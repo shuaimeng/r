@@ -78,3 +78,4 @@ error.bar(k4$fv,k4$raeva,k4$rastd,col=yan[4])
 leg<-c("Gly1-18nl/min","Gly1-180nl/min","Gly2-18nl/min","Gly2-180nl/min")
 
 legend("bottomright",legend=leg,col=yan,pch=pcc,lwd=1.5,inset = .01,bty="n",cex=0.8)
+g
