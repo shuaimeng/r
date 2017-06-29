@@ -20,7 +20,7 @@ pcc<-c(0,1,2,5)
 
 # x坐标是液滴的尺寸，y坐标是消耗的时间
 
-par(mfrow = c(2,1), mar = c(2,2.4,2,2), oma = c(1,1,1,1))
+par(mfrow = c(2,1), mar = c(2,2.4,0.8,1), oma = c(1,1,1,1))
 layout(matrix(c(1,2), 2, 1,byrow = TRUE))
 
 # 消耗的时间
@@ -29,7 +29,7 @@ plot(k1$dp,k1$trp, col=0,xlab = expression(italic(paste(Droplet,' ',diameter,' '
           ylab = expression(italic(t["rp"])(ms)), mgp=c(1.1, 0, 0),tck=0.02,
                main = "", xlim = c(40,400),ylim=c(0,150))
 
-mtext("Efficiency",3,line=0.2,font=2,cex=1.2)
+mtext("Efficiency",3,line=-1,font=2,cex=1)
 
 # 单位尺寸的液滴所需的时间
 lines(k1$dp,k1$trp,col=yan[1],pch=pcc[1],lwd=1.5,lty=2,type="b")
@@ -48,7 +48,7 @@ plot(k1$dp,k1$trp, col=0,xlab = expression(italic(paste(Droplet,' ',diameter,' '
           ylab = expression(italic(f["p"])(Hz)), mgp=c(1.1, 0, 0),tck=0.02,
                main = "", xlim = c(40,400),ylim=c(0,300))
 
-mtext("Printing frequency",3,line=0.2,font=2,cex=1.2)
+mtext("Printing frequency",3,line=-1,font=2,cex=1)
 
 fp1<-1000/k1$trp
 fp2<-1000/k2$trp
