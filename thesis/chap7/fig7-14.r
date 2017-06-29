@@ -14,7 +14,7 @@ par(mfrow = c(2,1), mar = c(2,2.4,0.8,1), oma = c(1,1,1,1))
 layout(matrix(c(1,2), 2, 1,byrow = TRUE))
 
 plot(k1$fv,k1$deva,col="0",xlab = expression(italic(f["v"]) (Hz)),
-          ylab =expression(italic(D)(um)), mgp=c(1.1, 0, 0),tck=0.02,
+          ylab =expression(italic(d["d"])(um)), mgp=c(1.1, 0, 0),tck=0.02,
                main = "",xlim = c(0,4000),ylim=c(0,80))
 
 points(k1$fv,k1$deva,col="red",pch=0)
