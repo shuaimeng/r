@@ -30,14 +30,14 @@ yan<-c("red","blue","black")
 pcc<-c(0,1,2)
 uy<-c(50,100,150)
 # plot
-par(mfrow = c(2,1), mar = c(2,2.4,2,2), oma = c(1,1,1,1))
+par(mfrow = c(2,1), mar = c(2,2.4,0.8,1), oma = c(1,1,1,1))
 layout(matrix(c(1,2), 2, 1,byrow = TRUE))
 
 plot(uy,k1$syeva, col=0,xlab = expression(italic(U["y"]) (um)),
           ylab = expression(italic(Error)(um)), mgp=c(1.1, 0, 0),tck=0.02,
                main = "", xlim = c(50,150),ylim=c(0,60))
 
-               mtext("Error as Uy-Sy-D",3,line=0.2,font=2,cex=1.2)
+               mtext("Error as Uy-Sy-D",3,line=-1,font=2,cex=1)
 
                z1<-(uy-(k1$syeva+k1$deva))
                z2<-(uy-(k2$syeva+k2$deva))
@@ -53,13 +53,13 @@ plot(uy,k1$syeva, col=0,xlab = expression(italic(U["y"]) (um)),
 
                leg<-c("600Hz","1KHz","2KHz")
 
-               legend("topleft",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n",cex=0.8)
+               legend("topleft",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n",cex=0.9)
 
                plot(uy,k1$syeva, col=0,xlab = expression(italic(U["y"]) (um)),
                          ylab = expression(italic(ratio_Sy)), mgp=c(1.1, 0, 0),tck=0.02,
                               main = "", xlim = c(50,150),ylim=c(0,1))
 
-                              mtext("error ratio in Uy",3,line=0.2,font=2,cex=1.2)
+                              mtext("Error ratio in Uy",3,line=-1,font=2,cex=1)
 
                               z4<-(uy-(k1$syeva+k1$deva))/uy
                               z5<-(uy-(k2$syeva+k2$deva))/uy
@@ -75,4 +75,4 @@ plot(uy,k1$syeva, col=0,xlab = expression(italic(U["y"]) (um)),
 
                               leg<-c("600Hz","1KHz","2KHz")
 
-                              legend("topleft",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n",cex=0.8)
+                              legend("topleft",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n",cex=0.9)

@@ -13,7 +13,7 @@ k3<-read.xlsx("doty.xlsx",sheetName="2khz",header=TRUE)
 
 # par
 
-par(mfrow = c(2,1), mar = c(2,2.4,2,2), oma = c(1,1,1,1))
+par(mfrow = c(2,1), mar = c(2,2.4,0.8,1), oma = c(1,1,1,1))
 layout(matrix(c(1,2), 2, 1,byrow = TRUE))
 
 # errorbar
@@ -40,7 +40,7 @@ e3<-k3$systd/uy
 
 plot(uy,z1, col=0,xlab = expression(italic(U["y"]) (um)),ylab = expression(italic(Sy/Uy)), mgp=c(1.1, 0, 0),tck=0.02,main = "", xlim = c(50,150),ylim=c(-0.5,1))
 
-mtext("Sy/Uy",3,line=0.2,font=2,cex=1.2)
+mtext("Sy/Uy",3,line=-1,font=2,cex=1)
 
 lines(uy,z1,col=yan[1],pch=pcc[1],lwd=1.5,lty=2,type="b")
 lines(uy,z2,col=yan[2],pch=pcc[2],lwd=1.5,lty=2,type="b")
@@ -52,7 +52,7 @@ error.bar(uy,z3,e3/2,col=yan[3])
 
 leg<-c("600Hz","1KHz","2KHz")
 
-legend("topleft",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n",cex=0.8)
+legend("topleft",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n",cex=0.9)
 
 # plot2,Sy+D
 
@@ -66,7 +66,7 @@ q3<-(k3$systd+k3$stdd)/uy
 
 plot(uy,r1, col=0,xlab = expression(italic(U["y"]) (um)),ylab = expression(italic(Sy+D/Uy)), mgp=c(1.1, 0, 0),tck=0.02,main = "", xlim = c(50,150),ylim=c(0.5,1))
 
-mtext("Line space/Uy",3,line=0.2,font=2,cex=1.2)
+mtext("Line space/Uy",3,line=-1,font=2,cex=1)
 
 lines(uy,r1,col=yan[1],pch=pcc[1],lwd=1.5,lty=2,type="b")
 lines(uy,r2,col=yan[2],pch=pcc[2],lwd=1.5,lty=2,type="b")
@@ -83,4 +83,4 @@ text(70,0.62,"ratio=0.65",font=2,col="black")
 
 leg<-c("600Hz","1KHz","2KHz")
 
-legend("topright",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n",cex=0.8)
+legend("topright",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n",cex=0.9)
