@@ -45,24 +45,26 @@ a1<-1/n1$d_eRn
 b<-log(rho*18*18/(n2$fv*60*60*2.3^3))
 b1<-1/n2$d_eRn
 
-#3#54nl-30G##
-c<-log(rho*54*54/(n3$fv*60*60*3.1^3))
-c1<-1/n3$d_eRn
+#3#18nl-34G##
 
-#4#18nl-34g##
-d<-log(rho*18*18/(n4$fv*60*60*1.9^3))
-d1<-1/n4$d_eRn
+c<-log(rho*18*18/(n3$fv*60*60*1.9^3))
+c1<-1/n4$d_eRn
+
+#4#54nl-30g##
+
+d<-log(rho*54*54/(n4$fv*60*60*3.1^3))
+d1<-1/n3$d_eRn
 
 #5#54nl-32G##
 e<-log(rho*54*54/(n5$fv*60*60*2.3^3))
 e1<-1/n5$d_eRn
 
-#6#180nl-30G##
-f<-log(rho*180*180/(n6$fv*60*60*3.1^3))
+#6#54nl-34G##
+f<-log(rho*54*54/(n6$fv*60*60*1.9^3))
 f1<-1/n6$d_eRn
 
-#7#54nl-34G##
-g<-log(rho*54*54/(n7$fv*60*60*1.9^3))
+#7#180nl-30G##
+g<-log(rho*180*180/(n7$fv*60*60*3.1^3))
 g1<-1/n7$d_eRn
 
 #8#180nl-32G##
@@ -94,16 +96,16 @@ points(lowess(i,1/n9$d_eRn,f=1/4,iter=3),col=yan[9],pch=24,lwd=2,lty=2,cex=0.8)
 
 ##拟合
 
-abline(lm(a1[9:18]~a[9:18]),col=yan[1],lty=4)
+abline(lm(a1[8:18]~a[8:18]),col=yan[1],lty=4)
 abline(lm(b1[10:23]~b[10:23]),col=yan[2],lty=4)
-abline(lm(c1[10:23]~c[10:23]),col=yan[3],lty=4)
+abline(lm(c1[7:18]~c[7:18]),col=yan[3],lty=4)
 
-abline(lm(d1[7:18]~d[7:18]),col=yan[4],lty=4)
+abline(lm(d1[9:22]~d[9:22]),col=yan[4],lty=4)
 abline(lm(e1[7:22]~e[7:22]),col=yan[5],lty=4)
-abline(lm(f1[8:21]~f[8:21]),col=yan[6],lty=4)
+abline(lm(f1[9:22]~f[9:22]),col=yan[6],lty=4)
 
-abline(lm(g1[3:7]~g[3:7]),col=yan[7],lty=4)
-abline(lm(h1[6:17]~h[6:17]),col=yan[8],lty=4)
+abline(lm(g1[10:13]~g[10:13]),col=yan[7],lty=4)
+abline(lm(h1[10:18]~h[10:18]),col=yan[8],lty=4)
 abline(lm(i1[8:20]~i[8:20]),col=yan[9],lty=4)
 
 leg<-c("18nl/min-30G","18nl/min-32G","54nl/min-30G",
