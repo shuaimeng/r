@@ -28,20 +28,6 @@ lines(lowess(q2$fv, q2$X0.3,f=0.1,iter=3),col="black", lwd=2, type="l", lty=2)
 lines(lowess(q2$fv,q2$X0.4,f=0.1,iter=3),col="red", lwd=2, type="l", lty=2)
 lines(lowess(q2$fv, q2$X0.5,f=0.1,iter=3),col="blue", lwd=2, type="l", lty=2)
 
-####小图####
-#par(mfg=c(1,1))
-#fig=c(0.2,0.98,0.2,0.98)
-
-plot(q2$fv, q2$X0.2, col = 0,
-     main = "", xlim = c(250, 1000),ylim=c(0,5))
-
-lines(lowess(q2$fv, q2$X0.2,f=0.1,iter=3),col="green4", lwd=2, type="l", lty=2)
-lines(lowess(q2$fv, q2$X0.3,f=0.1,iter=3),col="black", lwd=2, type="l", lty=2)
-lines(lowess(q2$fv,q2$X0.4,f=0.1,iter=3),col="red", lwd=2, type="l", lty=2)
-lines(lowess(q2$fv, q2$X0.5,f=0.1,iter=3),col="blue", lwd=2, type="l", lty=2)
-
-
-
 legend("topright", c("k = 0.2", "k = 0.3", "k = 0.4",
                      "k = 0.5"), col = c("green4",
                                            "black", "red", "blue"), pch = c(0,1,2,5),

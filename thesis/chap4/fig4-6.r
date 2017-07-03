@@ -1,3 +1,8 @@
+dyn.load('/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/server/libjvm.dylib')
+
+setwd("/Users/mengmengjiang/all datas/chap4")
+
+
 library(xlsx)
 
 k1<-read.xlsx("t_for.xls", sheetName = "0.2", header = TRUE)
@@ -21,7 +26,7 @@ h<-0.3e-3 #弯月面变形大小
 
 duty<-1-k
 
-par(mfrow=c(2,2), mgp = c(1.5, 0.5, 0),tck=0.02,mar=c(2.5,2.4,0.8,1), oma=c(2,2,2,2))
+par(mfrow=c(2,2), mgp = c(1.5, 0.5, 0),tck=0.02,mar=c(2.4,2.6,0.8,1), oma=c(2,2,2,2))
 
 
 #######占空比0.2####

@@ -1,101 +1,90 @@
+#setwd("D:/Dropbox/Data analyze/Rdocuments/datas")
 library(xlsx)
-
-k1<-read.xlsx("t_for.xls", sheetName = "0.2", header = TRUE)
-k2<-read.xlsx("t_for.xls", sheetName = "0.3", header = TRUE)
-k3<-read.xlsx("t_for.xls", sheetName = "0.4", header = TRUE)
-k4<-read.xlsx("t_for.xls", sheetName = "0.5", header = TRUE)
-
-v<-4.66e-13  #弯月面体积大小
-
-q<-c(2.5e-14, 4.5e-13, 9e-13, 3e-12)   #流量从1.5到180
-
-k<-c(0.2,0.3,0.4,0.5) #占空比
-
-pchc<-c(19,22,23,24)
-
-cc<-c("1.5nl/min", "27nl/min","54nl/min","180nl/min")
-
-mycolors<-c("red","blue", "darkgreen", "yellow3")
-
-h<-0.3e-3 #弯月面变形大小
-
-duty<-1-k
-
-par(mfrow=c(2,2), mgp = c(1.5, 0.5, 0),tck=0.02,mar=c(2.5,2.6,2,2), oma=c(2,2,2,2))
+ library(RColorBrewer)
 
 
-#######占空比0.2####
-plot(k1[,1],  (v+(duty[1]*q[1]))/(k1[,1]*k1[,2]^2),lwd=1.5,cex=0.6,lty=2, log="x",xlab=expression(log(italic(f["v"])) (Hz)), ylab=expression(italic(F)(N)), main="k=0.2", col=0, pch=pchc[1], ylim=c(0,8e-14))
 
-lines(lowess(k1[,1],  (v+(duty[1]*q[1]))/(k1[,1]*k1[,2]^2)),type="b",col=mycolors[1], pch=pchc[1],lwd=1.5,cex=0.6,lty=2)
+ fv<-5:3500 #电压频率
 
-for(i in 1:3){
-  
-  points(k1[,1], (v+(duty[1]*q[i+1]))/(k1[,1]*k1[,i+2]^2),pch=pchc[i+1], lwd=1.5,cex=0.6,lty=2,col=0)
-  lines(lowess(k1[,1], (v+(duty[1]*q[i+1]))/(k1[,1]*k1[,i+2]^2)), type="b",lwd=1.5, pch=pchc[i+1],cex=0.6,col=mycolors[i+1], lty=2)
+q<-c(2.5e-14, 4.5e-13, 9e-13, 3e-12) #不同的流量下
+
+k<-c(0.5,0.6,0.7,0.8) #不同占空比下无电场时间比例，即1-k_i
+
+v<-4.66e-13  #泰勒锥的体积总量
+
+mycolors<-c("red", "blue", "darkgreen", "yellow3")
+
+pchall<-c(21,22,23,24)
+
+######
+par(fig=c(0,1,0,1), new=FALSE)
+plot(fv, (k[1]*q[1]/fv+v), mgp = c(2, 0.5, 0),tck=0.02,col=mycolors[1], log="x", type="b", xlab = expression(log(italic(f["v"])) (Hz)),
+     ylab = expression(italic(V["ne"]+V(m^3))), main="", lwd=2, pch=pchall[1], lty=2, ylim=c(4.4e-13, 8e-13))
+
+#画出占空比为0.5，流量为1.5nl/min时的弯月面体积，说明最小值是什么
+
+###流量为1.5nl/min时####
+for (i in 1:3){
+lines(fv,  (k[i+1]*q[1]/fv+v), lwd=1.5, type="b",col="red", pch=pchall[i+1],lty=2,cex=0.6)
+}
+#画出，流量为最小，占空比从大到小，体积从小到大变化的曲线，其中：颜色均为red，pch的改变代表着占空比的改变
+
+###流量为27nl/min时####
+par(fig=c(0,1,0,1))
+for (i in 1:4){
+lines(fv,  (k[i]*q[2]/fv+v), lwd=1.5, type="b", col="blue", pch=pchall[i] ,lty=2,cex=0.6)
 }
 
-legend("topleft",cc, col=mycolors, pch=pchc,lty=2, lwd=2, bty="n",cex=0.8)
-
-abline(v=250, col="red", lwd=2, lty=3)
-
-text(200, 2e-14,"250Hz", col="red", font=2, cex=1)
-
-#####占空比0.3####
-plot(k2[,1],  (v+(duty[2]*q[1]))/(k2[,1]*k2[,2]^2), log="x",lwd=1.5,cex=0.6,lty=2,xlab=expression(log(italic(f["v"])) (Hz)), ylab=expression(italic(F)(N)), main="k=0.3", col=0, pch=pchc[1], ylim=c(0,3e-14))
-
-lines(lowess(k2[,1],  (v+(duty[2]*q[1]))/(k2[,1]*k2[,2]^2)),type="b",col=mycolors[1],pch=pchc[1], lwd=1.5,cex=0.6,lty=2)
-
-for(i in 1:3){
-  
-  points(k2[,1], (v+(duty[2]*q[i+1]))/(k2[,1]*k2[,i+2]^2),pch=pchc[i+1],lwd=1.5,cex=0.6,lty=2,col=0)
-  lines(lowess(k2[,1], (v+(duty[2]*q[i+1]))/(k2[,1]*k2[,i+2]^2)),type="b",lwd=1.5,pch=pchc[i+1],cex=0.6,lty=2,col=mycolors[i+1])
+###流量为54nl/min时####
+for (i in 1:4){
+lines(fv,  (k[i]*q[3]/fv+v), lwd=1.5, type="b", col="darkgreen", pch=pchall[i] ,lty=2,cex=0.6)
 }
 
-legend("topleft",cc, col=mycolors, pch=pchc, lwd=2, bty="n",cex=0.8)
-
-abline(v=250, col="red", lwd=2,lty=3)
-abline(v=300, col="blue", lwd=2,lty=3)
-
-
-text(100, 1e-14,"250Hz",col="red", font=2, cex=1)
-text(200, 1.5e-14,"300Hz",font=2, col="blue", cex=1)
-
-
-###占空比0.4###
-plot(k3[,1],  (v+(duty[3]*q[1]))/(k3[,1]*k3[,2]^2), log="x", lwd=1.5,cex=0.6,lty=2,xlab=expression(log(italic(f["v"])) (Hz)), ylab=expression(italic(F)(N)), main="k=0.4", col=0, pch=pchc[1], ylim=c(0,3e-14))
-
-lines(lowess(k3[,1],  (v+(duty[3]*q[1]))/(k3[,1]*k3[,2]^2)),type="b", col=mycolors[1],pch=pchc[1], lwd=1.5,cex=0.6,lty=2)
-
-for(i in 1:3){
-  
-  points(k3[,1], (v+(duty[3]*q[i+1]))/(k3[,1]*k3[,i+2]^2),pch=pchc[i+1],lwd=1.5,cex=0.6,lty=2,col=0)
-  lines(lowess(k3[,1], (v+(duty[3]*q[i+1]))/(k3[,1]*k3[,i+2]^2)),type="b",lwd=1.5,pch=pchc[i+1],cex=0.6,lty=2, col=mycolors[i+1])
+###流量为180nl/min时####
+for (i in 1:4){
+lines(fv,  (k[i]*q[4]/fv+v), lwd=1.5, type="b", col="yellow3", pch=pchall[i] ,lty=2,cex=0.6)
 }
 
-legend("topleft",cc,col=mycolors, pch=pchc, lwd=1.5, bty="n",cex=0.8)
+da<-c("k0.5-Q1.5nlmin", "k0.4-Q1.5nlmin", "k0.3-Q1.5nlmin", "k0.2-Q1.5nlmin", "k0.5-Q27nlmin", "k0.4-Q27nlmin", "k0.3-Q27nlmin", "k0.2-Q27nlmin","k0.5-54nlmin", "k0.4-Q54nlmin", "k0.3-Q54nlmin", "k0.2-Q54nlmin","k0.5-Q180nlmin", "k0.4-Q180nlmin", "k0.3-Q180nlmin", "k0.2-Q180nlmin")
 
-abline(v=250, col="red", lwd=2,lty=3)
-abline(v=500, col="blue", lwd=2,lty=3)
+mycolorsss<-c("red","red","red","red","blue","blue","blue","blue","darkgreen","darkgreen","darkgreen","darkgreen","yellow3","yellow3","yellow3","yellow3")
 
-text(100, 1e-14,"250Hz", col="red", font=2, cex=1)
-text(200, 1.5e-14,"500Hz",font=2, col="blue", cex=1)
+pchss<-c(21,22,23,24,21,22,23,24,21,22,23,24,21,22,23,24)
+
+legend("topright",  da, inset=0.08, col=mycolorsss, pch=pchss,  lwd=1.5, lty=2, cex=0.8, bty="n")
+
+abline(v=20, col="red", lwd=2,lty=3)
+abline(v=45, col="blue", lwd=2,lty=3)
+#abline(v=125, col="darkgreen", lwd=2,lty=3)
+
+#################################################
+par(fig=c(0.35, 0.98,0.20,0.98), new=TRUE)
+
+plot(fv, (k[1]*q[1]/fv+v), col=mycolors[1], mgp = c(2, 0.5, 0),tck=0.02,log="x", type="l", xlab = "125Hz ~ 1KHz", ylab ="", lwd=2, lty=2, xlim=c(125,1000), ylim=c(4.66e-13, 5e-13))
 
 
-####占空比0.5####
-plot(k4[,1],  (v+(duty[4]*q[1]))/(k4[,1]*k4[,2]^2),log="x",wd=1.5,cex=0.6,lty=2, xlab=expression(log(italic(f["v"])) (Hz)), ylab=expression(italic(F)(N)), main="k=0.5", col=0, pch=pchc[1], ylim=c(0,3e-14))
+#画出占空比为0.5，流量为1.5nl/min时的弯月面体积，说明最小值是什么
 
-lines(lowess(k3[,1],  (v+(duty[3]*q[1]))/(k3[,1]*k3[,2]^2)),type="b", col=mycolors[1],pch=pchc[1],lwd=1.5,cex=0.6,lty=2)
-
-for(i in 1:3){
-  
-  points(k3[,1], (v+(duty[3]*q[i+1]))/(k3[,1]*k3[,i+2]^2),pch=pchc[i+1], lwd=1.5,cex=0.6,lty=2,col=0)
-  lines(lowess(k4[,1], (v+(duty[4]*q[i+1]))/(k4[,1]*k4[,i+2]^2)),type="b",pch=pchc[i+1], col=mycolors[i+1],lwd=1.5,cex=0.6,lty=2)
+###流量为1.5nl/min时####
+for (i in 1:3){
+lines(fv,  (k[i+1]*q[1]/fv+v), lwd=2, col="red", lty=1)
 }
-legend("topleft",cc,col=mycolors, pch=pchc, lwd=1.5, bty="n",cex=0.8)
+#画出，流量为最小，占空比从大到小，体积从小到大变化的曲线，其中：颜色均为red，pch的改变代表着占空比的改变
 
-abline(v=300, col="red", lwd=2,lty=3)
-abline(v=900, col="blue", lwd=2,lty=3)
+###流量为27nl/min时####
+for (i in 1:4){
+lines(fv,  (k[i]*q[2]/fv+v), lwd=2, col="blue", lty=1)
+}
 
-text(50, 1e-14,"300Hz", col="red", font=2, cex=1)
-text(200, 1.5e-14,"900Hz",font=2, col="blue", cex=1)
+###流量为54nl/min时####
+for (i in 1:4){
+lines(fv,  (k[i]*q[3]/fv+v), lwd=2,col="darkgreen", lty=1)
+}
+
+###流量为180nl/min时####
+for (i in 1:4){
+lines(fv,  (k[i]*q[4]/fv+v), lwd=2,col="yellow3", lty=1)
+}
+
+abline(h=5.126e-13, col="red", lwd=1.5, lty=4)
+abline(h=5.592e-13, col="blue", lwd=1.5, lty=4)

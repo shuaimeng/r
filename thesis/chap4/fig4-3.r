@@ -21,7 +21,7 @@ h<-0.3e-3 #弯月面变形大小
 
 duty<-1-k
 
-par(mfrow=c(2,2), mgp = c(1.5, 0.5, 0),tck=0.02,mar=c(2.5,2.4,0.8,1), oma=c(2,2,2,2))
+par(mfrow=c(2,2), mgp = c(1.5, 0.5, 0),tck=0.02,mar=c(2.5,2.6,2,2), oma=c(2,2,2,2))
 
 
 #######占空比0.2####
@@ -30,7 +30,7 @@ plot(k1[,1],  (v+(duty[1]*q[1]))/(k1[,1]*k1[,2]^2),lwd=1.5,cex=0.6,lty=2, log="x
 lines(lowess(k1[,1],  (v+(duty[1]*q[1]))/(k1[,1]*k1[,2]^2)),type="b",col=mycolors[1], pch=pchc[1],lwd=1.5,cex=0.6,lty=2)
 
 for(i in 1:3){
-
+  
   points(k1[,1], (v+(duty[1]*q[i+1]))/(k1[,1]*k1[,i+2]^2),pch=pchc[i+1], lwd=1.5,cex=0.6,lty=2,col=0)
   lines(lowess(k1[,1], (v+(duty[1]*q[i+1]))/(k1[,1]*k1[,i+2]^2)), type="b",lwd=1.5, pch=pchc[i+1],cex=0.6,col=mycolors[i+1], lty=2)
 }
@@ -47,7 +47,7 @@ plot(k2[,1],  (v+(duty[2]*q[1]))/(k2[,1]*k2[,2]^2), log="x",lwd=1.5,cex=0.6,lty=
 lines(lowess(k2[,1],  (v+(duty[2]*q[1]))/(k2[,1]*k2[,2]^2)),type="b",col=mycolors[1],pch=pchc[1], lwd=1.5,cex=0.6,lty=2)
 
 for(i in 1:3){
-
+  
   points(k2[,1], (v+(duty[2]*q[i+1]))/(k2[,1]*k2[,i+2]^2),pch=pchc[i+1],lwd=1.5,cex=0.6,lty=2,col=0)
   lines(lowess(k2[,1], (v+(duty[2]*q[i+1]))/(k2[,1]*k2[,i+2]^2)),type="b",lwd=1.5,pch=pchc[i+1],cex=0.6,lty=2,col=mycolors[i+1])
 }
@@ -68,7 +68,7 @@ plot(k3[,1],  (v+(duty[3]*q[1]))/(k3[,1]*k3[,2]^2), log="x", lwd=1.5,cex=0.6,lty
 lines(lowess(k3[,1],  (v+(duty[3]*q[1]))/(k3[,1]*k3[,2]^2)),type="b", col=mycolors[1],pch=pchc[1], lwd=1.5,cex=0.6,lty=2)
 
 for(i in 1:3){
-
+  
   points(k3[,1], (v+(duty[3]*q[i+1]))/(k3[,1]*k3[,i+2]^2),pch=pchc[i+1],lwd=1.5,cex=0.6,lty=2,col=0)
   lines(lowess(k3[,1], (v+(duty[3]*q[i+1]))/(k3[,1]*k3[,i+2]^2)),type="b",lwd=1.5,pch=pchc[i+1],cex=0.6,lty=2, col=mycolors[i+1])
 }
@@ -88,7 +88,7 @@ plot(k4[,1],  (v+(duty[4]*q[1]))/(k4[,1]*k4[,2]^2),log="x",wd=1.5,cex=0.6,lty=2,
 lines(lowess(k3[,1],  (v+(duty[3]*q[1]))/(k3[,1]*k3[,2]^2)),type="b", col=mycolors[1],pch=pchc[1],lwd=1.5,cex=0.6,lty=2)
 
 for(i in 1:3){
-
+  
   points(k3[,1], (v+(duty[3]*q[i+1]))/(k3[,1]*k3[,i+2]^2),pch=pchc[i+1], lwd=1.5,cex=0.6,lty=2,col=0)
   lines(lowess(k4[,1], (v+(duty[4]*q[i+1]))/(k4[,1]*k4[,i+2]^2)),type="b",pch=pchc[i+1], col=mycolors[i+1],lwd=1.5,cex=0.6,lty=2)
 }
