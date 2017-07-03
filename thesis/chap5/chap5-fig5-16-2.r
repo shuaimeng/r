@@ -108,8 +108,8 @@ abline(lm(g1[10:13]~g[10:13]),col=yan[7],lty=4)
 abline(lm(h1[10:18]~h[10:18]),col=yan[8],lty=4)
 abline(lm(i1[8:20]~i[8:20]),col=yan[9],lty=4)
 
-leg<-c("18nl/min-30G","18nl/min-32G","54nl/min-30G",
-       "18nl/min-34G","54nl/min-32G",
-       "180nl/min-30G","54nl/min-34G","180nl/min-32G","180nl/min-34G")
+leg<-c("18nl/min-30G","18nl/min-32G","18nl/min-34G",
+       "54nl/min-30G","54nl/min-32G",
+       "54nl/min-34G","180nl/min-30G","180nl/min-32G","180nl/min-34G")
 
 legend("topright",legend=leg,col=yan,pch=pchc,bty="n",lwd=1.5,lty=2,inset=.02,cex=0.8)
