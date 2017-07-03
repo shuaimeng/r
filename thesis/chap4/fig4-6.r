@@ -1,15 +1,9 @@
-
-dyn.load('/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/server/libjvm.dylib')
-library(rJava)
-
-setwd("/Users/mengmengjiang/all datas/maxfp")
-
 library(xlsx)
 
-k1<-read.xlsx("t_for.xlsx", sheetName = "15nl", header = TRUE)
-k2<-read.xlsx("t_for.xlsx", sheetName = "27nl", header = TRUE)
-k3<-read.xlsx("t_for.xlsx", sheetName = "54nl", header = TRUE)
-k4<-read.xlsx("t_for.xlsx", sheetName = "180nl", header = TRUE)
+k1<-read.xlsx("t_for.xls", sheetName = "0.2", header = TRUE)
+k2<-read.xlsx("t_for.xls", sheetName = "0.3", header = TRUE)
+k3<-read.xlsx("t_for.xls", sheetName = "0.4", header = TRUE)
+k4<-read.xlsx("t_for.xls", sheetName = "0.5", header = TRUE)
 
 v<-4.66e-13  #弯月面体积大小
 
@@ -19,7 +13,7 @@ k<-c(0.2,0.3,0.4,0.5) #占空比
 
 pchc<-c(19,22,23,24)
 
-cc<-c("k=0.2", "k=0.3","k=0.4","k=0.5")
+cc<-c("1.5nl/min", "27nl/min","54nl/min","180nl/min")
 
 mycolors<-c("red","blue", "darkgreen", "yellow3")
 
@@ -27,11 +21,11 @@ h<-0.3e-3 #弯月面变形大小
 
 duty<-1-k
 
-par(mfrow=c(2,2), mgp = c(1.3, 0, 0),tck=0.02,mar=c(2.1,2.4,1,1), oma=c(2,2,2,2))
+par(mfrow=c(2,2), mgp = c(1.5, 0.5, 0),tck=0.02,mar=c(2.5,2.4,0.8,1), oma=c(2,2,2,2))
 
 
 #######占空比0.2####
-plot(k1[,1],  (v+(duty[1]*q[1]))/(k1[,1]*k1[,2]^2),lwd=1.5,cex=0.6,lty=2, log="x",xlab=expression(log(italic(f["v"])) (Hz)), ylab=expression(italic(F)(N)), main="1.5nl/min", col=0, pch=pchc[1], ylim=c(0,3e-14))
+plot(k1[,1],  (v+(duty[1]*q[1]))/(k1[,1]*k1[,2]^2),lwd=1.5,cex=0.6,lty=2, log="x",xlab=expression(log(italic(f["v"])) (Hz)), ylab=expression(italic(F)(N)), main="k=0.2", col=0, pch=pchc[1], ylim=c(0,8e-14))
 
 lines(lowess(k1[,1],  (v+(duty[1]*q[1]))/(k1[,1]*k1[,2]^2)),type="b",col=mycolors[1], pch=pchc[1],lwd=1.5,cex=0.6,lty=2)
 
@@ -48,7 +42,7 @@ abline(v=250, col="red", lwd=2, lty=3)
 text(200, 2e-14,"250Hz", col="red", font=2, cex=1)
 
 #####占空比0.3####
-plot(k2[,1],  (v+(duty[2]*q[1]))/(k2[,1]*k2[,2]^2), log="x",lwd=1.5,cex=0.6,lty=2,xlab=expression(log(italic(f["v"])) (Hz)), ylab=expression(italic(F)(N)), main="27nl/min", col=0, pch=pchc[1], ylim=c(0,3e-14))
+plot(k2[,1],  (v+(duty[2]*q[1]))/(k2[,1]*k2[,2]^2), log="x",lwd=1.5,cex=0.6,lty=2,xlab=expression(log(italic(f["v"])) (Hz)), ylab=expression(italic(F)(N)), main="k=0.3", col=0, pch=pchc[1], ylim=c(0,3e-14))
 
 lines(lowess(k2[,1],  (v+(duty[2]*q[1]))/(k2[,1]*k2[,2]^2)),type="b",col=mycolors[1],pch=pchc[1], lwd=1.5,cex=0.6,lty=2)
 
@@ -69,7 +63,7 @@ text(200, 1.5e-14,"300Hz",font=2, col="blue", cex=1)
 
 
 ###占空比0.4###
-plot(k3[,1],  (v+(duty[3]*q[1]))/(k3[,1]*k3[,2]^2), log="x", lwd=1.5,cex=0.6,lty=2,xlab=expression(log(italic(f["v"])) (Hz)), ylab=expression(italic(F)(N)), main="54nl/min", col=0, pch=pchc[1], ylim=c(0,3e-14))
+plot(k3[,1],  (v+(duty[3]*q[1]))/(k3[,1]*k3[,2]^2), log="x", lwd=1.5,cex=0.6,lty=2,xlab=expression(log(italic(f["v"])) (Hz)), ylab=expression(italic(F)(N)), main="k=0.4", col=0, pch=pchc[1], ylim=c(0,3e-14))
 
 lines(lowess(k3[,1],  (v+(duty[3]*q[1]))/(k3[,1]*k3[,2]^2)),type="b", col=mycolors[1],pch=pchc[1], lwd=1.5,cex=0.6,lty=2)
 
@@ -89,7 +83,7 @@ text(200, 1.5e-14,"500Hz",font=2, col="blue", cex=1)
 
 
 ####占空比0.5####
-plot(k4[,1],  (v+(duty[4]*q[1]))/(k4[,1]*k4[,2]^2),log="x",wd=1.5,cex=0.6,lty=2, xlab=expression(log(italic(f["v"])) (Hz)), ylab=expression(italic(F)(N)), main="180nl/min", col=0, pch=pchc[1], ylim=c(0,3e-14))
+plot(k4[,1],  (v+(duty[4]*q[1]))/(k4[,1]*k4[,2]^2),log="x",wd=1.5,cex=0.6,lty=2, xlab=expression(log(italic(f["v"])) (Hz)), ylab=expression(italic(F)(N)), main="k=0.5", col=0, pch=pchc[1], ylim=c(0,3e-14))
 
 lines(lowess(k3[,1],  (v+(duty[3]*q[1]))/(k3[,1]*k3[,2]^2)),type="b", col=mycolors[1],pch=pchc[1],lwd=1.5,cex=0.6,lty=2)
 
