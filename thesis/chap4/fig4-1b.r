@@ -1,90 +1,42 @@
-#setwd("D:/Dropbox/Data analyze/Rdocuments/datas")
-library(xlsx)
- library(RColorBrewer)
+
+       #par(mfrow=c(2,1), mgp = c(1.5, 0.5, 0),tck=0.02)
+
+       V<- 4.66*10^(-13)
+
+       #V是基础弯月面体积
+
+       vne1<- 0.5*q[1]/fv + 4.66*10^(-13)
 
 
+       vne2<- (3*10^(-12))*(1-k)/fv
 
- fv<-5:3500 #电压频率
+       #vne是体积增量
 
-q<-c(2.5e-14, 4.5e-13, 9e-13, 3e-12) #不同的流量下
+       fv<-c(1:200)
+       q<-c(1.5*10^(-12),8.33*10^(-12),16.67*10^(-12),
+            1.5/60*10^(-12),27/60*10^(-12),54/60*10^(-12),3*10^(-12))
+       k<-c(0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8)
 
-k<-c(0.5,0.6,0.7,0.8) #不同占空比下无电场时间比例，即1-k_i
+       #fv,q,k分别为电压频率，流量和占空比
 
-v<-4.66e-13  #泰勒锥的体积总量
+       plot(fv,vne1, mgp = c(1.5, 0.5, 0),tck=0.02,type="b",pch=1,cex=0.6,lwd=1.5,lty=2,xlab = expression(italic(f["v"])(Hz)),
+            ylab = expression (V["ne"]+V(m^3)),xlim=c(0,200),ylim=c(4.66*10^(-13), 9*10^(-13)))
 
-mycolors<-c("red", "blue", "darkgreen", "yellow3")
+       coll<-rainbow(7)
+       pcc<-c(1,2,3,4,5,6,7)
 
-pchall<-c(21,22,23,24)
+       for(i in 2:7){
+         lines(fv,(0.5*q[i]/fv + 4.66*10^(-13)),col=coll[i],pch=pcc[i],cex=0.6, type="b",lwd=1.5,
+               lty=2)
+       }
 
-######
-par(fig=c(0,1,0,1), new=FALSE)
-plot(fv, (k[1]*q[1]/fv+v), mgp = c(2, 0.5, 0),tck=0.02,col=mycolors[1], log="x", type="b", xlab = expression(log(italic(f["v"])) (Hz)), 
-     ylab = expression(italic(V["ne"]+V(m^3))), main="", lwd=2, pch=pchall[1], lty=2, ylim=c(4.4e-13, 8e-13))
+       abline(h=(V+0.05*V),col="red",lwd=1.5,lty=4)
+       abline(h=(V+0.1*V),col="red",lwd=1.5,lty=4)
+       abline(h=(V+0.2*V),col="red",lwd=1.5,lty=4)
+       abline(h=(V+0.6*V),col="red",lwd=1.5,lty=4)
 
-#画出占空比为0.5，流量为1.5nl/min时的弯月面体积，说明最小值是什么
-
-###流量为1.5nl/min时####
-for (i in 1:3){
-lines(fv,  (k[i+1]*q[1]/fv+v), lwd=1.5, type="b",col="red", pch=pchall[i+1],lty=2,cex=0.6)
-}
-#画出，流量为最小，占空比从大到小，体积从小到大变化的曲线，其中：颜色均为red，pch的改变代表着占空比的改变
-
-###流量为27nl/min时####
-par(fig=c(0,1,0,1))
-for (i in 1:4){
-lines(fv,  (k[i]*q[2]/fv+v), lwd=1.5, type="b", col="blue", pch=pchall[i] ,lty=2,cex=0.6)
-}
-
-###流量为54nl/min时####
-for (i in 1:4){
-lines(fv,  (k[i]*q[3]/fv+v), lwd=1.5, type="b", col="darkgreen", pch=pchall[i] ,lty=2,cex=0.6)
-}
-
-###流量为180nl/min时####
-for (i in 1:4){
-lines(fv,  (k[i]*q[4]/fv+v), lwd=1.5, type="b", col="yellow3", pch=pchall[i] ,lty=2,cex=0.6)
-}
-
-da<-c("k0.5-Q1.5nlmin", "k0.4-Q1.5nlmin", "k0.3-Q1.5nlmin", "k0.2-Q1.5nlmin", "k0.5-Q27nlmin", "k0.4-Q27nlmin", "k0.3-Q27nlmin", "k0.2-Q27nlmin","k0.5-54nlmin", "k0.4-Q54nlmin", "k0.3-Q54nlmin", "k0.2-Q54nlmin","k0.5-Q180nlmin", "k0.4-Q180nlmin", "k0.3-Q180nlmin", "k0.2-Q180nlmin")
-
-mycolorsss<-c("red","red","red","red","blue","blue","blue","blue","darkgreen","darkgreen","darkgreen","darkgreen","yellow3","yellow3","yellow3","yellow3")
-
-pchss<-c(21,22,23,24,21,22,23,24,21,22,23,24,21,22,23,24)
-
-legend("topright",  da, inset=0.08, col=mycolorsss, pch=pchss,  lwd=1.5, lty=2, cex=0.8, bty="n")
-
-abline(v=20, col="red", lwd=2,lty=3)
-abline(v=45, col="blue", lwd=2,lty=3)
-#abline(v=125, col="darkgreen", lwd=2,lty=3)
-
-#################################################
-par(fig=c(0.35, 0.98,0.20,0.98), new=TRUE)
-
-plot(fv, (k[1]*q[1]/fv+v), col=mycolors[1], mgp = c(2, 0.5, 0),tck=0.02,log="x", type="l", xlab = "125Hz ~ 1KHz", ylab ="", lwd=2, lty=2, xlim=c(125,1000), ylim=c(4.66e-13, 5e-13))
-
-
-#画出占空比为0.5，流量为1.5nl/min时的弯月面体积，说明最小值是什么
-
-###流量为1.5nl/min时####
-for (i in 1:3){
-lines(fv,  (k[i+1]*q[1]/fv+v), lwd=2, col="red", lty=1)
-}
-#画出，流量为最小，占空比从大到小，体积从小到大变化的曲线，其中：颜色均为red，pch的改变代表着占空比的改变
-
-###流量为27nl/min时####
-for (i in 1:4){
-lines(fv,  (k[i]*q[2]/fv+v), lwd=2, col="blue", lty=1)
-}
-
-###流量为54nl/min时####
-for (i in 1:4){
-lines(fv,  (k[i]*q[3]/fv+v), lwd=2,col="darkgreen", lty=1)
-}
-
-###流量为180nl/min时####
-for (i in 1:4){
-lines(fv,  (k[i]*q[4]/fv+v), lwd=2,col="yellow3", lty=1)
-}
-
-abline(h=5.126e-13, col="red", lwd=1.5, lty=4)
-abline(h=5.592e-13, col="blue", lwd=1.5, lty=4)
+       legend("topright",c("1.5nl/s","8.33nl/s","16.67nl/s",
+                           "1.5nl/min","27nl/min","54nl/min",
+                           "180nl/min"),col=c("black",
+         coll[2],coll[3],coll[4],coll[5],coll[6],coll[7]),
+         inset = .06,pch=c(1,2,3,4,5,6,7),bty = "n",lty=2,lwd=1.5)
