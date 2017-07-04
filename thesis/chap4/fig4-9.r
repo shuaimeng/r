@@ -27,7 +27,7 @@ pchc <- c(0,1,2,5)
 plot(s2$fv, s2$X1.5, xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz)),
      ylab = expression(italic(t["p"]) (ms)),mgp=c(0.8, 0, 0),tck=0.01,  main = "", cex.lab = 0.8,
      cex.axis = 0.8, yaxs = "r", xlim = c(0, 1000), cex=0.7,ylim = c(0, 1))
-     mtext("k = 0.2",3,line=0,font=2,cex=0.9)
+     mtext("kv = 0.2",3,line=0,font=2,cex=0.9)
 
 for (i in 1:4){
   points(s2$fv, s2[,i+1],  col=mycolors[i], cex=0.7,pch=pchc[i], lwd = 1)
@@ -35,7 +35,7 @@ for (i in 1:4){
 
 abline(0.45, -0.00088, lty = 3, col = "red", lwd = 2)
 abline(0.9, -0.001, lty = 3, col = "red", lwd = 2)
-text(500, 1, "0.45ms ~ 0.9ms", col ="blue", cex =1.2, font =2)
+text(500, 1, "0.45ms ~ 0.9ms", col ="blue", cex =1, font =2)
 #text(20, 0.95, "(a)", col ="black", cex =1.2, font =2)
 
 legend("topright", c("1.5nl/min", "27nl/min", "54nl/min", "180nl/min"),
@@ -47,7 +47,7 @@ plot(s3$fv, s3$X1.5, xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz))
      cex.lab = 0.8, cex.axis = 0.8, yaxs = "r",
      xlim = c(0, 1000), ylim = c(0, 1))
 
-     mtext("k = 0.3",3,line=0,font=2,cex=0.9)
+     mtext("kv = 0.3",3,line=0,font=2,cex=0.9)
 
 
 for (i in 1:4){
@@ -67,7 +67,7 @@ plot(s4$fv, s4$X1.5, xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz))
      cex.lab = 0.8, cex.axis = 0.8, yaxs = "r",
      xlim = c(0, 2000), ylim = c(0, 1))
 
-     mtext("k = 0.4",3,line=0,font=2,cex=0.9)
+     mtext("kv = 0.4",3,line=0,font=2,cex=0.9)
 
 
 for (i in 1:4){
@@ -76,7 +76,7 @@ for (i in 1:4){
 
 abline(0.50, -0.00088, lty = 3, col = "red", lwd = 2)
 abline(0.9, -0.001, lty = 3, col = "red", lwd = 2)
-text(1000, 1, "0.5ms ~ 0.9ms", col ="blue", cex =1.2, font =2)
+text(1000, 1, "0.5ms ~ 0.9ms", col ="blue", cex =1, font =2)
 #text(20, 1.5, "(c)", col ="black", cex =1.2, font =2)
 
 legend("topright", c("1.5nl/min", "27nl/min", "54nl/min", "180nl/min"),
@@ -88,7 +88,7 @@ plot(s5$fv, s5$X1.5, xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz))
      cex.lab = 0.8, cex.axis = 0.8, yaxs = "r",
      xlim = c(0, 3500), ylim = c(0, 1))
 
-mtext("k = 0.5",3,line=0,font=2,cex=0.9)
+mtext("kv = 0.5",3,line=0,font=2,cex=0.9)
 
 
 for (i in 1:4){
@@ -97,7 +97,7 @@ for (i in 1:4){
 
 abline(0.55, -0.00088, lty = 3, col = "red", lwd = 2)
 abline(0.95, -0.001, lty = 3, col = "red", lwd = 2)
-text(1600, 1, "0.55ms ~ 0.95ms", col ="blue", cex =1.2, font =2)
+text(1600, 1, "0.55ms ~ 0.95ms", col ="blue", cex =1, font =2)
 #text(20, 1.7, "(d)", col ="black", cex =1.2, font =2)
 
 legend("topright", c("1.5nl/min", "27nl/min", "54nl/min", "180nl/min"),
