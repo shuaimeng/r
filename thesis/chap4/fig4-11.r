@@ -10,7 +10,7 @@ q4 <- read.xlsx("f_eject_2.xls", sheetName = "eject_k4", header = TRUE)
 q5 <- read.xlsx("f_eject_2.xls", sheetName = "eject_k5", header = TRUE)
 
 #设置画图区域
-par(mfrow = c(2,2), mar = c(2,2.6,2,2), oma = c(1,1,1,1))
+par(mfrow = c(2,2), mar = c(2,2,0.6,1), oma = c(1,1,1,1))
 
 #读取的是1s内总射出频率的数据
 
@@ -20,7 +20,9 @@ par(mfrow = c(2,2), mar = c(2,2.6,2,2), oma = c(1,1,1,1))
 
 ##################################画图--占空比k = 0.2#######################
 plot(q2$fv, q2$X1.5, xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz)),
-     ylab = expression(italic(f["p"]) (Hz)), mgp=c(1.1, 0, 0),tck=0.01, main = "k = 0.2", cex.lab = 1.2, cex.main = 1.4, xlim = c(0, 1200), ylim = c(0, 1200))
+     ylab = expression(italic(f["p"]) (Hz)), mgp=c(0.8, 0, 0),tck=0.01, main = "", cex.lab = 0.8, cex.axis= 0.8, xlim = c(0, 1200), ylim = c(0, 1200))
+
+mtext("k = 0.2",3,line=-1,font=2,cex=0.9)
 
 points(q2$fv,q2$X1.5,col="green4",pch=0,cex=0.8)
 points(q2$fv,q2$X27,col="black",pch=1,cex=0.8)
@@ -38,11 +40,14 @@ lines(q2$fv, q2$X180, col="blue", lwd=2, type="l", lty=2)
 
 #区域划线
 legend("bottomright", c("1.5nl/min", "27nl/min", "54nl/min", "180nl/min"), col = c("green4", "black", "red", "blue"), pch = c(0,1,2,5),
-       lwd = 2, lty = 2, cex = 1.2, inset = .02, bty = "n")
+       lwd = 2, lty = 2, cex = 0.8, inset = .02, bty = "n")
 
 ##################################画图--占空比k = 0.3#######################
 plot(q3$fv, q3$X1.5, xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz)),
-     ylab = expression(italic(f["p"]) (Hz)), mgp=c(1.1, 0, 0),tck=0.01,main = "k = 0.3", cex.lab = 1.2, cex.main = 1.4, xlim = c(0,1000), ylim = c(0, 1000))
+     ylab = expression(italic(f["p"]) (Hz)), mgp=c(0.8, 0, 0),tck=0.01,main = "", cex.lab = 0.8, cex.axis = 0.8, xlim = c(0,1000), ylim = c(0, 1000))
+
+     mtext("k = 0.3",3,line=-1,font=2,cex=0.9)
+
 
 points(q3$fv,q3$X1.5,col="green4",pch=0,cex=0.8)
 points(q3$fv,q3$X27,col="black",pch=1,cex=0.8)
@@ -60,11 +65,14 @@ lines(q3$fv, q3$X180, col="blue", lwd=2, type="l", lty=2)
 
 #区域划线
 legend("bottomright", c("1.5nl/min", "27nl/min", "54nl/min", "180nl/min"), col = c("green4", "black", "red", "blue"), pch = c(0,1,2,5),
-       lwd = 2, lty = 2, cex = 1.2, inset = .02, bty = "n")
+       lwd = 2, lty = 2, cex = 0.8, inset = .02, bty = "n")
 
 ##################################画图--占空比k = 0.4#######################
 plot(q4$fv, q4$X1.5, xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz)),
-     ylab = expression(italic(f["p"]) (Hz)),mgp=c(1.1, 0, 0),tck=0.01, main = "k = 0.4", cex.lab = 1.2, cex.main = 1.4, xlim = c(0, 2000), ylim = c(0, 2000))
+     ylab = expression(italic(f["p"]) (Hz)),mgp=c(0.8, 0, 0),tck=0.01, main = "", cex.lab = 0.8, cex.axis = 0.8, xlim = c(0, 2000), ylim = c(0, 2000))
+
+     mtext("k = 0.4",3,line=-1,font=2,cex=0.9)
+
 
 points(q4$fv,q4$X1.5,col="green4",pch=0,cex=0.8)
 points(q4$fv,q4$X27,col="black",pch=1,cex=0.8)
@@ -82,11 +90,14 @@ lines(q4$fv, q4$X180, col="blue", lwd=2, type="l", lty=2)
 
 #区域划线
 legend("bottomright", c("1.5nl/min", "27nl/min", "54nl/min", "180nl/min"), col = c("green4", "black", "red", "blue"), pch = c(0,1,2,5),
-       lwd = 2, lty = 2, cex = 1.2, inset = .02, bty = "n")
+       lwd = 2, lty = 2, cex = 0.8, inset = .02, bty = "n")
 
 ##################################画图--占空比k = 0.5#######################
 plot(q5$fv, q5$X1.5, xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz)),
-     ylab = expression(italic(f["p"]) (Hz)), mgp=c(1.1, 0, 0),tck=0.01,main = "k = 0.5", cex.lab = 1.2, cex.main = 1.4, xlim = c(0, 3500), ylim = c(0, 3500))
+     ylab = expression(italic(f["p"]) (Hz)), mgp=c(0.8, 0, 0),tck=0.01,main = "", cex.lab = 0.8, cex.axis = 0.8, xlim = c(0, 3500), ylim = c(0, 3500))
+
+     mtext("k = 0.5",3,line=-1,font=2,cex=0.9)
+
 
 points(q5$fv,q5$X1.5,col="green4",pch=0,cex=0.8)
 points(q5$fv,q5$X27,col="black",pch=1,cex=0.8)
@@ -104,4 +115,4 @@ lines(q5$fv, q5$X180, col="blue", lwd=2, type="l", lty=2)
 
 #区域划线
 legend("bottomright", c("1.5nl/min", "27nl/min", "54nl/min", "180nl/min"), col = c("green4", "black", "red", "blue"), pch = c(0,1,2,5),
-       lwd = 2, lty = 2, cex = 1.2, inset = .02, bty = "n")
+       lwd = 2, lty = 2, cex = 0.8, inset = .02, bty = "n")

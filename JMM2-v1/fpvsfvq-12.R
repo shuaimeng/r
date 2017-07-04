@@ -1,3 +1,7 @@
+dyn.load('/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/server/libjvm.dylib')
+library(rJava)
+
+setwd("/Users/mengmengjiang/all datas/chap4")
 library(xlsx)
 #读取数据
 q2 <- read.xlsx("f_eject_2.xls", sheetName = "eject_q15", header = TRUE)
