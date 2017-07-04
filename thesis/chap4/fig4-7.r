@@ -18,7 +18,7 @@ plot(q2$fv, q2$X1.5, xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz))
      main = "", cex.lab = 0.8, cex.axis = 0.8,
      xlim = c(0, 250),ylim=c(0,40))
 
-     mtext("k = 0.2",3,line=0,font=2,cex=0.9)
+     mtext("kv = 0.2",3,line=0,font=2,cex=0.9)
 
 points(q2$fv,q2$X1.5,col="green4",pch=0,cex=0.6)
 points(q2$fv,q2$X27,col="black",pch=1,cex=0.6)
@@ -65,7 +65,7 @@ plot(q3$fv, q3$X1.5, xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz))
      main = "", cex.lab = 0.8, cex.axis = 0.8,
      xlim = c(0, 250),ylim=c(0,40))
 
-     mtext("k = 0.3",3,line=0,font=2,cex=0.9)
+     mtext("kv = 0.3",3,line=0,font=2,cex=0.9)
 
 
 points(q3$fv,q3$X1.5,col="green4",pch=0,cex=0.6)
@@ -108,7 +108,7 @@ plot(q4$fv, q4$X1.5, xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz))
      main = "", cex.lab = 0.8, cex.axis = 0.8,
      xlim = c(0, 250),ylim=c(0,40))
 
-     mtext("k = 0.4",3,line=0,font=2,cex=0.9)
+     mtext("kv = 0.4",3,line=0,font=2,cex=0.9)
 
 
 points(q4$fv,q4$X1.5,col="green4",pch=0,cex=0.6)
@@ -152,7 +152,7 @@ plot(q5$fv, q5$X1.5, xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz))
      main = "", cex.lab = 0.8, cex.axis = 0.8,
      xlim = c(0, 250),ylim=c(0,40))
 
-     mtext("k = 0.5",3,line=0,font=2,cex=0.9)
+     mtext("kv = 0.5",3,line=0,font=2,cex=0.9)
 
 
 points(q5$fv,q5$X1.5,col="green4",pch=0,cex=0.6)
