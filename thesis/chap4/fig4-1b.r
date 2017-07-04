@@ -20,7 +20,7 @@
        #fv,q,k分别为电压频率，流量和占空比
 
        plot(fv,vne1, mgp = c(1.5, 0.5, 0),tck=0.02,type="b",pch=1,cex=0.6,lwd=1.5,lty=2,xlab = expression(italic(f["v"])(Hz)),
-            ylab = expression (V["ne"]+V(m^3)),xlim=c(0,200),ylim=c(4.66*10^(-13), 9*10^(-13)))
+            ylab = expression (italic(V["ne"]+V["m"](m^3))),xlim=c(0,200),ylim=c(4.66*10^(-13), 9*10^(-13)))
 
        coll<-rainbow(7)
        pcc<-c(1,2,3,4,5,6,7)
@@ -39,4 +39,4 @@
                            "1.5nl/min","27nl/min","54nl/min",
                            "180nl/min"),col=c("black",
          coll[2],coll[3],coll[4],coll[5],coll[6],coll[7]),
-         inset = .06,pch=c(1,2,3,4,5,6,7),bty = "n",lty=2,lwd=1.5)
+         inset = .02,pch=c(1,2,3,4,5,6,7),bty = "n",lty=2,lwd=1.5,cex=0.8)

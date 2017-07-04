@@ -25,7 +25,7 @@ coll<-rainbow(5)
 
 
 plot(fv,vne2, col=coll[1],mgp = c(1.5, 0.5, 0),tck=0.02,type="b",pch=1,cex=0.6,lwd=1.5,lty=2,xlab = expression(italic(f["v"])(Hz)),
-     ylab = expression (V["ne"]+V(m^3)),xlim=c(0,200),ylim=c(4.66*10^(-13), 9*10^(-13)))
+     ylab = expression (italic(V["ne"]+V["m"](m^3))),xlim=c(0,200),ylim=c(4.66*10^(-13), 9*10^(-13)))
 
 
 pcc<-c(1,2,3,4,5)
@@ -40,6 +40,6 @@ abline(h=(V+0.1*V),col="blue",lwd=1.5,lty=4)
 abline(h=(V+0.2*V),col="blue",lwd=1.5,lty=4)
 abline(h=(V+0.6*V),col="blue",lwd=1.5,lty=4)
 
-legend("topright",c("k=0.1","k=0.3","k=0.5",
-                    "k=0.7","k=0.8"),col=coll,
-       inset = .1,pch=pcc,bty = "n",lty=2,lwd=1.5)
+legend("topright",c("kv=0.1","kv=0.3","kv=0.5",
+                    "kv=0.7","kv=0.8"),col=coll,
+       inset = .02,pch=pcc,bty = "n",lty=2,lwd=1.5,cex=0.8)
