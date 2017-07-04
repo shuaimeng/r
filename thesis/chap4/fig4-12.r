@@ -39,7 +39,7 @@ lines(q2$fv, q2$X0.4, col="red", lwd=2, type="l", lty=2)
 z4=loess(q2$X0.5~q2$fv,span=0.1,degree=2)
 lines(q2$fv, q2$X0.5, col="blue", lwd=2, type="l", lty=2)
 #区域划线
-legend("bottomright", c("k=0.2", "k=0.3", "k=0.4", "k=0.5"), col = c("green4", "black", "red", "blue"), pch = c(0,1,2,5),
+legend("bottomright", c("kv=0.2", "kv=0.3", "kv=0.4", "kv=0.5"), col = c("green4", "black", "red", "blue"), pch = c(0,1,2,5),
        lwd = 2, lty = 2, cex = 0.8, inset = .02, bty = "n")
 
 ##################################画图--占空比k = 0.3#######################
@@ -63,7 +63,7 @@ z8=loess(q3$X0.5~q3$fv,span=0.1,degree=2)
 lines(q3$fv, q3$X0.5, col="blue", lwd=2, type="l", lty=2)
 
 #区域划线
-legend("bottomright", c("k=0.2", "k=0.3", "k=0.4", "k=0.5"), col = c("green4", "black", "red", "blue"), pch = c(0,1,2,5),
+legend("bottomright", c("kv=0.2", "kv=0.3", "kv=0.4", "kv=0.5"), col = c("green4", "black", "red", "blue"), pch = c(0,1,2,5),
        lwd = 2, lty = 2, cex = 0.8, inset = .02, bty = "n")
 ##################################画图--占空比k = 0.4#######################
 plot(q4$fv, q4$X0.2, xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz)),
@@ -88,7 +88,7 @@ lines(q4$fv, z12$fit, col="blue", lwd=2, type="l", lty=2)
 
 
 #区域划线
-legend("bottomright", c("k=0.2", "k=0.3", "k=0.4", "k=0.5"), col = c("green4", "black", "red", "blue"), pch = c(0,1,2,5),
+legend("bottomright", c("kv=0.2", "kv=0.3", "kv=0.4", "kv=0.5"), col = c("green4", "black", "red", "blue"), pch = c(0,1,2,5),
        lwd = 2, lty = 2, cex = 0.8, inset = .02, bty = "n")
 ##################################画图--占空比k = 0.5#######################
 plot(q5$fv, q5$X0.2, xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz)),
@@ -113,5 +113,5 @@ lines(q5$fv, z16$fit, col="blue", lwd=2, type="l", lty=2)
 
 
 #区域划线
-legend("bottomright", c("k=0.2", "k=0.3", "k=0.4", "k=0.5"), col = c("green4", "black", "red", "blue"), pch = c(0,1,2,5),
+legend("bottomright", c("kv=0.2", "kv=0.3", "kv=0.4", "kv=0.5"), col = c("green4", "black", "red", "blue"), pch = c(0,1,2,5),
        lwd = 2, lty = 2, cex = 0.8, inset = .02, bty = "n")
