@@ -45,7 +45,7 @@ text(800,6,"ratio=16",col="green4", font=2,cex=1)
 
 
 #区域划线
-legend("topright", c("k=0.2", "k=0.3", "k=0.4", "k=0.5"), col = c("green4", "black", "red", "blue"), pch = c(0, 1, 2, 5),
+legend("topright", c("kv=0.2", "kv=0.3", "kv=0.4", "kv=0.5"), col = c("green4", "black", "red", "blue"), pch = c(0, 1, 2, 5),
        lwd = 2, lty = 2, cex = 0.8, inset = .02, bty = "n")
 
 ##################################画图--占空比k = 0.3#######################
@@ -72,7 +72,7 @@ text(160,30,"ratio=8",col="blue", font=2,cex=1)
 abline(h=10, col="green4", lwd=1,lty=3)
 text(400,6,"ratio=16",col="green4", font=2,cex=1)
 #区域划线
-legend("topright", c("k=0.2", "k=0.3", "k=0.4", "k=0.5"), col = c("green4", "black", "red", "blue"), pch = c(0, 1, 2, 5),
+legend("topright", c("kv=0.2", "kv=0.3", "kv=0.4", "kv=0.5"), col = c("green4", "black", "red", "blue"), pch = c(0, 1, 2, 5),
        lwd = 2, lty = 2, cex = 0.8, inset = .02, bty = "n")
 
 ##################################画图--占空比k = 0.4#######################
@@ -99,7 +99,7 @@ text(400,30,"ratio=8",col="blue", font=2,cex=1)
 abline(h=10, col="green4", lwd=1,lty=3)
 text(800,6,"ratio=16",col="green4", font=2,cex=1)
 #区域划线
-legend("topright", c("k=0.2", "k=0.3", "k=0.4", "k=0.5"), col = c("green4", "black", "red", "blue"), pch = c(0, 1, 2, 5),
+legend("topright", c("kv=0.2", "kv=0.3", "kv=0.4", "kv=0.5"), col = c("green4", "black", "red", "blue"), pch = c(0, 1, 2, 5),
        lwd = 2, lty = 2, cex = 0.8, inset = .02, bty = "n")
 
 ##################################画图--占空比k = 0.5#######################
@@ -126,5 +126,5 @@ text(1600,33,"ratio=8",col="blue", font=2,cex=1)
 abline(h=10, col="green4", lwd=1,lty=3)
 text(2000,6,"ratio=16",col="green4", font=2,cex=1)
 #区域划线
-legend("topright", c("k=0.2", "k=0.3", "k=0.4", "k=0.5"), col = c("green4", "black", "red", "blue"), pch = c(0, 1, 2, 5),
+legend("topright", c("kv=0.2", "kv=0.3", "kv=0.4", "kv=0.5"), col = c("green4", "black", "red", "blue"), pch = c(0, 1, 2, 5),
        lwd = 2, lty = 2, cex = 0.8, inset = .02, bty = "n")
