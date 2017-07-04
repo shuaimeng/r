@@ -10,7 +10,7 @@ q4 <- read.xlsx("f_eject_2.xls", sheetName = "eject_k4", header = TRUE)
 q5 <- read.xlsx("f_eject_2.xls", sheetName = "eject_k5", header = TRUE)
 
 #设置画图区域
-par(mfrow = c(2,2), mar = c(2,2,0.6,1), oma = c(1,1,1,1))
+par(mfrow = c(2,2), mar = c(1.6,2,0.6,1), oma = c(1,1,1,1))
 
 #读取的是1s内总射出频率的数据
 
