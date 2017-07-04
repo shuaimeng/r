@@ -22,7 +22,7 @@ par(mfrow = c(2,2), mar = c(1.6,1.8,0.6,1), oma = c(1,1,1,1))
 plot(q2$fv, q2$X15, xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz)),
      ylab = expression(italic(d) (um)), mgp=c(0.8, 0, 0),tck=0.01,main = "", cex.lab = 0.8, cex.axis= 0.8, xlim = c(0, 1000), ylim = c(0, 170))
 
-     mtext("k=0.2",3,line=-1,font=2,cex=0.9)
+     mtext("kv=0.2",3,line=-1,font=2,cex=0.9)
 
 
 points(q2$fv,q2$X15,col="green4",pch=0,cex=0.5)
@@ -43,13 +43,13 @@ abline(h=10, col="green4", lwd=1,lty=3)
 text(800,6,"ratio=16",col="green4", font=2,cex=1)
 #区域划线
 legend("topright", c("1.5nl/min", "27nl/min", "54nl/min", "180nl/min"), col = c("green4", "black", "red", "blue"), pch = c(0, 1, 2, 5),
-       lwd = 2, lty = 2, cex = 0.8, inset = .02, bty = "n")
+       lwd = 2, lty = 2, cex = 0.8, inset = .01, bty = "n")
 
 ##################################画图--占空比k = 0.3#######################
 plot(q3$fv, q3$X15, xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz)),
      ylab = expression(italic(d) (um)), mgp=c(0.8, 0, 0),tck=0.01,main = "", cex.lab = 0.8, cex.axis =0.8, xlim = c(0, 500), ylim = c(0, 170))
 
-     mtext("k=0.3",3,line=-1,font=2,cex=0.9)
+     mtext("kv=0.3",3,line=-1,font=2,cex=0.9)
 
 
 points(q3$fv,q3$X15,col="green4",pch=0,cex=0.5)
@@ -70,13 +70,13 @@ abline(h=10, col="green4", lwd=1,lty=3)
 text(400,6,"ratio=16",col="green4", font=2,cex=1)
 #区域划线
 legend("topright", c("1.5nl/min", "27nl/min", "54nl/min", "180nl/min"), col = c("green4", "black", "red", "blue"), pch = c(0, 1, 2, 5),
-       lwd = 2, lty = 2, cex = 0.8, inset = .02, bty = "n")
+       lwd = 2, lty = 2, cex = 0.8, inset = .01, bty = "n")
 
 ##################################画图--占空比k = 0.4#######################
 plot(q4$fv, q4$X15, xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz)),
      ylab = expression(italic(d) (um)),mgp=c(0.8, 0, 0),tck=0.01, main = "", cex.lab = 0.8, cex.axis = 0.8, xlim = c(0, 1100), ylim = c(0, 170))
 
-     mtext("k=0.4",3,line=-1,font=2,cex=0.9)
+     mtext("kv=0.4",3,line=-1,font=2,cex=0.9)
 
 
 points(q4$fv,q4$X15,col="green4",pch=0,cex=0.5)
@@ -97,13 +97,13 @@ abline(h=10, col="green4", lwd=1,lty=3)
 text(800,6,"ratio=16",col="green4", font=2,cex=1)
 #区域划线
 legend("topright", c("1.5nl/min", "27nl/min", "54nl/min", "180nl/min"), col = c("green4", "black", "red", "blue"), pch = c(0, 1, 2, 5),
-       lwd = 2, lty = 2, cex = 0.8, inset = .02, bty = "n")
+       lwd = 2, lty = 2, cex = 0.8, inset = .01, bty = "n")
 
 ##################################画图--占空比k = 0.5#######################
 plot(q5$fv, q5$X15, xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz)),
      ylab = expression(italic(d) (um)), mgp=c(0.8, 0, 0),tck=0.01, main = "", cex.lab = 0.8, cex.axis = 0.8, xlim = c(0, 3500), ylim = c(0, 170))
 
-     mtext("k=0.5",3,line=-1,font=2,cex=0.9)
+     mtext("kv=0.5",3,line=-1,font=2,cex=0.9)
 
 
 points(q5$fv,q5$X15,col="green4",pch=0,cex=0.5)
@@ -124,4 +124,4 @@ abline(h=10, col="green4", lwd=1,lty=3)
 text(2000,6,"ratio=16",col="green4", font=2,cex=1)
 #区域划线
 legend("topright", c("1.5nl/min", "27nl/min", "54nl/min", "180nl/min"), col = c("green4", "black", "red", "blue"), pch = c(0, 1, 2, 5),
-       lwd = 2, lty = 2, cex = 0.8, inset = .02, bty = "n")
+       lwd = 2, lty = 2, cex = 0.8, inset = .01, bty = "n")
