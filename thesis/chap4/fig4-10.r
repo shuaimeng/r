@@ -22,7 +22,7 @@ q5 <- read.xlsx("f_eject_2.xls", sheetName = "single_k5", header = TRUE)
 par(fig=c(0,0.5,0.5,1),mar = c(2,1.8,0.6,1), oma = c(1,1,1,1),new=F)
 
 plot(q2$fv, q2$X1.5, xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz)),
-     ylab = expression(italic(f["e"]) (Hz)), mgp=c(0.8, 0, 0),tck=0.01, main = "", cex.lab = 0.8, cex.axis = 0.8, xlim = c(0, 50),ylim=c(0,200))
+     ylab = expression(italic(f["e"]) (Hz)), mgp=c(0.8, 0, 0),tck=0.01, main = "", cex.lab = 1, cex.axis = 1, xlim = c(0, 50),ylim=c(0,200))
 
      mtext("kv = 0.2",3,line=0,font=2,cex=0.9)
 
@@ -44,7 +44,7 @@ lines(q2$fv, z4$fit, col="blue", lwd=2, type="l", lty=2)
 par(fig=c(0.12,0.49,0.65,0.99),new=T)
 
 plot(q2$fv, q2$X1.5, bty="n",xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz)),
-     ylab = expression(italic(f["e"]) (Hz)), mgp=c(0.8, 0, 0),tck=0.01, main = "", cex.lab = 0.7, cex.axis = 0.7, xlim = c(0, 150),ylim=c(0,200))
+     ylab = expression(italic(f["e"]) (Hz)), mgp=c(0.8, 0, 0),tck=0.01, main = "", cex.lab = 0.8, cex.axis = 0.8, xlim = c(0, 150),ylim=c(0,200))
 
 points(q2$fv,q2$X1.5,col="green4",pch=0,cex=0.8)
 points(q2$fv,q2$X27,col="black",pch=1,cex=0.8)
@@ -62,14 +62,14 @@ lines(q2$fv, z4$fit, col="blue", lwd=2, type="l", lty=2)
 
 #区域划线
 legend("topright", c("1.5nl/min", "27nl/min", "54nl/min", "180nl/min"), col = c("green4", "black", "red", "blue"), pch = c(0,1,2,5),
-       lwd = 2, lty = 2, cex = 0.8, inset = 0, bty = "n")
+       lwd = 2, lty = 2, cex = 0.85, inset = 0, bty = "n")
 
 ###################画图--占空比k = 0.3#######################
 par(fig=c(0.5,1,0.5,1), new=T)
 
 
 plot(q3$fv, q3$X1.5, xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz)),
-     ylab = expression(italic(f["e"]) (Hz)), mgp=c(0.8, 0, 0),tck=0.01,main = "", cex.lab = 0.8, cex.axis = 0.8, xlim = c(0, 50),ylim =c(0,200))
+     ylab = expression(italic(f["e"]) (Hz)), mgp=c(0.8, 0, 0),tck=0.01,main = "", cex.lab = 1, cex.axis = 1, xlim = c(0, 50),ylim =c(0,200))
 
      mtext("kv = 0.3",3,line=0,font=2,cex=0.9)
 
@@ -92,7 +92,7 @@ lines(q3$fv, z8$fit, col="blue", lwd=2, type="l", lty=2)
 par(fig=c(0.62,0.99,0.65,0.99),new=T)
 
 plot(q3$fv, q3$X1.5, bty="n",xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz)),
-     ylab = expression(italic(f["e"]) (Hz)), mgp=c(0.8, 0, 0),tck=0.01,main = "", cex.lab = 0.7, cex.axis = 0.7, xlim = c(0, 150),ylim =c(0,200))
+     ylab = expression(italic(f["e"]) (Hz)), mgp=c(0.8, 0, 0),tck=0.01,main = "", cex.lab = 0.8, cex.axis = 0.8, xlim = c(0, 150),ylim =c(0,200))
 
 points(q3$fv,q3$X1.5,col="green4",pch=0,cex=0.8)
 points(q3$fv,q3$X27,col="black",pch=1,cex=0.8)
@@ -111,14 +111,14 @@ lines(q3$fv, z8$fit, col="blue", lwd=2, type="l", lty=2)
 
 #区域划线
 legend("topright", c("1.5nl/min", "27nl/min", "54nl/min", "180nl/min"), col = c("green4", "black", "red", "blue"), pch = c(0,1,2,5),
-       lwd = 2, lty = 2, cex = 0.8, inset = 0, bty = "n")
+       lwd = 2, lty = 2, cex = 0.85, inset = 0, bty = "n")
 
 #########画图--占空比k = 0.4###########
 par(fig=c(0,0.5,0,0.5), new=T)
 
 
 plot(q4$fv, q4$X1.5, xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz)),
-     ylab = expression(italic(f["e"]) (Hz)),mgp=c(0.8, 0, 0),tck=0.01, main = "", cex.lab = 0.8, cex.axis = 0.8, xlim = c(0, 50),ylim=c(0,200))
+     ylab = expression(italic(f["e"]) (Hz)),mgp=c(0.8, 0, 0),tck=0.01, main = "", cex.lab = 1, cex.axis = 1, xlim = c(0, 50),ylim=c(0,200))
 
      mtext("kv = 0.4",3,line=0,font=2,cex=0.9)
 
@@ -141,7 +141,7 @@ lines(q4$fv, z12$fit, col="blue", lwd=2, type="l", lty=2)
 par(fig=c(0.12,0.49,0.15,0.49),new=T)
 
 plot(q4$fv, q4$X1.5, bty="n",xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz)),
-     ylab = expression(italic(f["e"]) (Hz)),mgp=c(0.8, 0, 0),tck=0.01, main = "", cex.lab = 0.7, cex.axis= 0.7, xlim = c(0, 150),ylim=c(0,200))
+     ylab = expression(italic(f["e"]) (Hz)),mgp=c(0.8, 0, 0),tck=0.01, main = "", cex.lab = 0.8, cex.axis= 0.8, xlim = c(0, 150),ylim=c(0,200))
 
 points(q4$fv,q4$X1.5,col="green4",pch=0,cex=0.8)
 points(q4$fv,q4$X27,col="black",pch=1,cex=0.8)
@@ -159,7 +159,7 @@ lines(q4$fv, z12$fit, col="blue", lwd=2, type="l", lty=2)
 
 #区域划线
 legend("topright", c("1.5nl/min", "27nl/min", "54nl/min", "180nl/min"), col = c("green4", "black", "red", "blue"), pch = c(0,1,2,5),
-       lwd = 2, lty = 2, cex = 0.8, inset = 0, bty = "n")
+       lwd = 2, lty = 2, cex = 0.85, inset = 0, bty = "n")
 
 
 ##################################画图--占空比k = 0.5#######################
@@ -167,7 +167,7 @@ legend("topright", c("1.5nl/min", "27nl/min", "54nl/min", "180nl/min"), col = c(
 par(fig=c(0.5,1,0,0.5), new=T)
 
 plot(q5$fv, q5$X1.5, xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz)),
-     ylab = expression(italic(f["e"]) (Hz)), mgp=c(0.8, 0, 0),tck=0.01,main = "", cex.lab = 0.8, cex.axis = 0.8, xlim = c(0, 50),ylim=c(0,200))
+     ylab = expression(italic(f["e"]) (Hz)), mgp=c(0.8, 0, 0),tck=0.01,main = "", cex.lab = 1, cex.axis = 1, xlim = c(0, 50),ylim=c(0,200))
 
      mtext("kv = 0.5",3,line=0,font=2,cex=0.9)
 
@@ -190,7 +190,7 @@ lines(q5$fv, z16$fit, col="blue", lwd=2, type="l", lty=2)
 par(fig=c(0.6,0.99,0.15,0.49),new=T)
 
 plot(q5$fv, q5$X1.5, bty="n",xaxs = "i", col = 0, xlab = expression(italic(f["v"]) (Hz)),
-     ylab = expression(italic(f["e"]) (Hz)), mgp=c(0.8, 0, 0),tck=0.01, main = "", cex.lab = 0.7, cex.axis = 0.7, xlim = c(0, 150),ylim=c(0,200))
+     ylab = expression(italic(f["e"]) (Hz)), mgp=c(0.8, 0, 0),tck=0.01, main = "", cex.lab = 0.8, cex.axis = 0.8, xlim = c(0, 150),ylim=c(0,200))
 
 points(q5$fv,q5$X1.5,col="green4",pch=0,cex=0.8)
 points(q5$fv,q5$X27,col="black",pch=1,cex=0.8)
@@ -208,4 +208,4 @@ lines(q5$fv, z16$fit, col="blue", lwd=2, type="l", lty=2)
 
 #区域划线
 legend("topright", c("1.5nl/min", "27nl/min", "54nl/min", "180nl/min"), col = c("green4", "black", "red", "blue"), pch = c(0,1,2,5),
-       lwd = 2, lty = 2, cex = 0.8, inset = 0, bty = "n")
+       lwd = 2, lty = 2, cex = 0.85, inset = 0, bty = "n")
