@@ -17,9 +17,9 @@ mycolors<-c("red", "blue", "darkgreen", "yellow3")
 pchall<-c(21,22,23,24)
 
 ######
-par(fig=c(0,1,0,1), new=FALSE)
+par(fig=c(0,1,0,1), mar = c(3,3,1,0.8), oma = c(1,1,1,1),new=FALSE)
 plot(fv, (k[1]*q[1]/fv+v), mgp = c(2, 0.5, 0),tck=0.02,col=mycolors[1], log="x", type="b", xlab = expression(log(italic(f["v"])) (Hz)),
-     ylab = expression(italic(V["ne"]+V["m"](m^3))), main="", lwd=2, pch=pchall[1], lty=2, ylim=c(4.4e-13, 8e-13))
+     ylab = expression(italic(V["ne"]+V["m"](m^3))), main="", lwd=2, pch=pchall[1], lty=2,cex.lab=1,cex.axis=1, ylim=c(4.4e-13, 8e-13))
 
 #画出占空比为0.5，流量为1.5nl/min时的弯月面体积，说明最小值是什么
 
@@ -51,16 +51,16 @@ mycolorsss<-c("red","red","red","red","blue","blue","blue","blue","darkgreen","d
 
 pchss<-c(21,22,23,24,21,22,23,24,21,22,23,24,21,22,23,24)
 
-legend("topright", da, inset=.02, col=mycolorsss, pch=pchss,  lwd=1.5, lty=2, cex=0.8, bty="n")
+legend("topright", da, inset=.02, col=mycolorsss, pch=pchss,  lwd=1.5, lty=2, cex=0.9, bty="n")
 
 abline(v=20, col="red", lwd=2,lty=3)
 abline(v=45, col="blue", lwd=2,lty=3)
 #abline(v=125, col="darkgreen", lwd=2,lty=3)
 
 #################################################
-par(fig=c(0.35, 0.98,0.20,0.98), new=TRUE)
+par(fig=c(0.4, 0.98,0.20,0.98), new=TRUE)
 
-plot(fv, (k[1]*q[1]/fv+v), col=mycolors[1], mgp = c(2, 0.5, 0),tck=0.02,log="x", type="l", xlab = "125Hz ~ 1KHz", ylab ="", lwd=2, lty=2, xlim=c(125,1000), ylim=c(4.66e-13, 5e-13))
+plot(fv, (k[1]*q[1]/fv+v),bty="n", col=mycolors[1], mgp = c(2, 0.5, 0),tck=0.02,log="x", type="l", xlab = "125Hz ~ 1KHz", ylab ="", lwd=2, lty=2, xlim=c(125,1000), ylim=c(4.66e-13, 5e-13))
 
 
 #画出占空比为0.5，流量为1.5nl/min时的弯月面体积，说明最小值是什么
