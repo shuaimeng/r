@@ -11,7 +11,7 @@ q5 <- read.xlsx("t_for.xls", sheetName = "180nl", header = TRUE)
 
 #par(mfrow = c(2,2), mar = c(2,2.4,2,2), oma = c(1,1,1,1))
 #######k=0.2#######
-par(fig=c(0,0.5,0.5,1),mar = c(2,2.2,0.6,0.8), oma = c(1,1,1,1),new=F)
+par(fig=c(0,0.5,0.5,1),mar = c(2,2.2,0.6,1), oma = c(1,1,1,1),new=F)
 
 plot(q2$fv,q2$X0.2,col = 0, xlab = expression(italic(f["v"]) (Hz)),
      ylab = expression(italic(t["for"]) (ms)), mgp=c(1, 0, 0),tck=0.01,

@@ -49,17 +49,19 @@ error.bar <- function(x, y, upper, coll,lower=upper, length=0.05,...){
 }
 
 ####18nl/min####
-par(fig=c(0,1,0.5,1),mar = c(1.8,2.2,1.8,1.8), oma = c(1,1,1,1),new=F)
+par(fig=c(0,1,0.5,1),mar = c(2,2.2,0.4,1), oma = c(1,1,1,1),new=F)
 plot(nj$fv, nj$feeva, xlab = expression(italic(f["v"])(Hz)),
-     ylab=expression(italic(f["e"])(Hz)),mgp=c(1.1, 0, 0),tck=0.02,main = "18nl/min", cex.lab = 1, cex.main = 1,xlim=c(0,500),ylim=c(0,250),col=0)
+     ylab=expression(italic(f["e"])(Hz)),mgp=c(1.1, 0, 0),tck=0.02,main = "", cex.lab = 1, cex.main = 1,xlim=c(0,500),ylim=c(0,250),col=0)
+
+mtext("18nl/min",3,line=0,font=2,cex=0.9)
 #25g
-lines(nj$fv,nj$feeva,col="red",pch=1,lwd=1.5,lty=2,type="b",cex=0.8)
+lines(nj$fv,nj$feeva,col="red",pch=1,lwd=1.5,lty=2,type="b",cex=0.6)
 #30g
-lines(na$fv,na$feeva,col="blue",pch=2,lwd=1.5,lty=2,type="b",cex=0.8)
+lines(na$fv,na$feeva,col="blue",pch=2,lwd=1.5,lty=2,type="b",cex=0.6)
 #32g
-lines(nd$fv,nd$feeva,col="black",pch=15,lwd=1.5,lty=15,type="b",cex=0.8)
+lines(nd$fv,nd$feeva,col="black",pch=15,lwd=1.5,lty=15,type="b",cex=0.6)
 #34g
-lines(ng$fv,ng$feeva,col="green3",pch=16,lwd=1.5,lty=2,type="b",cex=0.8)
+lines(ng$fv,ng$feeva,col="green3",pch=16,lwd=1.5,lty=2,type="b",cex=0.6)
 
 error.bar(nj$fv,nj$feeva,nj$festd/2,"red")
 error.bar(na$fv,na$feeva,na$festd/2,"blue")
@@ -67,34 +69,36 @@ error.bar(nd$fv,nd$feeva,nd$festd/2,"black")
 error.bar(ng$fv,ng$feeva,ng$festd/2,"green3")
 
 par(fig=c(0.14,0.985,0.65,0.985),new=T)
-plot(nj$fv, nj$feeva, xlab = expression(italic(f["v"])(Hz)),
-     ylab="",mgp=c(1, 0, 0),tck=0.02,xlim=c(0,3500),ylim=c(0,250),col=0)
+plot(nj$fv, nj$feeva, bty="n",xlab = expression(italic(f["v"])(Hz)),
+     ylab="",mgp=c(1, 0, 0),tck=0.02,cex.lab=0.8,cex.axis=0.8,xlim=c(0,3500),ylim=c(0,250),col=0)
 
-lines(nj$fv,nj$feeva,col="red",pch=1,lwd=1.5,lty=2,type="b",cex=0.8)
+lines(nj$fv,nj$feeva,col="red",pch=1,lwd=1.5,lty=2,type="b",cex=0.6)
 #30g
-lines(na$fv,na$feeva,col="blue",pch=2,lwd=1.5,lty=2,type="b",cex=0.8)
+lines(na$fv,na$feeva,col="blue",pch=2,lwd=1.5,lty=2,type="b",cex=0.6)
 #32g
-lines(nd$fv,nd$feeva,col="black",pch=15,lwd=1.5,lty=15,type="b",cex=0.8)
+lines(nd$fv,nd$feeva,col="black",pch=15,lwd=1.5,lty=15,type="b",cex=0.6)
 #34g
-lines(ng$fv,ng$feeva,col="green3",pch=16,lwd=1.5,lty=2,type="b",cex=0.8)
+lines(ng$fv,ng$feeva,col="green3",pch=16,lwd=1.5,lty=2,type="b",cex=0.6)
 
 legend("topright",c("25g",
                     "30g","32g","34g"),
-       pch=c(1,2,15,16),bty="n",lty=2,cex=0.8,col=c("red","blue","black","green3"),inset=.02)
+       pch=c(1,2,15,16),bty="n",lty=2,cex=0.85,col=c("red","blue","black","green3"),inset=.01)
 
 ###54nl/min####
 par(fig=c(0,0.5,0,0.5), new=T)
 plot(nk$fv, nk$d_ra, xlab = expression(italic(f["v"])(Hz)),
-     ylab=expression(italic(f["e"])(Hz)),mgp=c(1.1, 0, 0),tck=0.02,main = "54nl/min", cex.lab = 1, cex.main = 1,xlim=c(0,500),ylim=c(0,250),col=0)
+     ylab=expression(italic(f["e"])(Hz)),mgp=c(1.1, 0, 0),tck=0.02,main = "", cex.lab = 1, cex.main = 1,xlim=c(0,500),ylim=c(0,250),col=0)
+
+     mtext("54nl/min",3,line=0,font=2,cex=0.9)
 
 #25g
-lines(nk$fv,nk$feeva,col="red",pch=1,lwd=1.5,lty=2,type="b",cex=0.8)
+lines(nk$fv,nk$feeva,col="red",pch=1,lwd=1.5,lty=2,type="b",cex=0.6)
 #30g
-lines(nb$fv,nb$feeva,col="blue",pch=2,lwd=1.5,lty=2,type="b",cex=0.8)
+lines(nb$fv,nb$feeva,col="blue",pch=2,lwd=1.5,lty=2,type="b",cex=0.6)
 #32g
-lines(ne$fv,ne$feeva,col="black",pch=15,lwd=1.5,lty=2,type="b",cex=0.8)
+lines(ne$fv,ne$feeva,col="black",pch=15,lwd=1.5,lty=2,type="b",cex=0.6)
 #34g
-lines(nh$fv,nh$feeva,col="green3",pch=16,lwd=1.5,lty=2,type="b",cex=0.8)
+lines(nh$fv,nh$feeva,col="green3",pch=16,lwd=1.5,lty=2,type="b",cex=0.6)
 
 
 error.bar(nk$fv,nk$feeva,nk$festd/2,"red")
@@ -104,29 +108,31 @@ error.bar(nh$fv,nh$feeva,nh$festd/2,"green3")
 
 par(fig=c(0.12,0.485,0.15,0.485),new=T)
 
-plot(nk$fv, nk$d_ra, xlab = expression(italic(f["v"])(Hz)),
-     ylab="",mgp=c(1, 0, 0),tck=0.02,xlim=c(0,3500),ylim=c(0,250),col=0)
+plot(nk$fv, nk$d_ra, bty="n",xlab = expression(italic(f["v"])(Hz)),
+     ylab="",mgp=c(1, 0, 0),tck=0.02,cex.lab=0.8,cex.axis=0.8,xlim=c(0,3500),ylim=c(0,250),col=0)
 
-lines(nk$fv,nk$feeva,col="red",pch=1,lwd=1.5,lty=2,type="b",cex=0.8)
+lines(nk$fv,nk$feeva,col="red",pch=1,lwd=1.5,lty=2,type="b",cex=0.6)
 #30g
-lines(nb$fv,nb$feeva,col="blue",pch=2,lwd=1.5,lty=2,type="b",cex=0.8)
+lines(nb$fv,nb$feeva,col="blue",pch=2,lwd=1.5,lty=2,type="b",cex=0.6)
 #32g
-lines(ne$fv,ne$feeva,col="black",pch=15,lwd=1.5,lty=2,type="b",cex=0.8)
+lines(ne$fv,ne$feeva,col="black",pch=15,lwd=1.5,lty=2,type="b",cex=0.6)
 #34g
-lines(nh$fv,nh$feeva,col="green3",pch=16,lwd=1.5,lty=2,type="b",cex=0.8)
+lines(nh$fv,nh$feeva,col="green3",pch=16,lwd=1.5,lty=2,type="b",cex=0.6)
 
 legend("topright",c("25g",
                     "30g","32g","34g"),
-       pch=c(1,2,15,16),bty="n",lty=2,cex=0.8,col=c("red","blue","black","green3"),inset=.02)
+       pch=c(1,2,15,16),bty="n",lty=2,cex=0.85,col=c("red","blue","black","green3"),inset=.01)
 
 ####180nlmin####
 par(fig=c(0.5,1,0,0.5), new=T)
 plot(nl$fv, nl$d_ra, xlab = expression(italic(f["v"])(Hz)),
-     ylab=expression(italic(f["e"])(Hz)),mgp=c(1.1, 0, 0),tck=0.02,main = "180nl/min", cex.lab = 1, cex.main = 1,xlim=c(0,500),ylim=c(0,250),col=0)
+     ylab=expression(italic(f["e"])(Hz)),mgp=c(1.1, 0, 0),tck=0.02,main = "", cex.lab = 1, cex.main = 1,xlim=c(0,500),ylim=c(0,250),col=0)
+
+     mtext("180nl/min",3,line=0,font=2,cex=0.9)
 #25g
-lines(nl$fv,nl$feeva,col="red",pch=1,lwd=1.5,lty=2,type="b",cex=0.8)
+lines(nl$fv,nl$feeva,col="red",pch=1,lwd=1.5,lty=2,type="b",cex=0.6)
 #30g
-lines(nc$fv,nc$feeva,col="blue",pch=2,lwd=1.5,lty=2,type="b",cex=0.8)
+lines(nc$fv,nc$feeva,col="blue",pch=2,lwd=1.5,lty=2,type="b",cex=0.6)
 #32g
 lines(nf$fv,nf$feeva,col="black",pch=15,lwd=1.5,lty=2,type="b",cex=0.8)
 #34g
@@ -138,17 +144,17 @@ error.bar(nf$fv,nf$feeva,nf$festd/2,"black")
 error.bar(ni$fv,ni$feeva,ni$festd/2,"green3")
 
 par(fig=c(0.58,0.985,0.15,0.485),new=T)
-plot(nl$fv, nl$d_ra, xlab = expression(italic(f["v"])(Hz)),
-     ylab="",mgp=c(1, 0, 0),tck=0.02,xlim=c(0,2500),ylim=c(0,250),col=0)
+plot(nl$fv, nl$d_ra, bty="n",xlab = expression(italic(f["v"])(Hz)),
+     ylab="",mgp=c(1, 0, 0),tck=0.02,cex.lab=0.8,cex.axis=0.8,xlim=c(0,2500),ylim=c(0,250),col=0)
 
      #25g
      lines(nl$fv,nl$feeva,col="red",pch=1,lwd=1.5,lty=2,type="b",cex=0.8)
      #30g
-     lines(nc$fv,nc$feeva,col="blue",pch=2,lwd=1.5,lty=2,type="b",cex=0.8)
+     lines(nc$fv,nc$feeva,col="blue",pch=2,lwd=1.5,lty=2,type="b",cex=0.6)
      #32g
-     lines(nf$fv,nf$feeva,col="black",pch=15,lwd=1.5,lty=2,type="b",cex=0.8)
+     lines(nf$fv,nf$feeva,col="black",pch=15,lwd=1.5,lty=2,type="b",cex=0.6)
      #34g
-     lines(ni$fv,ni$feeva,col="green3",pch=16,lwd=1.5,lty=2,type="b",cex=0.8)
+     lines(ni$fv,ni$feeva,col="green3",pch=16,lwd=1.5,lty=2,type="b",cex=0.6)
 
      error.bar(nl$fv,nl$feeva,nl$festd/2,"red")
      error.bar(nc$fv,nc$feeva,nc$festd/2,"blue")
@@ -157,4 +163,4 @@ plot(nl$fv, nl$d_ra, xlab = expression(italic(f["v"])(Hz)),
 
 legend("topright",c("25g",
                     "30g","32g","34g"),
-       pch=c(1,2,15,16),bty="n",lty=2,col=c("red","blue","black","green3"),cex=0.8,inset=.02)
+       pch=c(1,2,15,16),bty="n",lty=2,col=c("red","blue","black","green3"),cex=0.85,inset=.01)
