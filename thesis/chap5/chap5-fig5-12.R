@@ -21,44 +21,44 @@ n9<-read.xlsx("he-34g.xlsx",sheetName="2kv180",header=TRUE)
 
 
 ###布局###
-par(mar=c(2,2,1.4,1),oma=c(2,2,2,2))
+par(mar=c(2,2.2,0.4,1),oma=c(2,2,2,2))
 layout(matrix(c(1,1,2,3), 2, 2,byrow = TRUE))
 
 ####30G###
-plot(n1$fv, n1$d_ra, xlab = expression(f["v"](Hz)),
-     ylab=expression(d["d"](um)),mgp=c(1, 0, 0),tck=0.02,xlim=c(0,3400),ylim=c(0,80),col=0)
+plot(n1$fv, n1$d_ra, xlab = expression(italic(f["v"](Hz))),
+     ylab=expression(italic(d["d"](um))),mgp=c(1, 0, 0),tck=0.01,xlim=c(0,3400),ylim=c(0,80),col=0)
 
-     mtext("30G",col="black",3,line=-1.2,font=2,cex=0.8)
+     mtext("30G",col="black",3,line=-1,font=2,cex=0.9)
 
 #30g,32g,34g##
 lines(lowess(n1$fv,n1$d_e,f=1/4,iter=3),col="red",pch=1,lwd=1.5,lty=2,type="b",cex=0.8)
 lines(lowess(n2$fv,n2$d_e,f=1/4,iter=3),col="blue",pch=2,lwd=1.5,lty=2,type="b",cex=0.8)
 lines(lowess(n3$fv,n3$d_e,f=1/4,iter=3),col="black",pch=15,lwd=1.5,lty=2,type="b",cex=0.8)
 
-legend("topright",c("18nl/min","54nl/min","180nl/min"),col=c("red","blue","black"),pch=c(1,2,15),lwd=1.5,lty=2,bty="n",inset=.02,cex=0.8)
+legend("topright",c("18nl/min","54nl/min","180nl/min"),col=c("red","blue","black"),pch=c(1,2,15),lwd=1.5,lty=2,bty="n",inset=.01,cex=0.85)
 
 ####32G###
 plot(n4$fv, n4$d_ra, xlab = expression(italic(f["v"](Hz))),
-     ylab=expression(italic(d["d"](um))),mgp=c(1, 0, 0),tck=0.02,xlim=c(0,3000),ylim=c(0,80),col=0)
+     ylab=expression(italic(d["d"](um))),mgp=c(1, 0, 0),tck=0.01,xlim=c(0,3000),ylim=c(0,80),col=0)
 
-mtext("32G",col="black",3,line=-1.2,font=2,cex=0.8)
+mtext("32G",col="black",3,line=-1,font=2,cex=0.9)
 #30g,32g,34g##
 lines(lowess(n4$fv,n4$d_e,f=1/4,iter=3),col="red",pch=1,lwd=1.5,lty=2,type="b",cex=0.8)
 lines(lowess(n5$fv,n5$d_e,f=1/4,iter=3),col="blue",pch=2,lwd=1.5,lty=2,type="b",cex=0.8)
 lines(lowess(n6$fv,n6$d_e,f=1/4,iter=3),col="black",pch=15,lwd=1.5,lty=2,type="b",cex=0.8)
 
-legend("topright",c("18nl/min","54nl/min","180nl/min"),col=c("red","blue","black"),pch=c(1,2,15),lwd=1.5,lty=2,bty="n",inset=.02,cex=0.8)
+legend("topright",c("18nl/min","54nl/min","180nl/min"),col=c("red","blue","black"),pch=c(1,2,15),lwd=1.5,lty=2,bty="n",inset=.01,cex=0.85)
 
 
 ####34G###
-plot(n7$fv, n7$d_ra, xlab = expression(f["v"](Hz)),
-     ylab=expression(d["d"](um)),mgp=c(1, 0, 0),tck=0.02,xlim=c(0,3500),ylim=c(0,80),col=0)
+plot(n7$fv, n7$d_ra, xlab = expression(italic(f["v"](Hz))),
+     ylab=expression(italic(d["d"](um))),mgp=c(1, 0, 0),tck=0.02,xlim=c(0,3500),ylim=c(0,80),col=0)
 
-     mtext("34G",col="black",3,line=-1.2,font=2,cex=0.8)
+     mtext("34G",col="black",3,line=-1,font=2,cex=0.9)
 
 #30g,32g,34g##
 lines(lowess(n7$fv,n7$d_e,f=1/4,iter=3),col="red",pch=1,lwd=1.5,lty=2,type="b",cex=0.8)
 lines(lowess(n8$fv,n8$d_e,f=1/4,iter=3),col="blue",pch=2,lwd=1.5,lty=2,type="b",cex=0.8)
 lines(lowess(n9$fv,n9$d_e,f=1/4,iter=3),col="black",pch=15,lwd=1.5,lty=2,type="b",cex=0.8)
 
-legend("topright",c("18nl/min","54nl/min","180nl/min"),col=c("red","blue","black"),pch=c(1,2,15),lwd=1.5,lty=2,bty="n",inset=.02,cex=0.8)
+legend("topright",c("18nl/min","54nl/min","180nl/min"),col=c("red","blue","black"),pch=c(1,2,15),lwd=1.5,lty=2,bty="n",inset=.01,cex=0.85)
