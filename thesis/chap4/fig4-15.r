@@ -52,8 +52,8 @@ text(2000,6,"ratio=16",col="green4", font=2,cex=1)
 
 
 #区域划线
-legend("topright", c("1.5nl/mi-0.2", "1.5nl/mi-0.3", "180nl/mi-0.4",
-                     "180nl/mi-0.5"), col = c("red", "blue", "green3", "black"), pch = c(0, 1, 2, 5),
-       lwd = 2, lty = 2, cex = 0.9, inset = .02, bty = "n")
+legend("topright", c("1.5nl/min-kv0.2", "1.5nl/min-kv0.3", "180nl/min-kv0.4",
+                     "180nl/min-kv0.5"), col = c("red", "blue", "green3", "black"), pch = c(0, 1, 2, 5),
+       lwd = 2, lty = 2, cex = 0.8, inset = .02, bty = "n")
 
 ##################################画图--占空比k = 0.3#######################
