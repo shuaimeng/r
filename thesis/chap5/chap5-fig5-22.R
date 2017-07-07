@@ -1,129 +1,77 @@
 dyn.load('/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/server/libjvm.dylib')
 
 setwd("/Users/mengmengjiang/all datas/voltage")
-
-#对单个内容进行画图分析，尝试记录单个内容的pdf图片格式
-#文件名：voltage_stable , OV电压与BV电压之差，即stable 稳定电压与三种液体之间随流量、极间距离、针头直径变化的影响
-
 library(xlsx)
 
-#读取v~Q的数据
-eq<-read.xlsx("voltage.xls",sheetName="ethanol_q",header=TRUE)
-aq<-read.xlsx("voltage.xls",sheetName="acetone_q",header=TRUE)
-iq<-read.xlsx("voltage.xls",sheetName="iso_q",header=TRUE)
+# reading and compare the datas from gly1 and he-25g
 
-###布局###
-par(mar=c(2,2.2,0.2,1),oma=c(2,2,2,2))
-layout(matrix(c(1,1,2,3), 2, 2,byrow = TRUE))
+k1<-read.xlsx("he-32g.xlsx", sheetName = "2kv18", header = TRUE)
+k2<-read.xlsx("qd3.xlsx", sheetName = "v1", header = TRUE)
+k3<-read.xlsx("qd3.xlsx", sheetName = "v2", header = TRUE)
+k4<-read.xlsx("qd3.xlsx", sheetName = "v3", header = TRUE)
 
-plot(eq$f, eq$va,  col=0, xaxs="i", xlim=c(-0.002, 0.04), ylim=c(1, 3),
-     xlab=expression(italic(Q)(nl/min)),mgp=c(1, 0, 0),tck=0.01,cex.lab=1.1,
-     ylab=expression(italic(V)(kv)))
+##
+yan<-c("red","blue","black","green3")
+pcc<-c(0,1,2,5)
 
-mtext("Flowrate",col="black",3,line=-1,font=2,cex=0.9)
-
-###error bar####
+##
 error.bar <- function(x, y, upper, coll,lower=upper, length=0.05,...){
   if(length(x) != length(y) | length(y) !=length(lower) | length(lower) != length(upper))
     stop("vectors must be same length")
   arrows(x,y+upper, x, y-lower,col=coll, angle=90, code=3, length=length, ...)
 }
+##
+par(mfrow = c(2,1), mar = c(2,2.4,0.8,1), oma = c(1,1,1,1))
 
-###lines##
-yan<-c("red","red","blue","blue","green3","green3")
-pch<-c(1,2,1,2,1,2)
+plot(k1$fv,1/k1$d_Rn, col=0,xlab = expression(italic(f["v"]) (Hz)),
+     ylab = expression(italic(ratio)) , mgp=c(1.1, 0, 0),tck=0.02,
+     main = "", xlim = c(0,4000),ylim=c(0,20))
 
-lines(eq$f,eq$vaeva,col=yan[1],pch=1,lwd=2,lty=4,type="b")
-lines(eq$f,eq$vbeva,col=yan[2],pch=2,lwd=2,lty=4,type="b")
-lines(aq$f,aq$vaeva,col=yan[3],pch=1,lwd=2,lty=4,type="b")
-lines(aq$f,aq$vbeva,col=yan[4],pch=2,lwd=2,lty=4,type="b")
-lines(iq$f,iq$vaeva,col=yan[5],pch=1,lwd=2,lty=4,type="b")
-lines(iq$f,iq$vbeva,col=yan[6],pch=2,lwd=2,lty=4,type="b")
+     mtext("18nl/min",3,line=-1,font=2,cex=1)
 
-error.bar(eq$f,eq$vaeva,eq$vastd/2,col=yan[1])
-error.bar(eq$f,eq$vbeva,eq$vbstd/2,col=yan[2])
+lines(k1$fv,1/k1$d_eRn,col=yan[1],pch=pcc[1],type="b",lwd=2,lty=2)
+lines(k2$fv,k2$raeva,col=yan[2],pch=pcc[2],type="b",lwd=2,lty=2)
+lines(k3$fv,k3$raeva,col=yan[3],pch=pcc[3],type="b",lwd=2,lty=2)
+lines(k4$fv,k4$raeva,col=yan[4],pch=pcc[4],type="b",lwd=2,lty=2)
 
-error.bar(aq$f,aq$vaeva,aq$vastd/2,col=yan[3])
-error.bar(aq$f,aq$vbeva,aq$vbstd/2,col=yan[4])
 
-error.bar(iq$f,iq$vaeva,iq$vastd/2,col=yan[5])
-error.bar(iq$f,iq$vbeva,iq$vbstd/2,col=yan[6])
-
-leg<-c("ethanol-Von","ethanol-Vbr","acetone-Von","acetone-Vbr","iso-Von","iso-Vbr")
-
-legend("bottomright",legend=leg, col=yan, pch=c(1,2,1,2,1,2),bty="n",lwd=2,lty=2,inset=.01,cex=0.9)
-
-#读取v~Q的数据
-eq<-read.xlsx("voltage.xls",sheetName="ethanol_d",header=TRUE)
-aq<-read.xlsx("voltage.xls",sheetName="acetone_d",header=TRUE)
-iq<-read.xlsx("voltage.xls",sheetName="iso_d",header=TRUE)
-
-plot(eq$d, eq$va,  col=0, xaxs="i", xlim=c(0.5,4.5), ylim=c(1, 3.3),xlab=expression(italic(Distance)(mm)),mgp=c(1, 0,0),tck=0.01,cex.lab=1.1,ylab=expression(italic(V)(kv)))
-
-mtext("Distance",col="black",3,line=-1,font=2,cex=0.9)
-
-###error bar####
-error.bar <- function(x, y, upper, coll,lower=upper, length=0.05,...){
-  if(length(x) != length(y) | length(y) !=length(lower) | length(lower) != length(upper))
-    stop("vectors must be same length")
-  arrows(x,y+upper, x, y-lower,col=coll, angle=90, code=3, length=length, ...)
-}
-
-###lines##
-yan<-c("red","red","blue","blue","green3","green3")
-pch<-c(1,2,1,2,1,2)
-
-lines(eq$d,eq$vaeva,col=yan[1],pch=1,lwd=2,lty=4,type="b")
-lines(eq$d,eq$vbeva,col=yan[2],pch=2,lwd=2,lty=4,type="b")
-lines(aq$d,aq$vaeva,col=yan[3],pch=1,lwd=2,lty=4,type="b")
-lines(aq$d,aq$vbeva,col=yan[4],pch=2,lwd=2,lty=4,type="b")
-lines(iq$d,iq$vaeva,col=yan[5],pch=1,lwd=2,lty=4,type="b")
-lines(iq$d,iq$vbeva,col=yan[6],pch=2,lwd=2,lty=4,type="b")
-
-error.bar(eq$d,eq$vaeva,eq$vastd/2,col=yan[1])
-error.bar(eq$d,eq$vbeva,eq$vbstd/2,col=yan[2])
-
-error.bar(aq$d,aq$vaeva,aq$vastd/2,col=yan[3])
-error.bar(aq$d,aq$vbeva,aq$vbstd/2,col=yan[4])
-
-error.bar(iq$d,iq$vaeva,iq$vastd/2,col=yan[5])
-error.bar(iq$d,iq$vbeva,iq$vbstd/2,col=yan[6])
+error.bar(k1$fv,1/k1$d_eRn,0,col=yan[1])
+error.bar(k2$fv,k2$raeva,k2$rastd/2,col=yan[2])
+error.bar(k3$fv,k3$raeva,k3$rastd/2,col=yan[3])
+error.bar(k4$fv,k4$raeva,k4$rastd/2,col=yan[4])
 
 
 
+leg<-c("V0+0:0kv+2Kv","Va+Vb:1.7kv-2kv","Va+Vb:1.8kv-2kv","Va+Vb:1.9kv-2kv")
 
-#读取v~Q的数据
-eq<-read.xlsx("voltage.xls",sheetName="ethanol_r",header=TRUE)
-aq<-read.xlsx("voltage.xls",sheetName="acetone_r",header=TRUE)
-iq<-read.xlsx("voltage.xls",sheetName="iso_r",header=TRUE)
+legend("topleft",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.01,bty="n",cex=0.8)
 
-plot(eq$r, eq$va,  col=0, xaxs="i", xlim=c(0.25,0.85), ylim=c(1, 3.3),xlab=expression(paste(italic(Nozzle)," ",italic(diameter),(mm))),mgp=c(1, 0,0),tck=0.01,cex.lab=1.1,ylab=expression(italic(V)(kv)))
+q1<-read.xlsx("he-32g.xlsx", sheetName = "2kv180", header = TRUE)
+q2<-read.xlsx("qd4.xlsx", sheetName = "v1", header = TRUE)
+q3<-read.xlsx("qd4.xlsx", sheetName = "v2", header = TRUE)
+q4<-read.xlsx("qd4.xlsx", sheetName = "v3", header = TRUE)
 
-mtext("Nozzles",col="black",3,line=-1,font=2,cex=0.9)
+##
 
-###error bar####
-error.bar <- function(x, y, upper, coll,lower=upper, length=0.05,...){
-  if(length(x) != length(y) | length(y) !=length(lower) | length(lower) != length(upper))
-    stop("vectors must be same length")
-  arrows(x,y+upper, x, y-lower,col=coll, angle=90, code=3, length=length, ...)
-}
+plot(q1$fv,1/q1$d_Rn, col=0,xlab = expression(italic(f["v"]) (Hz)),
+     ylab = expression(italic(ratio)) , mgp=c(1.1, 0, 0),tck=0.02,
+     main = "", xlim = c(0,4000),ylim=c(0,20))
 
-###lines##
-yan<-c("red","red","blue","blue","green3","green3")
-pch<-c(1,2,1,2,1,2)
+     mtext("180nl/min",3,line=-1,font=2,cex=1)
 
-lines(eq$r,eq$vaeva,col=yan[1],pch=1,lwd=2,lty=4,type="b")
-lines(eq$r,eq$vbeva,col=yan[2],pch=2,lwd=2,lty=4,type="b")
-lines(aq$r,aq$vaeva,col=yan[3],pch=1,lwd=2,lty=4,type="b")
-lines(aq$r,aq$vbeva,col=yan[4],pch=2,lwd=2,lty=4,type="b")
-lines(iq$r,iq$vaeva,col=yan[5],pch=1,lwd=2,lty=4,type="b")
-lines(iq$r,iq$vbeva,col=yan[6],pch=2,lwd=2,lty=4,type="b")
+lines(q1$fv,1/q1$d_eRn,col=yan[1],pch=pcc[1],type="b",lwd=2,lty=2)
+lines(q2$fv,q2$raeva,col=yan[2],pch=pcc[2],type="b",lwd=2,lty=2)
+lines(q3$fv,q3$raeva,col=yan[3],pch=pcc[3],type="b",lwd=2,lty=2)
+lines(q4$fv,q4$raeva,col=yan[4],pch=pcc[4],type="b",lwd=2,lty=2)
 
-error.bar(eq$r,eq$vaeva,eq$vastd/2,col=yan[1])
-error.bar(eq$r,eq$vbeva,eq$vbstd/2,col=yan[2])
 
-error.bar(aq$r,aq$vaeva,aq$vastd/2,col=yan[3])
-error.bar(aq$r,aq$vbeva,aq$vbstd/2,col=yan[4])
+error.bar(q1$fv,1/q1$d_eRn,0,col=yan[1])
+error.bar(q2$fv,q2$raeva,q2$rastd/2,col=yan[2])
+error.bar(q3$fv,q3$raeva,q3$rastd/2,col=yan[3])
+error.bar(q4$fv,q4$raeva,q4$rastd/2,col=yan[4])
 
-error.bar(iq$r,iq$vaeva,iq$vastd/2,col=yan[5])
-error.bar(iq$r,iq$vbeva,iq$vbstd/2,col=yan[6])
+
+
+leg<-c("V0+0:0kv+2Kv","Va+Vb:1.7kv-2kv","Va+Vb:1.8kv-2kv","Va+Vb:1.9kv-2kv")
+
+legend("topleft",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.01,bty="n",cex=0.8)

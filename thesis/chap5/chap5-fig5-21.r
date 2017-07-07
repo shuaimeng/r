@@ -122,5 +122,5 @@ plot(x,y1, col=0,xlab = expression(italic(f["v"]) (KHz)),
 
         leg2<-c("2+0kv-18nl/min","2kv+1.7kv-18nl/min",
         "2kv-1.8kv-18nl/min","2kv-1.9kv-18nl/min")
-        
+
         legend("bottomright",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.01,cex=0.8,bty="n")
