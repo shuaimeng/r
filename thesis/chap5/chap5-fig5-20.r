@@ -41,7 +41,7 @@ error.bar(k2$fv,k2$fveva,k2$stdfv/2,col=yan[2])
 error.bar(k3$fv,k3$fveva,k3$stdfv/2,col=yan[3])
 error.bar(k4$fv,k4$fveva,k4$stdfv/2,col=yan[4])
 
-leg<-c("V0+0:0kv+2Kv","Va+Vb:1.7kv-2kv","Va+Vb:1.9kv-2kv","Va+Vb:1.95kv-2kv")
+leg<-c("V0+0:2kv+0Kv","Va+Vb:2kv-1.7kv","Va+Vb:2kv-1.9kv","Va+Vb:2kv-1.95kv")
 
 legend("topright",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n",cex=0.8)
 
@@ -70,7 +70,7 @@ error.bar(k2$fv,k2$fveva,k2$stdfv/2,col=yan[2])
 error.bar(k3$fv,k3$fveva,k3$stdfv/2,col=yan[3])
 error.bar(k4$fv,k4$fveva,k4$stdfv/2,col=yan[4])
 
-leg<-c("V0+0:0kv+2Kv","Va+Vb:1.7kv-2kv","Va+Vb:1.8kv-2kv","Va+Vb:1.9kv-2kv")
+leg<-c("V0+0:2kv+0Kv","Va+Vb:2kv-1.7kv","Va+Vb:2kv-1.9kv","Va+Vb:2kv-1.95kv")
 
 legend("topright",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.02,bty="n",cex=0.8)
 
@@ -104,7 +104,7 @@ y1<-c(0,2500)
 lines(x1,y1,lwd=1,lty=2,col="blue")
 text(2350,3000,"fvc = 2.5kHz",col="blue",font=2)
 
-leg<-c("V0+0:0kv+2Kv","Va+Vb:1.7kv-2kv","Va+Vb:1.8kv-2kv","Va+Vb:1.9kv-2kv")
+leg<-c("V0+0:2kv+0Kv","Va+Vb:2kv-1.7kv","Va+Vb:2kv-1.9kv","Va+Vb:2kv-1.95kv")
 
 legend("topright",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.01,bty="n",cex=0.8)
 
@@ -143,6 +143,6 @@ y2<-c(0,2000)
 lines(x2,y2,lwd=1,lty=2,col="blue")
 text(1800,2600,"fvc=2kHz",col="blue",font=2)
 
-leg<-c("V0+0:0kv+2Kv","Va+Vb:1.7kv-2kv","Va+Vb:1.8kv-2kv","Va+Vb:1.9kv-2kv")
+leg<-c("V0+0:2kv+0Kv","Va+Vb:2kv-1.7kv","Va+Vb:2kv-1.9kv","Va+Vb:2kv-1.95kv")
 
 legend("topleft",legend=leg,col=yan,pch=pcc,lwd=1.5,lty=2,inset=.01,bty="n",cex=0.8)
