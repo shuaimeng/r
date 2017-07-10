@@ -17,12 +17,12 @@ n8<-read.xlsx("he-34g.xlsx",sheetName="18kv",header=TRUE)
 n9<-read.xlsx("he-34g.xlsx",sheetName="2kv180",header=TRUE)
 n10<-read.xlsx("he-34g.xlsx",sheetName="22kv",header=TRUE)
 ###布局
-par(mar=c(2.4,2.6,1.4,1),oma=c(2,2,2,2))
+par(mar=c(2.4,3,1,1),oma=c(2,2,2,2))
 layout(matrix(c(1,2,3), 3,1,byrow = TRUE))
 ###画图-30g##
 plot(n3$fv, n3$he_ra, xlab = expression(italic(log(q["d"]))),
-     ylab=expression(italic(log(f["e"]))),mgp=c(1.3, 0, 0),tck=0.02,
-     xlim=c(-14,-2),ylim=c(-2,8),cex.lab=1.3,col=0)
+     ylab=expression(italic(log(f["e"]))),mgp=c(1.6, 0.3, 0),tck=0.02,
+     xlim=c(-14,-2),ylim=c(-2,8),cex.lab=1.3,cex.axis=1.3,col=0)
 
 mtext("30G",col="black",3,line=-1.4,font=2,cex=1)
 ###颜色###
@@ -71,13 +71,13 @@ abline(lm(d1~d),col=yan[4],lty=4)
 
 leg<-c("1.6kv","1.8kv","2kv","2.2kv")
 
-legend("topleft",legend=leg,col=yan,pch=pchc,bty="n",lwd=1.5,lty=2,inset=.02,cex=1.2)
+legend("topleft",legend=leg,col=yan,pch=pchc,bty="n",lwd=1.5,lty=2,inset=.02,cex=1.4)
 
 #####画图-32G###
 
 plot(n3$fv, n3$he_ra, xlab = expression(italic(log(q["d"]))),
-     ylab=expression(italic(log(f["e"]))),mgp=c(1.3, 0, 0),tck=0.02,
-     xlim=c(-14,-2),ylim=c(-2,8),cex.lab=1.3,col=0)
+     ylab=expression(italic(log(f["e"]))),mgp=c(1.6, 0.3, 0),tck=0.02,
+     xlim=c(-14,-2),ylim=c(-2,8),cex.lab=1.3,cex.axis=1.3,col=0)
      mtext("32G",col="black",3,line=-1.4,font=2,cex=1)
 
 ###颜色###
@@ -116,13 +116,13 @@ abline(lm(g1~g),col=yan[3],lty=4)
 
 leg<-c("1.8kv","2kv","2.2kv")
 
-legend("topleft",legend=leg,col=yan,pch=pchc,bty="n",lwd=1.5,lty=2,inset=.02,cex=1.2)
+legend("topleft",legend=leg,col=yan,pch=pchc,bty="n",lwd=1.5,lty=2,inset=.02,cex=1.4)
 
 ####34G
 
 plot(n8$fv, n8$he_ra, xlab = expression(italic(log(q["d"]))),
-     ylab=expression(italic(log(f["e"]))),mgp=c(1.3, 0, 0),tck=0.02,
-     xlim=c(-14,-2),ylim=c(-2,8),cex.lab=1.3,col=0)
+     ylab=expression(italic(log(f["e"]))),mgp=c(1.6, 0.3, 0),tck=0.02,
+     xlim=c(-14,-2),ylim=c(-2,8),cex.lab=1.3,cex.axis=1.3,col=0)
      mtext("34G",col="black",3,line=-1.4,font=2,cex=1)
 
 ###颜色###
@@ -161,4 +161,4 @@ abline(lm(i1~i),col=yan[2],lty=4)
 
 leg<-c("1.8kv","2kv")
 
-legend("topleft",legend=leg,col=yan,pch=pchc,bty="n",lwd=1.5,lty=2,inset=.02,cex=1.2)
+legend("topleft",legend=leg,col=yan,pch=pchc,bty="n",lwd=1.5,lty=2,inset=.02,cex=1.4)
