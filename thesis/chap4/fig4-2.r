@@ -18,7 +18,7 @@ pchall<-c(21,22,23,24)
 
 ######
 par(fig=c(0,1,0,1), mar = c(3,3,1,1), oma = c(1,1,1,1),new=FALSE)
-plot(fv, (k[1]*q[1]/fv+v), mgp = c(1, 0, 0),tck=0.01,col=mycolors[1], log="x", type="b", xlab = expression(log(italic(f["v"])) (Hz)),
+plot(fv, (k[1]*q[1]/fv+v), mgp = c(1, 0, 0),tck=0.01,col=mycolors[1], log="x", type="b", xlab = expression(italic(f["v"])(Hz)),
      ylab = expression(italic(V["ne"]+V["m"](m^3))), main="", lwd=2, pch=pchall[1], lty=2,cex.lab=1,cex.axis=1, ylim=c(4.4e-13, 8e-13))
 
 #画出占空比为0.5，流量为1.5nl/min时的弯月面体积，说明最小值是什么
