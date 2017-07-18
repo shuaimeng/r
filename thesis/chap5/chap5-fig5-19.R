@@ -103,17 +103,19 @@ h1<-D/n2$X5
 #画点
 points(lowess(e,e1,f=1/4,iter=3),col=yan[1],pch=0,lwd=2,lty=2,cex=0.8)
 
-points(lowess(f,f1,f=1/4,iter=3),col=yan[2],pch=1,lwd=2,lty=2,cex=0.8)
+
 
 points(lowess(g,g1,f=1/4,iter=3),col=yan[3],pch=2,lwd=2,lty=2,cex=0.8)
 
+points(lowess(f,f1,f=1/4,iter=3),col=yan[2],pch=1,lwd=2,lty=2,cex=0.8)
 points(lowess(h,h1,f=1/4,iter=3),col=yan[4],pch=5,lwd=2,lty=2,cex=0.8)
 
 ##拟合
 
 abline(lm(e1[1:14]~e[1:14]),col=yan[1],lty=4)
-abline(lm(f1[1:14]~f[1:14]),col=yan[2],lty=4)
 abline(lm(g1[1:14]~g[1:14]),col=yan[3],lty=4)
+abline(lm(f1[1:14]~f[1:14]),col=yan[2],lty=4)
+
 abline(lm(h1[1:14]~h[1:14]),col=yan[4],lty=4)
 
 legend("topright",legend=leg,col=yan,pch=pcc,bty="n",lwd=1.5,lty=2,inset=.02,cex=0.8)
@@ -144,18 +146,20 @@ l1<-D/n3$X5
 #画点
 points(lowess(i,i1,f=1/4,iter=3),col=yan[1],pch=0,lwd=2,lty=2,cex=0.8)
 
-points(lowess(j,j1,f=1/4,iter=3),col=yan[2],pch=1,lwd=2,lty=2,cex=0.8)
+points(lowess(l,l1,f=1/4,iter=3),col=yan[2],pch=5,lwd=2,lty=2,cex=0.8)
 
 points(lowess(k,k1,f=1/4,iter=3),col=yan[3],pch=2,lwd=2,lty=2,cex=0.8)
 
-points(lowess(l,l1,f=1/4,iter=3),col=yan[4],pch=5,lwd=2,lty=2,cex=0.8)
+points(lowess(j,j1,f=1/4,iter=3),col=yan[4],pch=1,lwd=2,lty=2,cex=0.8)
 
 ##拟合
 
 abline(lm(i1[1:19]~i[1:19]),col=yan[1],lty=4)
-abline(lm(j1[1:19]~j[1:19]),col=yan[2],lty=4)
+abline(lm(l1[1:19]~l[1:19]),col=yan[2],lty=4)
+
 abline(lm(k1[1:19]~k[1:19]),col=yan[3],lty=4)
-abline(lm(l1[1:19]~l[1:19]),col=yan[4],lty=4)
+abline(lm(j1[1:19]~j[1:19]),col=yan[4],lty=4)
+
 
 legend("topright",legend=leg,col=yan,pch=pcc,bty="n",lwd=1.5,lty=2,inset=.02,cex=0.8)
 
