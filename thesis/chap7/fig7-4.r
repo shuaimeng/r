@@ -36,10 +36,10 @@ plot(k1$ux,k1$sdeva, col=0,xlab = expression(italic(U["x"]) (mm/s)),
 
 mtext("Sd",3,line=-1,font=2,cex=1)
 
-lines(k1$ux,k1$sdeva,lwd=1.5,lty=2,col=yan[1],pch=pcc[1],type="b")
-lines(k2$ux,k2$sdeva,lwd=1.5,lty=2,col=yan[2],pch=pcc[2],type="b")
-lines(k3$ux,k3$sdeva,lwd=1.5,lty=2,col=yan[3],pch=pcc[3],type="b")
-lines(k4$ux,k4$sdeva,lwd=1.5,lty=2,col=yan[4],pch=pcc[4],type="b")
+lines(k1$ux,k1$sdeva,lwd=1.5,lty=1,col=yan[1],pch=pcc[1],type="b")
+lines(k2$ux,k2$sdeva,lwd=1.5,lty=1,col=yan[2],pch=pcc[2],type="b")
+lines(k3$ux,k3$sdeva,lwd=1.5,lty=1,col=yan[3],pch=pcc[3],type="b")
+lines(k4$ux,k4$sdeva,lwd=1.5,lty=1,col=yan[4],pch=pcc[4],type="b")
 
 error.bar(k1$ux,k1$sdeva,k1$sdstd/2,col=yan[1])
 error.bar(k2$ux,k2$sdeva,k2$sdstd/2,col=yan[2])
