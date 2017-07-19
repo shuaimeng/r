@@ -18,7 +18,7 @@ layout(matrix(c(1,2,3),3,1,byrow = TRUE))
 
 ## flow rates
 plot(eq$f, eq$va,  col=0, xaxs="i", xlim=c(-0.002, 0.032), ylim=c(0.4,1.2),
-     xlab=expression(italic(Q)(nl/min)),mgp=c(1.7, 0.5, 0),tck=0.01,cex.lab=1.6,cex.axis=1.6,
+     xlab=expression(italic(Q)(ml/min)),mgp=c(1.8, 0.5, 0),tck=0.01,cex.lab=1.6,cex.axis=1.6,
      ylab=expression(italic(V)(kv)))
 
 mtext("Flow rate",col="black",3,line=-1.4,font=2,cex=1.2)
