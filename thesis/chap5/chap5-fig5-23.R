@@ -13,11 +13,11 @@ aq<-read.xlsx("voltage.xls",sheetName="acetone_q",header=TRUE)
 iq<-read.xlsx("voltage.xls",sheetName="iso_q",header=TRUE)
 
 ###布局###
-par(mar=c(2,2.2,0.2,1),oma=c(2,2,2,2))
+par(mar=c(2,2.4,0.4,1),oma=c(2,2,2,2))
 layout(matrix(c(1,1,2,3), 2, 2,byrow = TRUE))
 
 plot(eq$f, eq$va,  col=0, xaxs="i", xlim=c(-0.002, 0.04), ylim=c(1, 3),
-     xlab=expression(italic(Q)(nl/min)),mgp=c(1, 0, 0),tck=0.01,cex.lab=1.1,
+     xlab=expression(italic(Q)(ml/min)),mgp=c(1, 0, 0),tck=0.01,cex.lab=1.1,
      ylab=expression(italic(V)(kv)))
 
 mtext("Flowrate",col="black",3,line=-1,font=2,cex=0.9)
